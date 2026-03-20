@@ -30,13 +30,13 @@ export default function Nav() {
         className="transition-all duration-300 px-6 md:px-10 py-3 flex items-center justify-between"
         style={{
           background: scrolled
-            ? "rgba(140, 45, 10, 0.98)"
-            : "rgba(160, 50, 12, 0.95)",
+            ? "rgba(255, 245, 238, 0.98)"
+            : "rgba(255, 245, 238, 0.95)",
           backdropFilter: "blur(24px)",
           WebkitBackdropFilter: "blur(24px)",
-          borderBottom: "1px solid rgba(255, 255, 255, 0.15)",
+          borderBottom: "1px solid rgba(232, 85, 32, 0.1)",
           boxShadow: scrolled
-            ? "0 8px 32px rgba(0, 0, 0, 0.2)"
+            ? "0 8px 32px rgba(0, 0, 0, 0.08)"
             : "none",
         }}
       >
@@ -46,7 +46,7 @@ export default function Nav() {
             <div className="bg-orange rounded-xl w-9 h-9 flex items-center justify-center text-lg">
               🍽
             </div>
-            <span className="font-bold text-white text-sm">GourmetJobs</span>
+            <span className="font-bold text-[#1A0E05] text-sm">GourmetJobs</span>
           </a>
 
           <div className="hidden md:flex items-center gap-6">
@@ -54,7 +54,7 @@ export default function Nav() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-white font-medium hover:text-white/90 transition-colors duration-200 text-sm"
+                className="text-[#7A5C48] font-medium hover:text-orange transition-colors duration-200 text-sm"
               >
                 {link.label}
               </a>
@@ -66,16 +66,16 @@ export default function Nav() {
         <div className="hidden md:flex items-center gap-2.5">
           <a
             href="#"
-            className="text-sm font-bold text-white px-5 py-2.5 rounded-[14px] transition-all duration-200 hover:bg-white/10"
+            className="text-sm font-bold text-orange px-5 py-2.5 rounded-[14px] transition-all duration-200 hover:bg-orange/5"
             style={{
-              border: "2px solid rgba(255, 255, 255, 0.5)",
+              border: "2px solid rgba(232, 85, 32, 0.3)",
             }}
           >
             Ingresar
           </a>
           <a
             href="#"
-            className="text-sm font-semibold text-orange bg-white hover:bg-cream px-5 py-2.5 rounded-[14px] transition-all duration-200"
+            className="text-sm font-semibold text-white bg-orange hover:bg-orange2 px-5 py-2.5 rounded-[14px] transition-all duration-200"
           >
             Empezar gratis →
           </a>
@@ -88,17 +88,17 @@ export default function Nav() {
           aria-label="Toggle menu"
         >
           <span
-            className={`block w-5 h-[2px] bg-white rounded-full transition-all duration-300 ${
+            className={`block w-5 h-[2px] bg-[#1A0E05] rounded-full transition-all duration-300 ${
               mobileOpen ? "rotate-45 translate-y-[7px]" : ""
             }`}
           />
           <span
-            className={`block w-5 h-[2px] bg-white rounded-full transition-all duration-300 ${
+            className={`block w-5 h-[2px] bg-[#1A0E05] rounded-full transition-all duration-300 ${
               mobileOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block w-5 h-[2px] bg-white rounded-full transition-all duration-300 ${
+            className={`block w-5 h-[2px] bg-[#1A0E05] rounded-full transition-all duration-300 ${
               mobileOpen ? "-rotate-45 -translate-y-[7px]" : ""
             }`}
           />
@@ -114,10 +114,10 @@ export default function Nav() {
         <div
           className="px-6 py-5 flex flex-col gap-3"
           style={{
-            background: "rgba(140, 45, 10, 0.98)",
+            background: "rgba(255, 245, 238, 0.98)",
             backdropFilter: "blur(24px)",
             WebkitBackdropFilter: "blur(24px)",
-            borderBottom: "1px solid rgba(255, 255, 255, 0.15)",
+            borderBottom: "1px solid rgba(232, 85, 32, 0.1)",
           }}
         >
           {links.map((link) => (
@@ -125,26 +125,26 @@ export default function Nav() {
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="text-white font-medium hover:text-white/90 transition-colors duration-200 text-sm py-2"
+              className="text-[#7A5C48] font-medium hover:text-orange transition-colors duration-200 text-sm py-2"
             >
               {link.label}
             </a>
           ))}
 
-          <hr className="border-white/10 my-1" />
+          <hr className="border-orange/10 my-1" />
 
           <a
             href="#"
-            className="text-sm font-semibold text-white px-5 py-2.5 rounded-[14px] transition-all duration-200 text-center hover:bg-white/5"
+            className="text-sm font-semibold text-orange px-5 py-2.5 rounded-[14px] transition-all duration-200 text-center hover:bg-orange/5"
             style={{
-              border: "1px solid rgba(255, 255, 255, 0.15)",
+              border: "2px solid rgba(232, 85, 32, 0.3)",
             }}
           >
             Ingresar
           </a>
           <a
             href="#"
-            className="text-sm font-semibold text-orange bg-white hover:bg-cream px-5 py-2.5 rounded-[14px] transition-all duration-200 text-center"
+            className="text-sm font-semibold text-white bg-orange hover:bg-orange2 px-5 py-2.5 rounded-[14px] transition-all duration-200 text-center"
           >
             Empezar gratis →
           </a>
