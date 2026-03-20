@@ -10,10 +10,14 @@ export default function Problem() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto">
           <RevealWrapper>
-            <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-orange/10 text-white">
-              EL PROBLEMA
-            </span>
-            <h2 className="text-4xl md:text-6xl font-extrabold mt-5 leading-[1.05]">
+            <div className="inline-flex items-center gap-2.5 bg-orange/10 rounded-full px-4 py-2 mb-5">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E85520]"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: "#E85520", boxShadow: "0 0 10px #E85520, 0 0 20px rgba(232,85,32,0.4)" }}></span>
+              </span>
+              <span className="text-orange text-xs font-bold uppercase tracking-wider">El problema</span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-extrabold leading-[1.05]">
               <span className="text-[#1A0E05]">La contratación gastronómica</span>
               <br />
               <span className="gradient-text-orange">está rota</span>

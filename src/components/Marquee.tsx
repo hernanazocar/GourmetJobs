@@ -142,8 +142,8 @@ export default function Marquee() {
           <div className="text-center max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2.5 bg-white/15 rounded-full px-4 py-2 mb-4">
               <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" style={{ boxShadow: "0 0 8px #22c55e" }}></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e]"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: "#22c55e", boxShadow: "0 0 10px #22c55e, 0 0 20px rgba(34,197,94,0.4)" }}></span>
               </span>
               <span className="text-white text-xs font-bold uppercase tracking-wider">{marqueeWorkers.length} profesionales activos ahora</span>
             </div>
