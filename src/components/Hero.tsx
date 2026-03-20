@@ -8,11 +8,14 @@ import RevealWrapper from "./ui/RevealWrapper";
 import { heroStats } from "@/lib/data";
 
 const rotatingWords = [
-  "en minutos",
-  "sin fricción",
   "cerca de ti",
-  "ahora mismo",
-  "con confianza",
+  "de confianza",
+  "en 2 minutos",
+  "verificado",
+  "sin esperas",
+  "disponible ahora",
+  "listo para trabajar",
+  "a un click",
 ];
 
 export default function Hero() {
@@ -55,7 +58,7 @@ export default function Hero() {
       {/* Title */}
       <RevealWrapper delay={0.1}>
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-[-0.04em] leading-[1] max-w-4xl mx-auto">
-          <span className="text-white block">El talento que llega</span>
+          <span className="text-white block">Talento gastronómico</span>
           <span className="block h-[1.1em] relative mt-2 overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.span
