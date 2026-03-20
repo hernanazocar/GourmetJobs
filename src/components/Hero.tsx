@@ -8,10 +8,7 @@ import RevealWrapper from "./ui/RevealWrapper";
 import { useSearch } from "@/lib/SearchContext";
 
 const liveMessages = [
-  { text: "247 profesionales disponibles ahora", icon: "👥" },
-  { text: "Último match hace 3 minutos", icon: "⚡" },
-  { text: "5 restaurantes buscando personal hoy", icon: "🍽️" },
-  { text: "12 trabajadores conectados ahora mismo", icon: "🟢" },
+  { text: "15 talentos conectados ahora" },
 ];
 
 export default function Hero() {
@@ -46,27 +43,35 @@ export default function Hero() {
           className="inline-flex items-center gap-2.5 rounded-full pl-3.5 pr-5 py-2 text-sm font-semibold text-[#1A0E05] mb-6"
           style={{ background: "rgba(255,255,255,0.55)", border: "1px solid rgba(255,255,255,0.75)" }}
         >
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={liveIndex}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.3 }}
-              className="inline-flex items-center gap-2"
-            >
-              <span className="text-base">{liveMessages[liveIndex].icon}</span>
-              {liveMessages[liveIndex].text}
-            </motion.span>
-          </AnimatePresence>
+          <span className="relative flex h-3 w-3 shrink-0">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e]"></span>
+            <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: "#22c55e", boxShadow: "0 0 8px #22c55e" }}></span>
+          </span>
+          15 talentos conectados ahora
         </div>
       </RevealWrapper>
 
       {/* Headline */}
       <RevealWrapper delay={0.1}>
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-[-0.04em] leading-[1.05] text-[#1A0E05] max-w-4xl mx-auto">
-          Profesionales gastronómicos{" "}
-          <span className="gradient-text-orange">disponibles ahora mismo</span>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-[-0.04em] leading-[1.1] max-w-4xl mx-auto">
+          <span className="text-[#1A0E05]">Talento gastronómico</span>
+          <br />
+          <span className="text-[#1A0E05]">disponible </span>
+          <span className="inline-block h-[1.1em] relative overflow-hidden align-bottom" style={{ minWidth: "4ch" }}>
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={liveIndex}
+                initial={{ y: 40, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -40, opacity: 0 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute left-0 whitespace-nowrap"
+                style={{ color: "#E85520" }}
+              >
+                {["en tiempo real", "cerca de ti", "sin esperas", "ahora mismo", "de confianza", "listo en minutos", "a un click"][liveIndex % 7]}
+              </motion.span>
+            </AnimatePresence>
+          </span>
         </h1>
       </RevealWrapper>
 

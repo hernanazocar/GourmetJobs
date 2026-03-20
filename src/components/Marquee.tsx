@@ -169,7 +169,7 @@ export default function Marquee() {
           {/* Header */}
           <div className="text-center mb-8 px-4">
             <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
-              Profesionales disponibles <span className="gradient-text">ahora</span>
+              Talento disponible <span className="gradient-text">ahora</span>
             </h2>
             <p className="text-white/60 text-base mt-3 max-w-lg mx-auto">
               Explora talento activo listo para trabajar hoy
@@ -206,9 +206,9 @@ export default function Marquee() {
 
           {/* Carousel — auto-scrolling */}
           <div className="overflow-hidden">
-            <div className="flex animate-marquee gap-3 px-4" style={{ animationDuration: "20s" }}>
+            <div className="flex animate-marquee gap-4 px-4" style={{ animationDuration: "25s" }}>
               {[...workers, ...workers].map((worker, i) => (
-                <div key={`${worker.name}-${i}`} className="shrink-0 w-[240px]">
+                <div key={`${worker.name}-${i}`} className="shrink-0 w-[270px]">
                   <div
                     onClick={() => setSelected(worker)}
                     className="group bg-white rounded-2xl p-4 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl shadow-lg h-full flex flex-col"
