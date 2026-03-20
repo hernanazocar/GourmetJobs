@@ -11,7 +11,7 @@ const rotatingWords = [
   "en tiempo real",
   "cerca de ti, ahora",
   "100% de confianza",
-  "listo en 2 minutos",
+  "listo en minutos",
   "verificado y seguro",
   "sin esperas, sin CVs",
   "disponible ahora ya",
