@@ -1,134 +1,69 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useMemo } from "react";
-import { marqueeWorkers } from "@/lib/data";
+import { useState, useRef, useMemo } from "react";
+import { marqueeWorkers, WorkerCategory } from "@/lib/data";
 import { useSearch } from "@/lib/SearchContext";
 
 type Worker = (typeof marqueeWorkers)[number];
 
-function ProfileModal({
-  worker,
-  onClose,
-}: {
-  worker: Worker;
-  onClose: () => void;
-}) {
-  return (
-    <div
-      className="fixed inset-0 z-[100] flex items-center justify-center px-4"
-      onClick={onClose}
-    >
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
-      <div
-        className="relative bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-5 text-[#9A7A60] hover:text-[#1A0E05] transition text-xl"
-        >
-          &times;
-        </button>
+const filters: { label: string; value: WorkerCategory | "all" | "hot" }[] = [
+  { label: "Todos", value: "all" },
+  { label: "Garzones", value: "garzones" },
+  { label: "Cocina", value: "cocina" },
+  { label: "Baristas", value: "baristas" },
+  { label: "Administración", value: "admin" },
+  { label: "Turnos hoy 🔥", value: "hot" },
+];
 
+function Badge({ type }: { type: "fast" | "demand" | "new" | null }) {
+  if (!type) return null;
+  const config = {
+    fast: { text: "⚡ Respuesta rápida", bg: "bg-blue-50", color: "text-blue-600" },
+    demand: { text: "🔥 Alta demanda", bg: "bg-orange/10", color: "text-orange" },
+    new: { text: "🟡 Nuevo", bg: "bg-amber-50", color: "text-amber-600" },
+  };
+  const c = config[type];
+  return <span className={`${c.bg} ${c.color} text-[10px] font-bold px-2 py-0.5 rounded-full`}>{c.text}</span>;
+}
+
+function ProfileModal({ worker, onClose }: { worker: Worker; onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center px-4" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+      <div className="relative bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl" onClick={(e) => e.stopPropagation()}>
+        <button onClick={onClose} className="absolute top-4 right-5 text-[#9A7A60] hover:text-[#1A0E05] transition text-xl">&times;</button>
         <div className="flex items-center gap-5">
-          <div className="relative w-20 h-20 rounded-full overflow-hidden shrink-0 ring-2 ring-orange/30 ring-offset-4 ring-offset-white">
-            <Image
-              src={worker.img}
-              alt={worker.name}
-              width={80}
-              height={80}
-              className="object-cover w-full h-full"
-              unoptimized
-            />
+          <div className="relative w-20 h-20 rounded-2xl overflow-hidden">
+            <Image src={worker.img} alt={worker.name} width={80} height={80} className="object-cover w-full h-full" unoptimized />
           </div>
           <div>
             <h3 className="text-xl font-bold text-[#1A0E05]">{worker.name}</h3>
-            <p className="text-orange text-sm font-semibold mt-0.5">{worker.role}</p>
-            <div className="flex items-center gap-2 mt-1.5">
+            <p className="text-orange text-sm font-semibold">{worker.role}</p>
+            <div className="flex items-center gap-2 mt-1">
               <span className="text-[#7A5C48] text-xs">📍 {worker.zone}</span>
-              {worker.availability === "now" ? (
-                <span className="bg-green-50 text-green-600 px-2 py-0.5 rounded-full text-[11px] font-semibold">
-                  Disponible ahora
-                </span>
-              ) : (
-                <span className="bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full text-[11px] font-semibold">
-                  Disponible hoy
-                </span>
-              )}
+              <span className="text-[#7A5C48] text-xs">· {worker.experience}</span>
             </div>
           </div>
         </div>
-
-        <div className="grid grid-cols-3 gap-3 mt-7">
+        <p className="text-[#7A5C48] text-sm mt-4 italic">&ldquo;{worker.tagline}&rdquo;</p>
+        <div className="grid grid-cols-3 gap-3 mt-5">
           {[
-            { label: "Puntualidad", value: `${worker.puntualidad}%` },
             { label: "Rating", value: worker.rating.toFixed(1) },
-            { label: "Turnos", value: String(worker.turnos) },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-xl py-3 text-center"
-              style={{ background: "#FFF0E6" }}
-            >
-              <div className="text-lg font-bold text-orange">
-                {stat.value}
-              </div>
-              <div className="text-[#7A5C48] text-[11px] mt-0.5">{stat.label}</div>
+            { label: "Precio", value: worker.price },
+            { label: "Horario", value: worker.hours.split(" ").slice(1).join(" ") },
+          ].map((s) => (
+            <div key={s.label} className="rounded-xl py-3 text-center bg-[#FFF0E6]">
+              <div className="text-base font-bold text-orange">{s.value}</div>
+              <div className="text-[#7A5C48] text-[11px]">{s.label}</div>
             </div>
           ))}
         </div>
-
-        <div className="mt-6">
-          <h4 className="text-xs text-[#9A7A60] font-semibold uppercase tracking-wider mb-2">
-            Habilidades
-          </h4>
-          <div className="flex flex-wrap gap-2">
-            {worker.skills.map((skill) => (
-              <span
-                key={skill}
-                className="bg-orange/10 text-orange text-xs px-3 py-1.5 rounded-full font-medium"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex gap-3 mt-8">
-          <a
-            href={`https://wa.me/?text=${encodeURIComponent(
-              `Hola ${worker.name}, te contacto por GourmetJobs para un turno.`
-            )}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 bg-[#25D366] text-white py-3.5 rounded-xl font-semibold text-sm text-center hover:brightness-110 transition"
-          >
-            💬 WhatsApp
-          </a>
-          <button className="flex-1 bg-orange text-white py-3.5 rounded-xl font-semibold text-sm text-center hover:bg-orange2 transition">
-            📋 Contratar turno
-          </button>
+        <div className="flex gap-3 mt-6">
+          <button className="flex-1 bg-orange text-white py-3.5 rounded-xl font-bold text-sm hover:bg-orange2 transition">Ver perfil completo</button>
+          <button className="flex-1 bg-[#1A0E05] text-white py-3.5 rounded-xl font-bold text-sm hover:bg-[#2A1A10] transition">Invitar a turno</button>
         </div>
       </div>
-    </div>
-  );
-}
-
-function StarRating({ rating }: { rating: number }) {
-  return (
-    <div className="flex items-center gap-0.5">
-      {[1, 2, 3, 4, 5].map((star) => (
-        <svg
-          key={star}
-          className={`w-3.5 h-3.5 ${star <= Math.round(rating) ? "text-orange" : "text-[#E0D0C0]"}`}
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-        </svg>
-      ))}
-      <span className="text-[#7A5C48] text-xs ml-1">{rating.toFixed(1)}</span>
     </div>
   );
 }
@@ -136,160 +71,182 @@ function StarRating({ rating }: { rating: number }) {
 export default function Marquee() {
   const { search, isFiltering } = useSearch();
   const [selected, setSelected] = useState<Worker | null>(null);
+  const [activeFilter, setActiveFilter] = useState<string>("all");
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const filtered = useMemo(() => {
-    if (!isFiltering) return marqueeWorkers;
-    return marqueeWorkers.filter((w) => {
-      const matchRole = !search.role || w.role.toLowerCase().includes(search.role.toLowerCase());
-      const matchZone = !search.where || w.zone.toLowerCase().includes(search.where.toLowerCase());
-      return matchRole && matchZone;
-    });
-  }, [search, isFiltering]);
+  const workers = useMemo(() => {
+    let result = marqueeWorkers;
 
-  const workers = filtered.length > 0 ? filtered : marqueeWorkers;
-  const doubled = [...workers, ...workers];
+    if (isFiltering) {
+      result = result.filter((w) => {
+        const matchRole = !search.role || w.role.toLowerCase().includes(search.role.toLowerCase());
+        const matchZone = !search.where || w.zone.toLowerCase().includes(search.where.toLowerCase());
+        return matchRole && matchZone;
+      });
+    }
+
+    if (activeFilter !== "all") {
+      if (activeFilter === "hot") {
+        result = result.filter((w) => w.availability === "now");
+      } else {
+        result = result.filter((w) => w.category === activeFilter);
+      }
+    }
+
+    return result.length > 0 ? result : marqueeWorkers;
+  }, [search, isFiltering, activeFilter]);
+
+  function scroll(dir: "left" | "right") {
+    if (!scrollRef.current) return;
+    scrollRef.current.scrollBy({ left: dir === "left" ? -320 : 320, behavior: "smooth" });
+  }
 
   return (
     <>
-      <section id="talento" className="sec-dark py-16 overflow-hidden">
-        <div className="relative z-10 max-w-6xl mx-auto px-4 mb-10">
-          <div className="text-center max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2.5 bg-white/15 rounded-full px-4 py-2 mb-4">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e]"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: "#22c55e", boxShadow: "0 0 10px #22c55e, 0 0 20px rgba(34,197,94,0.4)" }}></span>
-              </span>
-              <span className="text-white text-xs font-bold uppercase tracking-wider">
-                {isFiltering ? `${filtered.length} resultado${filtered.length !== 1 ? "s" : ""} encontrado${filtered.length !== 1 ? "s" : ""}` : `${marqueeWorkers.length} profesionales activos ahora`}
-              </span>
-            </div>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-[-0.03em]">
-              Talento verificado, <span className="gradient-text">disponible ahora</span>
-            </h3>
+      <section id="talento" className="sec-dark py-16 px-4">
+        <div className="relative z-10 max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
+              Profesionales disponibles <span className="gradient-text">ahora</span>
+            </h2>
             <p className="text-white/60 text-base mt-3 max-w-lg mx-auto">
-              Profesionales evaluados con score de confiabilidad. Haz click en cualquier perfil para ver su historial y contactarlo al instante.
+              Explora talento activo listo para trabajar hoy
             </p>
           </div>
-        </div>
 
-        <div className="relative z-10 flex animate-marquee">
-          {doubled.map((worker, i) => (
-            <div key={i} className="shrink-0 px-2.5">
+          {/* Filters */}
+          <div className="flex flex-wrap justify-center gap-2 mb-6">
+            {filters.map((f) => (
               <button
-                onClick={() => setSelected(worker)}
-                className="group w-[280px] bg-white rounded-[22px] p-5 text-left transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 cursor-pointer shadow-lg"
-                style={{
-                  border: "1px solid rgba(0,0,0,0.06)",
-                }}
+                key={f.value}
+                onClick={() => setActiveFilter(f.value)}
+                className={`text-sm font-semibold px-5 py-2 rounded-full transition-all duration-200 ${
+                  activeFilter === f.value
+                    ? "bg-white text-orange shadow-lg"
+                    : "bg-white/15 text-white hover:bg-white/25"
+                }`}
               >
-                {/* Top: avatar + info */}
-                <div className="flex items-center gap-4">
-                  <div className="relative shrink-0">
-                    <div className="w-14 h-14 rounded-full overflow-hidden ring-2 ring-orange/30 ring-offset-2 ring-offset-white">
-                      <Image
-                        src={worker.img}
-                        alt={worker.name}
-                        width={56}
-                        height={56}
-                        className="object-cover w-full h-full"
-                        unoptimized
-                      />
-                    </div>
-                    {worker.availability === "now" && (
-                      <span className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-[#22c55e] rounded-full border-2 border-white" />
-                    )}
-                  </div>
-                  <div className="min-w-0">
-                    <h4 className="text-[#1A0E05] font-bold text-sm truncate">
-                      {worker.name}
-                    </h4>
-                    <p className="text-orange text-xs font-semibold mt-0.5">
-                      {worker.role}
-                    </p>
-                    <div className="flex items-center gap-1 mt-1 text-[#7A5C48] text-[11px]">
-                      <span>📍</span>
-                      <span>{worker.zone}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Rating */}
-                <div className="mt-3">
-                  <StarRating rating={worker.rating} />
-                </div>
-
-                {/* Stats row */}
-                <div className="flex items-center gap-2 mt-3">
-                  <div className="flex-1 rounded-lg py-2 text-center" style={{ background: "#FFE4CC" }}>
-                    <div className="text-[#1A0E05] font-bold text-sm">
-                      {worker.turnos}
-                    </div>
-                    <div className="text-[#7A5C48] text-[10px]">turnos</div>
-                  </div>
-                  <div className="flex-1 rounded-lg py-2 text-center" style={{ background: "#FFE4CC" }}>
-                    <div className="text-[#1A0E05] font-bold text-sm">
-                      {worker.puntualidad}%
-                    </div>
-                    <div className="text-[#7A5C48] text-[10px]">puntualidad</div>
-                  </div>
-                </div>
-
-                {/* Skills */}
-                <div className="flex flex-wrap gap-1.5 mt-3">
-                  {worker.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="bg-orange/10 text-orange text-[10px] font-medium px-2 py-0.5 rounded-full"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Bottom CTA hint */}
-                <div className="mt-4 flex items-center justify-between">
-                  {worker.availability === "now" ? (
-                    <span className="bg-green-50 text-green-600 px-2.5 py-1 rounded-full text-[11px] font-semibold">
-                      ● Disponible ahora
-                    </span>
-                  ) : (
-                    <span className="bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full text-[11px] font-semibold">
-                      ● Disponible hoy
-                    </span>
-                  )}
-                  <span className="text-[#7A5C48] text-xs group-hover:text-orange transition-colors">
-                    Ver perfil →
-                  </span>
-                </div>
+                {f.label}
               </button>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* CTA */}
-        <div className="relative z-10 max-w-2xl mx-auto px-4 mt-12 text-center">
-          <p className="text-white text-lg font-semibold">
-            Cada perfil tiene score verificado, historial real y disponibilidad en tiempo real.
-          </p>
-          <p className="text-white/60 text-sm mt-2 mb-6">
-            Sin CVs, sin entrevistas. Solo talento listo para trabajar hoy.
-          </p>
-          <a
-            href="#precios"
-            className="inline-flex items-center gap-2 bg-white text-orange px-8 py-4 rounded-2xl font-bold text-base hover:bg-cream transition-all duration-300 hover:scale-[1.02]"
-            style={{ boxShadow: "0 8px 30px rgba(0,0,0,0.15)" }}
-          >
-            Publica tu primer turno gratis
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
+          {/* Activity indicator */}
+          <div className="flex items-center justify-center gap-2 mb-8">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e]"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#22c55e]"></span>
+            </span>
+            <span className="text-white/70 text-sm font-medium">
+              {workers.length} profesionales conectados ahora
+            </span>
+          </div>
+
+          {/* Carousel */}
+          <div className="relative">
+            {/* Arrows */}
+            <button onClick={() => scroll("left")} className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white rounded-full shadow-xl items-center justify-center hover:scale-110 transition">
+              <svg className="w-5 h-5 text-[#1A0E05]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button onClick={() => scroll("right")} className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white rounded-full shadow-xl items-center justify-center hover:scale-110 transition">
+              <svg className="w-5 h-5 text-[#1A0E05]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            {/* Cards */}
+            <div
+              ref={scrollRef}
+              className="flex gap-4 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
+            >
+              <style>{`div::-webkit-scrollbar { display: none; }`}</style>
+              {workers.map((worker, i) => (
+                <div key={`${worker.name}-${i}`} className="snap-start shrink-0 w-[280px] md:w-[300px]">
+                  <div
+                    onClick={() => setSelected(worker)}
+                    className="group bg-white rounded-3xl p-5 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl shadow-xl h-full flex flex-col"
+                  >
+                    {/* Header: photo + availability */}
+                    <div className="relative">
+                      <div className="w-full h-40 rounded-2xl overflow-hidden bg-[#FFF0E6]">
+                        <Image src={worker.img} alt={worker.name} width={300} height={160} className="object-cover w-full h-full" unoptimized />
+                      </div>
+                      <span className={`absolute top-2 right-2 text-[10px] font-bold px-2.5 py-1 rounded-full ${
+                        worker.availability === "now"
+                          ? "bg-green-500 text-white"
+                          : "bg-amber-500 text-white"
+                      }`}>
+                        {worker.availability === "now" ? "Disponible hoy" : "Disponible esta semana"}
+                      </span>
+                      {worker.badge && (
+                        <div className="absolute top-2 left-2">
+                          <Badge type={worker.badge} />
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Info */}
+                    <div className="mt-4 flex-1">
+                      <div className="flex items-center justify-between">
+                        <h4 className="text-[#1A0E05] font-bold text-base">{worker.name}</h4>
+                        <div className="flex items-center gap-1">
+                          <svg className="w-4 h-4 text-orange fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                          <span className="text-[#1A0E05] text-sm font-bold">{worker.rating}</span>
+                        </div>
+                      </div>
+                      <p className="text-orange text-sm font-semibold">{worker.role}</p>
+
+                      <div className="flex items-center gap-3 mt-2 text-[#7A5C48] text-xs">
+                        <span className="flex items-center gap-1">⏱️ {worker.experience}</span>
+                        <span className="flex items-center gap-1">📍 {worker.zone}</span>
+                      </div>
+
+                      <p className="text-[#7A5C48] text-xs mt-2 leading-relaxed italic">
+                        &ldquo;{worker.tagline}&rdquo;
+                      </p>
+
+                      <div className="flex items-center justify-between mt-3 text-xs">
+                        <span className="text-[#1A0E05] font-bold">💰 {worker.price}</span>
+                        <span className="text-[#7A5C48]">🕒 {worker.hours}</span>
+                      </div>
+                    </div>
+
+                    {/* Actions */}
+                    <div className="flex gap-2 mt-4">
+                      <button className="flex-1 bg-orange text-white py-2.5 rounded-xl text-xs font-bold hover:bg-orange2 transition">
+                        Ver perfil
+                      </button>
+                      <button className="flex-1 bg-[#1A0E05] text-white py-2.5 rounded-xl text-xs font-bold hover:bg-[#2A1A10] transition">
+                        Invitar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-10">
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 bg-white text-orange px-8 py-4 rounded-2xl font-bold text-base hover:bg-cream transition-all duration-300 hover:scale-[1.02] shadow-xl"
+            >
+              Ver todo el talento
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+            <p className="text-white/40 text-xs mt-3">+3,200 profesionales registrados</p>
+          </div>
         </div>
       </section>
 
-      {selected && (
-        <ProfileModal worker={selected} onClose={() => setSelected(null)} />
-      )}
+      {selected && <ProfileModal worker={selected} onClose={() => setSelected(null)} />}
     </>
   );
 }
