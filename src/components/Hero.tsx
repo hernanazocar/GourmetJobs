@@ -60,9 +60,9 @@ export default function Hero() {
 
       {/* Title */}
       <RevealWrapper delay={0.1}>
-        <h1 className="max-w-4xl mx-auto">
+        <h1 className="max-w-4xl mx-auto text-center">
           <span className="text-5xl md:text-7xl font-extrabold tracking-[-0.04em] leading-[1] text-[#1A0E05] block">Talento gastronómico</span>
-          <span className="block h-[1.1em] relative mt-3 overflow-hidden text-5xl md:text-7xl font-extrabold tracking-[-0.04em] leading-[1]">
+          <span className="block h-[1.15em] relative mt-2 overflow-hidden text-5xl md:text-7xl tracking-[-0.04em] leading-[1]">
             <AnimatePresence mode="wait">
               <motion.span
                 key={wordIndex}
@@ -70,8 +70,8 @@ export default function Hero() {
                 animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                 exit={{ y: -40, opacity: 0, filter: "blur(8px)" }}
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                className="italic absolute inset-x-0"
-                style={{ fontFamily: "var(--font-accent)", fontWeight: 900, color: "#E85520", fontSize: "inherit" }}
+                className="absolute inset-x-0 font-extrabold italic"
+                style={{ color: "#E85520" }}
               >
                 {rotatingWords[wordIndex]}
               </motion.span>
