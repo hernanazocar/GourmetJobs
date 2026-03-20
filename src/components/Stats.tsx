@@ -16,22 +16,22 @@ export default function Stats() {
       <div className="relative z-10 max-w-6xl mx-auto">
         <RevealWrapper>
           <div className="text-center">
-            <div className="inline-flex items-center gap-2.5 bg-orange/10 rounded-full px-4 py-2 mb-5">
+            <div className="inline-flex items-center gap-2.5 bg-white/15 rounded-full px-4 py-2 mb-5">
               <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: "#E85520", boxShadow: "0 0 10px #E85520, 0 0 20px rgba(232,85,32,0.4)" }}></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: "#FFFFFF", boxShadow: "0 0 10px #FFFFFF, 0 0 20px rgba(255,255,255,0.4)" }}></span>
               </span>
-              <span className="text-orange text-xs font-bold uppercase tracking-wider">Impacto</span>
+              <span className="text-white text-xs font-bold uppercase tracking-wider">Impacto</span>
             </div>
             <h2 className="text-4xl md:text-6xl font-extrabold mt-4 text-center">
-              <span className="text-[#1A0E05]">Números que</span>
+              <span className="text-white">Números que</span>
               <br />
-              <span className="gradient-text-orange">hablan solos</span>
+              <span className="gradient-text">hablan solos</span>
             </h2>
-            <p className="text-[#7A5C48] text-lg mt-4 max-w-lg mx-auto">
+            <p className="text-white/70 text-lg mt-4 max-w-lg mx-auto">
               Métricas que demuestran resultados reales
             </p>
-            <div className="w-16 h-1 bg-orange rounded-full mx-auto mt-6" />
+            <div className="w-16 h-1 bg-white/30 rounded-full mx-auto mt-6" />
           </div>
         </RevealWrapper>
 
@@ -55,7 +55,7 @@ export default function Stats() {
 
         <div className="mt-10">
           <div className="mx-auto max-w-xs h-px bg-gradient-to-r from-transparent via-orange/30 to-transparent" />
-          <p className="mt-6 text-center text-[#9A7A60] text-sm">
+          <p className="mt-6 text-center text-white/50 text-sm">
             Datos actualizados en tiempo real · Marzo 2026
           </p>
         </div>

@@ -64,25 +64,25 @@ export default function Comparison() {
   return (
     <section id="comparacion" className="sec-dark py-24 px-4">
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <span className="inline-flex items-center gap-2.5 bg-white/15 rounded-full px-4 py-2 mb-5">
-          <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
-          <span className="text-white text-xs font-bold uppercase tracking-wider">
+        <span className="inline-flex items-center gap-2.5 bg-orange/10 rounded-full px-4 py-2 mb-5">
+          <span className="w-2 h-2 bg-orange rounded-full animate-pulse" />
+          <span className="text-orange text-xs font-bold uppercase tracking-wider">
             Comparación
           </span>
         </span>
 
         <h2 className="text-4xl md:text-6xl font-extrabold mt-4 leading-[1.05]">
-          <span className="text-white">¿Por qué no un portal</span>
+          <span className="text-[#1A0E05]">¿Por qué no un portal</span>
           <br />
-          <span className="gradient-text">de empleo tradicional?</span>
+          <span className="gradient-text-orange">de empleo tradicional?</span>
         </h2>
 
-        <p className="text-white/70 text-lg mt-5 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-[#7A5C48] text-lg mt-5 max-w-2xl mx-auto leading-relaxed">
           Los portales genéricos no entienden la urgencia de la gastronomía.
           Mira cómo GourmetJobs supera cada métrica que importa.
         </p>
 
-        <div className="w-16 h-1 bg-white/30 rounded-full mx-auto mt-6" />
+        <div className="w-16 h-1 bg-orange/30 rounded-full mx-auto mt-6" />
 
         <RevealWrapper>
           <div className="mt-14 bg-white rounded-3xl shadow-2xl overflow-hidden">

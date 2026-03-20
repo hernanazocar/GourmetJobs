@@ -6,7 +6,7 @@ import RevealWrapper from "./ui/RevealWrapper";
 
 export default function Pricing() {
   return (
-    <section id="precios" className="sec-dark py-24 px-4">
+    <section id="precios" className="sec-light py-24 px-4">
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         <span className="inline-flex items-center gap-2.5 bg-white/15 rounded-full px-4 py-2 mb-5">
           <span className="w-2 h-2 bg-white rounded-full animate-pulse" />

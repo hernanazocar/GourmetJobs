@@ -63,7 +63,7 @@ function StarIcon() {
 
 export default function Testimonials() {
   return (
-    <section id="testimonios" className="sec-light py-24 px-4">
+    <section id="testimonios" className="sec-dark py-24 px-4">
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="flex justify-center">
           <span className="inline-flex items-center gap-2.5 bg-orange/10 rounded-full px-4 py-2">
