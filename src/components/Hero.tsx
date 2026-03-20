@@ -90,7 +90,7 @@ export default function Hero() {
 
       {/* Search bar */}
       <RevealWrapper delay={0.2}>
-        <p className="text-[#1A0E05] text-lg font-bold mt-10 mb-3">¿Qué necesitas hoy?</p>
+        <p className="text-[#1A0E05] text-lg font-bold mt-12 mb-3">¿Qué necesitas hoy?</p>
         <div
           className="w-full max-w-3xl mx-auto bg-white rounded-2xl p-2 flex flex-col sm:flex-row items-stretch gap-2 shadow-xl"
           style={{ border: "1px solid rgba(232,85,32,0.1)" }}
@@ -147,14 +147,14 @@ export default function Hero() {
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
-            Ver disponibles
+            Ver trabajadores disponibles
           </button>
         </div>
       </RevealWrapper>
 
       {/* Quick tags */}
       <RevealWrapper delay={0.25}>
-        <div className="flex flex-wrap justify-center items-center gap-2 mt-4">
+        <div className="flex flex-wrap justify-center items-center gap-2 mt-6">
           <span className="text-[#9A7A60] text-xs font-semibold">Búsquedas rápidas:</span>
           {[
             { label: "Garzón", role: "Garzón" },
@@ -182,7 +182,7 @@ export default function Hero() {
 
       {/* CTAs */}
       <RevealWrapper delay={0.3}>
-        <div className="flex flex-col sm:flex-row items-center gap-4 mt-10">
+        <div className="flex flex-col sm:flex-row items-center gap-4 mt-14">
           <a
             href="#"
             className="group bg-orange text-white px-8 py-4 rounded-2xl text-base font-bold hover:bg-orange2 transition-all duration-300 flex items-center gap-3 hover:scale-[1.02]"
