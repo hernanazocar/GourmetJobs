@@ -1,4 +1,5 @@
 import Nav from "@/components/Nav";
+import ChatBot from "@/components/ChatBot";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import Problem from "@/components/Problem";
@@ -34,6 +35,7 @@ export default function Home() {
         <FinalCTA />
       </main>
       <Footer />
+      <ChatBot />
     </>
   );
 }
