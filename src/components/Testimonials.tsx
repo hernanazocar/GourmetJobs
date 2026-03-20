@@ -66,18 +66,18 @@ export default function Testimonials() {
     <section id="testimonios" className="sec-dark py-24 px-4">
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="flex justify-center">
-          <span className="inline-flex items-center gap-2.5 bg-orange/10 rounded-full px-4 py-2">
-            <span className="w-2 h-2 bg-orange rounded-full animate-pulse" />
-            <span className="text-orange text-xs font-bold uppercase tracking-wider">TESTIMONIOS</span>
+          <span className="inline-flex items-center gap-2.5 bg-white/15 rounded-full px-4 py-2">
+            <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+            <span className="text-white text-xs font-bold uppercase tracking-wider">TESTIMONIOS</span>
           </span>
         </div>
         <h2 className="text-4xl md:text-6xl font-extrabold mt-4 text-center">
-          <span className="text-[#1A0E05]">Lo que dicen</span>
+          <span className="text-white">Lo que dicen</span>
           <br />
-          <span className="gradient-text-orange">nuestros usuarios</span>
+          <span className="gradient-text">nuestros usuarios</span>
         </h2>
-        <p className="text-[#7A5C48] text-base mt-4 max-w-lg mx-auto text-center">Empresas y trabajadores que ya transformaron su forma de operar.</p>
-        <div className="w-16 h-1 bg-orange rounded-full mx-auto mt-6" />
+        <p className="text-white/70 text-base mt-4 max-w-lg mx-auto text-center">Empresas y trabajadores que ya transformaron su forma de operar.</p>
+        <div className="w-16 h-1 bg-white/30 rounded-full mx-auto mt-6" />
 
         <div className="grid md:grid-cols-3 gap-6 mt-14">
           {testimonials.map((t, i) => (
@@ -118,7 +118,7 @@ export default function Testimonials() {
           ))}
         </div>
 
-        <div className="text-center mt-14"><p className="text-[#9A7A60] text-sm">Únete a +3,200 profesionales que confían en GourmetJobs</p></div>
+        <div className="text-center mt-14"><p className="text-white/50 text-sm">Únete a +3,200 profesionales que confían en GourmetJobs</p></div>
       </div>
     </section>
   );

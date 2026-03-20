@@ -18,7 +18,7 @@ export default function Footer() {
               />
             </div>
 
-            <p className="text-[#7A5C48] text-sm max-w-xs">
+            <p className="text-white/70 text-sm max-w-xs">
               Plataforma de contratación gastronómica en tiempo real.
             </p>
 
@@ -31,13 +31,13 @@ export default function Footer() {
           {/* Link columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="text-[#1A0E05] font-semibold text-sm mb-4">
+              <h4 className="text-white font-semibold text-sm mb-4">
                 {title}
               </h4>
               <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link}>
-                    <span className="text-[#7A5C48] text-sm hover:text-[#1A0E05] transition cursor-pointer">
+                    <span className="text-white/70 text-sm hover:text-white transition cursor-pointer">
                       {link}
                     </span>
                   </li>
@@ -48,11 +48,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-[rgba(232,85,32,0.1)] flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="text-[#9A7A60] text-xs">
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+          <span className="text-white/50 text-xs">
             © 2024 GourmetJobs. Todos los derechos reservados.
           </span>
-          <span className="bg-white text-[#9A7A60] text-xs px-3 py-1 rounded-full">
+          <span className="bg-white/15 text-white/50 text-xs px-3 py-1 rounded-full">
             v1.0.0 — Beta
           </span>
         </div>

@@ -8,24 +8,24 @@ export default function Pricing() {
   return (
     <section id="precios" className="sec-light py-24 px-4">
       <div className="relative z-10 max-w-5xl mx-auto text-center">
-        <span className="inline-flex items-center gap-2.5 bg-white/15 rounded-full px-4 py-2 mb-5">
-          <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
-          <span className="text-white text-xs font-bold uppercase tracking-wider">
+        <span className="inline-flex items-center gap-2.5 bg-orange/10 rounded-full px-4 py-2 mb-5">
+          <span className="w-2 h-2 bg-orange rounded-full animate-pulse" />
+          <span className="text-orange text-xs font-bold uppercase tracking-wider">
             Precios
           </span>
         </span>
 
         <h2 className="text-4xl md:text-6xl font-extrabold mt-4 leading-[1.05]">
-          <span className="text-white">Simple, transparente.</span>
+          <span className="text-[#1A0E05]">Simple, transparente.</span>
           <br />
-          <span className="gradient-text">Sin letra chica.</span>
+          <span className="gradient-text-orange">Sin letra chica.</span>
         </h2>
 
-        <p className="text-white/60 text-base mt-4 max-w-lg mx-auto leading-relaxed">
+        <p className="text-[#7A5C48] text-base mt-4 max-w-lg mx-auto leading-relaxed">
           Empieza gratis. Escala cuando quieras.
         </p>
 
-        <div className="w-16 h-1 bg-white/30 rounded-full mx-auto mt-6" />
+        <div className="w-16 h-1 bg-orange/30 rounded-full mx-auto mt-6" />
 
         <div className="grid md:grid-cols-3 gap-4 mt-14">
           {pricingPlans.map((plan, index) => (
@@ -85,7 +85,7 @@ export default function Pricing() {
           ))}
         </div>
 
-        <p className="text-white/50 text-sm text-center mt-8">
+        <p className="text-[#9A7A60] text-sm text-center mt-8">
           Sin contratos · Cancela cuando quieras · Soporte incluido
         </p>
       </div>

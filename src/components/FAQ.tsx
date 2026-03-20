@@ -58,16 +58,16 @@ export default function FAQ() {
     <section id="faq" className="sec-dark py-24 px-4">
       <div className="relative z-10 max-w-3xl mx-auto">
         <div className="flex justify-center">
-          <span className="inline-flex items-center gap-2.5 bg-orange/10 rounded-full px-4 py-2">
-            <span className="w-2 h-2 bg-orange rounded-full animate-pulse" />
-            <span className="text-orange text-xs font-bold uppercase tracking-wider">FAQ</span>
+          <span className="inline-flex items-center gap-2.5 bg-white/15 rounded-full px-4 py-2">
+            <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+            <span className="text-white text-xs font-bold uppercase tracking-wider">FAQ</span>
           </span>
         </div>
         <h2 className="text-4xl md:text-6xl font-extrabold mt-4 text-center">
-          <span className="text-[#1A0E05]">Preguntas</span> <span className="gradient-text-orange">frecuentes</span>
+          <span className="text-white">Preguntas</span> <span className="gradient-text">frecuentes</span>
         </h2>
-        <p className="text-[#7A5C48] text-base mt-4 max-w-lg mx-auto text-center">Todo lo que necesitas saber antes de empezar.</p>
-        <div className="w-16 h-1 bg-orange rounded-full mx-auto mt-6" />
+        <p className="text-white/70 text-base mt-4 max-w-lg mx-auto text-center">Todo lo que necesitas saber antes de empezar.</p>
+        <div className="w-16 h-1 bg-white/30 rounded-full mx-auto mt-6" />
 
         <RevealWrapper>
           <div className="bg-white/90 rounded-[28px] border border-light-border shadow-xl p-2 mt-14">
