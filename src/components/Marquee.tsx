@@ -142,8 +142,8 @@ export default function Marquee() {
           <div className="text-center max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2.5 bg-white/15 rounded-full px-4 py-2 mb-4">
               <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: "#FFE4CC", boxShadow: "0 0 10px rgba(255,228,204,0.8), 0 0 20px rgba(255,228,204,0.4)" }}></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e]"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: "#22c55e", boxShadow: "0 0 10px #22c55e, 0 0 20px rgba(34,197,94,0.4)" }}></span>
               </span>
               <span className="text-white text-xs font-bold uppercase tracking-wider">{marqueeWorkers.length} profesionales activos ahora</span>
             </div>
@@ -161,10 +161,9 @@ export default function Marquee() {
             <div key={i} className="shrink-0 px-2.5">
               <button
                 onClick={() => setSelected(worker)}
-                className="group w-[280px] rounded-[22px] p-5 text-left transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 cursor-pointer shadow-lg"
+                className="group w-[280px] bg-white rounded-[22px] p-5 text-left transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 cursor-pointer shadow-lg"
                 style={{
-                  background: "#FFE4CC",
-                  border: "1px solid rgba(232,85,32,0.1)",
+                  border: "1px solid rgba(0,0,0,0.06)",
                 }}
               >
                 {/* Top: avatar + info */}
