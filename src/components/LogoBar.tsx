@@ -20,7 +20,7 @@ export default function LogoBar() {
     <section className="sec-light py-12 px-4">
       <div className="relative z-10">
         <RevealWrapper>
-          <p className="text-text3 text-xs uppercase tracking-widest font-semibold text-center mb-8">
+          <p className="text-[#9A7A60] text-xs uppercase tracking-widest font-semibold text-center mb-8">
             Confían en nosotros
           </p>
         </RevealWrapper>
@@ -32,10 +32,10 @@ export default function LogoBar() {
                 key={i}
                 className="flex items-center gap-3 shrink-0 px-8"
               >
-                <div className="bg-card w-11 h-11 rounded-xl flex items-center justify-center border border-border text-xl">
+                <div className="bg-white w-11 h-11 rounded-xl flex items-center justify-center border border-[rgba(232,85,32,0.1)] text-xl">
                   {brand.emoji}
                 </div>
-                <span className="text-lg font-bold text-text3/50 whitespace-nowrap">
+                <span className="text-lg font-bold text-[#9A7A60]/50 whitespace-nowrap">
                   {brand.name}
                 </span>
               </div>

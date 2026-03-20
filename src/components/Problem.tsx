@@ -39,7 +39,7 @@ export default function Problem() {
                   <span className="text-[#1A0E05] text-lg">✕</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">
+                  <h3 className="text-xl font-bold text-[#1A0E05]">
                     El método tradicional
                   </h3>
                   <p className="text-[#9A7A60] text-xs mt-0.5">Lo que sigues haciendo hoy</p>
@@ -64,7 +64,7 @@ export default function Problem() {
 
               {/* Bottom stat */}
               <div className="mt-8 pt-6 border-t border-light-border flex items-center gap-3">
-                <span className="text-3xl font-extrabold text-white">35%</span>
+                <span className="text-3xl font-extrabold text-[#1A0E05]">35%</span>
                 <p className="text-[#9A7A60] text-xs leading-tight">
                   de los candidatos en portales<br />tradicionales no se presentan
                 </p>
@@ -127,7 +127,7 @@ export default function Problem() {
           <div className="text-center mt-14">
             <p className="text-[#9A7A60] text-sm">
               ¿Cuánto te cuesta un turno descubierto?{" "}
-              <a href="#precios" className="text-[#1A0E05] hover:text-white/80 font-semibold transition underline underline-offset-4">
+              <a href="#precios" className="text-[#1A0E05] hover:text-orange font-semibold transition underline underline-offset-4">
                 Calcula tu ahorro →
               </a>
             </p>

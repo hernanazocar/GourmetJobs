@@ -66,7 +66,7 @@ export default function Testimonials() {
     <section id="testimonios" className="sec-light py-24 px-4">
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="flex justify-center">
-          <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-orange/10 text-white">
+          <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-orange/10 text-orange">
             TESTIMONIOS
           </span>
         </div>
@@ -88,7 +88,7 @@ export default function Testimonials() {
                   <StarIcon />
                 </div>
 
-                <p className="text-text text-sm leading-relaxed mt-4">
+                <p className="text-[#7A5C48] text-sm leading-relaxed mt-4">
                   <span className="text-orange text-3xl font-bold block mb-1">
                     &ldquo;
                   </span>

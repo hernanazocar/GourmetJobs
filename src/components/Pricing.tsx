@@ -8,7 +8,7 @@ export default function Pricing() {
   return (
     <section id="precios" className="sec-dark py-24 px-4">
       <div className="relative z-10 max-w-5xl mx-auto text-center">
-        <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-white/15 text-orange">
+        <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-white/15 text-white">
           PRECIOS
         </span>
 
@@ -28,8 +28,8 @@ export default function Pricing() {
               <div
                 className={`relative rounded-card p-8 border text-left transition-all duration-300 hover:-translate-y-1  ${
                   plan.popular
-                    ? "bg-gradient-to-b from-orange/10 to-white border-orange/20"
-                    : "bg-card border-border"
+                    ? "bg-white border-orange/20"
+                    : "bg-white/15 border-border"
                 }`}
                 style={{ borderRadius: "28px" }}
               >
@@ -39,28 +39,28 @@ export default function Pricing() {
                   </span>
                 )}
 
-                <p className="text-white/65 text-sm font-semibold uppercase tracking-wider">
+                <p className={`text-sm font-semibold uppercase tracking-wider ${plan.popular ? "text-[#7A5C48]" : "text-white/65"}`}>
                   {plan.name}
                 </p>
 
                 <p className="text-4xl font-extrabold mt-2">
-                  <span className={plan.popular ? "gradient-text" : "text-white"}>
+                  <span className={plan.popular ? "gradient-text-orange" : "text-white"}>
                     {plan.price}
                   </span>
-                  <span className="text-white/65 text-base font-normal">{plan.period}</span>
+                  <span className={`text-base font-normal ${plan.popular ? "text-[#7A5C48]" : "text-white/65"}`}>{plan.period}</span>
                 </p>
 
-                <p className="text-white/65 text-sm mt-2">{plan.description}</p>
+                <p className={`text-sm mt-2 ${plan.popular ? "text-[#7A5C48]" : "text-white/65"}`}>{plan.description}</p>
 
-                <hr className="border-t border-border my-6" />
+                <hr className={`border-t my-6 ${plan.popular ? "border-[#E5D5CC]" : "border-border"}`} />
 
                 <ul className="space-y-3">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
-                      <span className="bg-white/15 w-6 h-6 rounded-lg flex items-center justify-center text-orange text-xs">
+                      <span className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs ${plan.popular ? "bg-orange/10 text-[#E85520]" : "bg-white/15 text-white"}`}>
                         ✓
                       </span>
-                      <span className="text-white/65 text-sm">{feature}</span>
+                      <span className={`text-sm ${plan.popular ? "text-[#7A5C48]" : "text-white/65"}`}>{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -69,7 +69,7 @@ export default function Pricing() {
                   className={`mt-8 w-full py-3.5 rounded-btn font-semibold text-sm text-center transition ${
                     plan.popular
                       ? "bg-orange text-white hover:bg-orange2"
-                      : "text-white border border-[#1A0E05]/20 hover:bg-[#1A0E05]/5"
+                      : "bg-white/15 text-white hover:bg-white/25"
                   }`}
                 >
                   {plan.cta}

@@ -58,7 +58,7 @@ export default function FAQ() {
     <section id="faq" className="sec-light py-24 px-4">
       <div className="relative z-10 max-w-3xl mx-auto">
         <div className="flex justify-center">
-          <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-orange/10 text-white">
+          <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-orange/10 text-orange">
             FAQ
           </span>
         </div>

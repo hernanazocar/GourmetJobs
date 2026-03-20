@@ -16,7 +16,7 @@ export default function Stats() {
       <div className="relative z-10 max-w-6xl mx-auto">
         <RevealWrapper>
           <div className="text-center">
-            <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-orange/10 text-white">
+            <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-orange/10 text-orange">
               IMPACTO
             </span>
             <h2 className="text-4xl md:text-5xl font-extrabold mt-4 text-center">

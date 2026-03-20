@@ -26,26 +26,26 @@ export default function Roles() {
           <div className="rounded-card border border-border overflow-hidden shadow-xl shadow-orange/5">
             <div className="grid md:grid-cols-2">
               {/* LEFT PANEL - Empresas */}
-              <div className="bg-card p-10 md:p-14">
-                <span className="inline-block bg-white/15 text-orange text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+              <div className="bg-white p-10 md:p-14">
+                <span className="inline-block bg-orange/10 text-[#E85520] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
                   Para empresas
                 </span>
 
-                <h2 className="text-3xl md:text-4xl font-extrabold text-white mt-5">
+                <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A0E05] mt-5">
                   Llena turnos en minutos, no semanas
                 </h2>
 
-                <p className="text-white/65 mt-3 text-sm">
+                <p className="text-[#7A5C48] mt-3 text-sm">
                   Publica un turno y recibe candidatos verificados en tiempo récord. Sin papeleo, sin esperas.
                 </p>
 
                 <ul className="mt-6 space-y-3">
                   {empresasItems.map((item) => (
                     <li key={item} className="flex items-center gap-3">
-                      <span className="bg-white/15 w-7 h-7 rounded-lg flex items-center justify-center text-orange text-sm">
+                      <span className="bg-orange/10 w-7 h-7 rounded-lg flex items-center justify-center text-[#E85520] text-sm">
                         ✓
                       </span>
-                      <span className="text-white/65 text-sm">{item}</span>
+                      <span className="text-[#7A5C48] text-sm">{item}</span>
                     </li>
                   ))}
                 </ul>

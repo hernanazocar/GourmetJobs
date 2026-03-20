@@ -64,7 +64,7 @@ export default function Comparison() {
   return (
     <section id="comparacion" className="sec-dark py-24 px-4">
       <div className="relative z-10 max-w-4xl mx-auto">
-        <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-white/15 text-orange">
+        <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-white/15 text-white">
           COMPARACIÓN
         </span>
 
@@ -80,26 +80,26 @@ export default function Comparison() {
         </p>
 
         <RevealWrapper>
-          <div className="mt-14 bg-card rounded-[28px] border border-border overflow-hidden ">
+          <div className="mt-14 bg-white rounded-[28px] border border-border overflow-hidden ">
             {/* Header */}
-            <div className="hidden sm:grid grid-cols-3 bg-light-warm px-6 py-4 border-b border-border">
-              <span className="text-white/65 text-sm font-semibold">
+            <div className="hidden sm:grid grid-cols-3 bg-[#FFF5F0] px-6 py-4 border-b border-[#E5D5CC]">
+              <span className="text-[#7A5C48] text-sm font-semibold">
                 Criterio
               </span>
-              <span className="text-white/65 text-sm font-semibold">
+              <span className="text-[#7A5C48] text-sm font-semibold">
                 Portales tradicionales
               </span>
-              <span className="text-orange text-sm font-bold">
+              <span className="text-[#E85520] text-sm font-bold">
                 GourmetJobs
               </span>
             </div>
 
             {/* Mobile Header */}
-            <div className="grid grid-cols-2 sm:hidden bg-light-warm px-6 py-4 border-b border-border">
-              <span className="text-white/65 text-sm font-semibold">
+            <div className="grid grid-cols-2 sm:hidden bg-[#FFF5F0] px-6 py-4 border-b border-[#E5D5CC]">
+              <span className="text-[#7A5C48] text-sm font-semibold">
                 Portales tradicionales
               </span>
-              <span className="text-orange text-sm font-bold">
+              <span className="text-[#E85520] text-sm font-bold">
                 GourmetJobs
               </span>
             </div>
@@ -107,13 +107,13 @@ export default function Comparison() {
             {/* Data Rows */}
             {rows.map((row, i) => {
               const isLast = i === rows.length - 1;
-              const borderClass = isLast ? "" : "border-b border-border";
+              const borderClass = isLast ? "" : "border-b border-[#E5D5CC]";
 
               return (
                 <div key={row.criteria}>
                   {/* Mobile: criteria label */}
                   <div
-                    className={`sm:hidden px-6 pt-4 pb-1 text-white/65 text-xs uppercase tracking-wider font-semibold ${
+                    className={`sm:hidden px-6 pt-4 pb-1 text-[#7A5C48] text-xs uppercase tracking-wider font-semibold ${
                       isLast ? "" : ""
                     }`}
                   >
@@ -125,7 +125,7 @@ export default function Comparison() {
                     className={`grid grid-cols-2 sm:hidden px-6 py-3 ${borderClass}`}
                   >
                     <span
-                      className={`text-white/65 ${
+                      className={`text-[#7A5C48] ${
                         row.isIcon ? "text-center" : ""
                       }`}
                     >
@@ -135,7 +135,7 @@ export default function Comparison() {
                       className={`${
                         row.gourmetIsGreen
                           ? "text-green text-center"
-                          : "text-white font-semibold"
+                          : "text-[#1A0E05] font-semibold"
                       }`}
                     >
                       {row.gourmet}
@@ -146,11 +146,11 @@ export default function Comparison() {
                   <div
                     className={`hidden sm:grid grid-cols-3 px-6 py-5 ${borderClass}`}
                   >
-                    <span className="text-white/65 text-sm font-medium">
+                    <span className="text-[#7A5C48] text-sm font-medium">
                       {row.criteria}
                     </span>
                     <span
-                      className={`text-white/65 ${
+                      className={`text-[#7A5C48] ${
                         row.isIcon ? "text-center" : ""
                       }`}
                     >
@@ -160,7 +160,7 @@ export default function Comparison() {
                       className={`${
                         row.gourmetIsGreen
                           ? "text-green text-center"
-                          : "text-white font-semibold"
+                          : "text-[#1A0E05] font-semibold"
                       }`}
                     >
                       {row.gourmet}

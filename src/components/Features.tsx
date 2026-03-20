@@ -9,7 +9,7 @@ export default function Features() {
     <section id="features" className="sec-dark py-24 px-4">
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="text-center">
-          <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-white/15 text-orange">
+          <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-white/15 text-white">
             FEATURES
           </span>
 
@@ -54,7 +54,7 @@ export default function Features() {
                       <div key={bar.label} className="mt-3">
                         <div className="flex justify-between text-xs mb-1">
                           <span className="text-white/65">{bar.label}</span>
-                          <span className="text-orange font-semibold">{bar.value}%</span>
+                          <span className="text-white font-semibold">{bar.value}%</span>
                         </div>
                         <div className="bg-white/15 rounded-full h-2">
                           <div
