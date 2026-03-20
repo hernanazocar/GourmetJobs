@@ -8,9 +8,10 @@ import RevealWrapper from "./ui/RevealWrapper";
 import { useSearch } from "@/lib/SearchContext";
 
 const liveMessages = [
-  "247 profesionales disponibles ahora",
-  "12 conectados en este momento",
-  "Último match: hace 3 min",
+  { text: "247 profesionales disponibles ahora", icon: "👥" },
+  { text: "Último match hace 3 minutos", icon: "⚡" },
+  { text: "5 restaurantes buscando personal hoy", icon: "🍽️" },
+  { text: "12 trabajadores conectados ahora mismo", icon: "🟢" },
 ];
 
 export default function Hero() {
@@ -45,10 +46,6 @@ export default function Hero() {
           className="inline-flex items-center gap-2.5 rounded-full pl-3.5 pr-5 py-2 text-sm font-semibold text-[#1A0E05] mb-6"
           style={{ background: "rgba(255,255,255,0.55)", border: "1px solid rgba(255,255,255,0.75)" }}
         >
-          <span className="relative flex h-3 w-3 shrink-0">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e]"></span>
-            <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: "#22c55e", boxShadow: "0 0 8px #22c55e" }}></span>
-          </span>
           <AnimatePresence mode="wait">
             <motion.span
               key={liveIndex}
@@ -56,8 +53,10 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.3 }}
+              className="inline-flex items-center gap-2"
             >
-              {liveMessages[liveIndex]}
+              <span className="text-base">{liveMessages[liveIndex].icon}</span>
+              {liveMessages[liveIndex].text}
             </motion.span>
           </AnimatePresence>
         </div>
