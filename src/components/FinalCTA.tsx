@@ -15,12 +15,12 @@ export default function FinalCTA() {
               EN VIVO
             </span>
 
-            <h2 className="text-4xl md:text-6xl font-extrabold mt-6 max-w-3xl mx-auto text-bg">
+            <h2 className="text-4xl md:text-6xl font-extrabold mt-6 max-w-3xl mx-auto text-[#1A0E05]">
               Tu próximo turno cubierto{" "}
               <span className="gradient-text">en minutos</span>
             </h2>
 
-            <p className="text-text3 text-lg mt-5 max-w-lg mx-auto">
+            <p className="text-[#7A5C48] text-lg mt-5 max-w-lg mx-auto">
               Únete a más de 3,200 trabajadores y 450 restaurantes que ya usan
               GourmetJobs.
             </p>
@@ -29,12 +29,12 @@ export default function FinalCTA() {
               <button className="bg-orange text-white px-8 py-4 rounded-btn font-semibold shadow-[0_8px_32px_rgba(232,85,32,0.3)] hover:bg-orange2 transition">
                 Empezar gratis →
               </button>
-              <button className="bg-bg text-white px-8 py-4 rounded-btn font-semibold hover:bg-bg2 transition">
+              <button className="bg-[#1A0E05] text-white px-8 py-4 rounded-btn font-semibold hover:bg-[#2A1A10] transition">
                 Ver demo
               </button>
             </div>
 
-            <div className="flex items-center justify-center gap-2 mt-8 text-sm text-text3">
+            <div className="flex items-center justify-center gap-2 mt-8 text-sm text-[#7A5C48]">
               <span className="w-2 h-2 bg-green rounded-full animate-pulse" />
               247 trabajadores activos ahora
             </div>

@@ -10,7 +10,7 @@ export default function Problem() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto">
           <RevealWrapper>
-            <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-opal text-orange">
+            <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-white/15 text-white">
               EL PROBLEMA
             </span>
             <h2 className="text-4xl md:text-6xl font-extrabold mt-5 leading-[1.05]">
@@ -31,8 +31,8 @@ export default function Problem() {
           <RevealWrapper direction="left">
             <div className="bg-card rounded-[28px] p-8 md:p-10 border border-border h-full">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
-                  <span className="text-red-400 text-lg">✕</span>
+                <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center">
+                  <span className="text-white text-lg">✕</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">
@@ -45,7 +45,7 @@ export default function Problem() {
               <ul className="space-y-6">
                 {problems.map((item, i) => (
                   <li key={i} className="flex gap-4 items-start group">
-                    <div className="bg-bg2 rounded-xl w-11 h-11 flex items-center justify-center text-lg shrink-0 border border-border group-hover:border-red-500/20 transition">
+                    <div className="bg-black/15 rounded-xl w-11 h-11 flex items-center justify-center text-lg shrink-0 border border-border group-hover:border-white/30 transition">
                       {item.icon}
                     </div>
                     <div>
@@ -60,7 +60,7 @@ export default function Problem() {
 
               {/* Bottom stat */}
               <div className="mt-8 pt-6 border-t border-border flex items-center gap-3">
-                <span className="text-3xl font-extrabold text-red-400/80">35%</span>
+                <span className="text-3xl font-extrabold text-white">35%</span>
                 <p className="text-text3 text-xs leading-tight">
                   de los candidatos en portales<br />tradicionales no se presentan
                 </p>
@@ -123,7 +123,7 @@ export default function Problem() {
           <div className="text-center mt-14">
             <p className="text-text3 text-sm">
               ¿Cuánto te cuesta un turno descubierto?{" "}
-              <a href="#precios" className="text-orange hover:text-orange2 font-semibold transition underline underline-offset-4">
+              <a href="#precios" className="text-white hover:text-white/80 font-semibold transition underline underline-offset-4">
                 Calcula tu ahorro →
               </a>
             </p>

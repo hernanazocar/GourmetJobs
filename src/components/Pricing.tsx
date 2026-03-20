@@ -13,7 +13,7 @@ export default function Pricing() {
         </span>
 
         <h2 className="text-4xl md:text-5xl font-extrabold mt-4">
-          <span className="text-bg">Simple, transparente.</span>
+          <span className="text-[#1A0E05]">Simple, transparente.</span>
           <br />
           <span className="gradient-text">Sin letra chica.</span>
         </h2>
@@ -35,18 +35,18 @@ export default function Pricing() {
                   </span>
                 )}
 
-                <p className="text-text3 text-sm font-semibold uppercase tracking-wider">
+                <p className="text-[#7A5C48] text-sm font-semibold uppercase tracking-wider">
                   {plan.name}
                 </p>
 
                 <p className="text-4xl font-extrabold mt-2">
-                  <span className={plan.popular ? "gradient-text" : "text-bg"}>
+                  <span className={plan.popular ? "gradient-text" : "text-[#1A0E05]"}>
                     {plan.price}
                   </span>
-                  <span className="text-text3 text-base font-normal">{plan.period}</span>
+                  <span className="text-[#7A5C48] text-base font-normal">{plan.period}</span>
                 </p>
 
-                <p className="text-text3 text-sm mt-2">{plan.description}</p>
+                <p className="text-[#7A5C48] text-sm mt-2">{plan.description}</p>
 
                 <hr className="border-t border-light-border my-6" />
 
@@ -56,7 +56,7 @@ export default function Pricing() {
                       <span className="bg-orange/10 w-6 h-6 rounded-lg flex items-center justify-center text-orange text-xs">
                         ✓
                       </span>
-                      <span className="text-text3 text-sm">{feature}</span>
+                      <span className="text-[#7A5C48] text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -65,16 +65,8 @@ export default function Pricing() {
                   className={`mt-8 w-full py-3.5 rounded-btn font-semibold text-sm text-center transition ${
                     plan.popular
                       ? "bg-orange text-white hover:bg-orange2"
-                      : "text-white hover:bg-white/10"
+                      : "text-[#1A0E05] border border-[#1A0E05]/20 hover:bg-[#1A0E05]/5"
                   }`}
-                  style={
-                    !plan.popular
-                      ? {
-                          background: "rgba(255,255,255,0.06)",
-                          border: "1px solid rgba(255,255,255,0.1)",
-                        }
-                      : undefined
-                  }
                 >
                   {plan.cta}
                 </button>

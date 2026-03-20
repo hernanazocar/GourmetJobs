@@ -69,12 +69,12 @@ export default function Comparison() {
         </span>
 
         <h2 className="text-4xl md:text-5xl font-extrabold mt-4">
-          <span className="text-bg">¿Por qué no un portal</span>
+          <span className="text-[#1A0E05]">¿Por qué no un portal</span>
           <br />
           <span className="gradient-text">de empleo tradicional?</span>
         </h2>
 
-        <p className="text-text3 text-lg mt-4 max-w-2xl">
+        <p className="text-[#7A5C48] text-lg mt-4 max-w-2xl">
           Diseñamos GourmetJobs específicamente para la velocidad que necesita
           la gastronomía.
         </p>
@@ -83,10 +83,10 @@ export default function Comparison() {
           <div className="mt-14 bg-white rounded-[28px] border border-light-border overflow-hidden shadow-lg shadow-orange/5">
             {/* Header */}
             <div className="hidden sm:grid grid-cols-3 bg-light-warm px-6 py-4 border-b border-border">
-              <span className="text-text3 text-sm font-semibold">
+              <span className="text-[#7A5C48] text-sm font-semibold">
                 Criterio
               </span>
-              <span className="text-text3 text-sm font-semibold">
+              <span className="text-[#7A5C48] text-sm font-semibold">
                 Portales tradicionales
               </span>
               <span className="text-orange text-sm font-bold">
@@ -96,7 +96,7 @@ export default function Comparison() {
 
             {/* Mobile Header */}
             <div className="grid grid-cols-2 sm:hidden bg-light-warm px-6 py-4 border-b border-border">
-              <span className="text-text3 text-sm font-semibold">
+              <span className="text-[#7A5C48] text-sm font-semibold">
                 Portales tradicionales
               </span>
               <span className="text-orange text-sm font-bold">
@@ -113,7 +113,7 @@ export default function Comparison() {
                 <div key={row.criteria}>
                   {/* Mobile: criteria label */}
                   <div
-                    className={`sm:hidden px-6 pt-4 pb-1 text-text3 text-xs uppercase tracking-wider font-semibold ${
+                    className={`sm:hidden px-6 pt-4 pb-1 text-[#7A5C48] text-xs uppercase tracking-wider font-semibold ${
                       isLast ? "" : ""
                     }`}
                   >
@@ -125,7 +125,7 @@ export default function Comparison() {
                     className={`grid grid-cols-2 sm:hidden px-6 py-3 ${borderClass}`}
                   >
                     <span
-                      className={`text-text3 ${
+                      className={`text-[#7A5C48] ${
                         row.isIcon ? "text-center" : ""
                       }`}
                     >
@@ -135,7 +135,7 @@ export default function Comparison() {
                       className={`${
                         row.gourmetIsGreen
                           ? "text-green text-center"
-                          : "text-bg font-semibold"
+                          : "text-[#1A0E05] font-semibold"
                       }`}
                     >
                       {row.gourmet}
@@ -146,11 +146,11 @@ export default function Comparison() {
                   <div
                     className={`hidden sm:grid grid-cols-3 px-6 py-5 ${borderClass}`}
                   >
-                    <span className="text-text3 text-sm font-medium">
+                    <span className="text-[#7A5C48] text-sm font-medium">
                       {row.criteria}
                     </span>
                     <span
-                      className={`text-text3 ${
+                      className={`text-[#7A5C48] ${
                         row.isIcon ? "text-center" : ""
                       }`}
                     >
@@ -160,7 +160,7 @@ export default function Comparison() {
                       className={`${
                         row.gourmetIsGreen
                           ? "text-green text-center"
-                          : "text-bg font-semibold"
+                          : "text-[#1A0E05] font-semibold"
                       }`}
                     >
                       {row.gourmet}

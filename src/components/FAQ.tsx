@@ -58,7 +58,7 @@ export default function FAQ() {
     <section id="faq" className="sec-dark py-24 px-4">
       <div className="relative z-10 max-w-3xl mx-auto">
         <div className="flex justify-center">
-          <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-opal text-orange">
+          <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-white/15 text-white">
             FAQ
           </span>
         </div>
@@ -83,7 +83,7 @@ export default function FAQ() {
                     {faq.question}
                   </span>
                   <span
-                    className={`w-8 h-8 rounded-full bg-bg2 flex items-center justify-center text-orange text-lg font-bold shrink-0 transition-transform duration-300 ${
+                    className={`w-8 h-8 rounded-full bg-black/15 flex items-center justify-center text-white text-lg font-bold shrink-0 transition-transform duration-300 ${
                       openIndex === i ? "rotate-180" : ""
                     }`}
                   >

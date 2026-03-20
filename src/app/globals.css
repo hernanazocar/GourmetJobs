@@ -4,20 +4,20 @@
 
 :root {
   --bg: #E85520;
-  --bg2: #F06028;
-  --bg3: #F56B30;
-  --card: #D84E1A;
-  --card2: #CC4515;
+  --bg2: #D04D1C;
+  --bg3: #C04518;
+  --card: rgba(0, 0, 0, 0.2);
+  --card2: rgba(0, 0, 0, 0.25);
   --orange: #E85520;
   --orange2: #FF7040;
   --orange3: #FF9060;
-  --opal: rgba(232, 85, 32, 0.12);
+  --opal: rgba(255, 255, 255, 0.15);
   --cream: #FFF8F2;
-  --text: #FFF4EC;
-  --text2: #B89880;
-  --text3: #7A5C48;
+  --text: #FFFFFF;
+  --text2: rgba(255, 255, 255, 0.75);
+  --text3: rgba(255, 255, 255, 0.5);
   --green: #34D399;
-  --border: rgba(255, 255, 255, 0.15);
+  --border: rgba(255, 255, 255, 0.2);
 }
 
 * {
@@ -40,6 +40,13 @@ body {
 }
 
 .gradient-text {
+  background: linear-gradient(135deg, #FFFFFF, #FFD4C0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-orange {
   background: linear-gradient(135deg, #E85520, #FF9060);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -83,10 +90,10 @@ h1, h2, h3, h4, h5, h6 {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
   background-size: 32px 32px;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .sec-light {

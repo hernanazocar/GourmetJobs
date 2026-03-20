@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Brand column */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="bg-orange rounded-xl w-9 h-9 flex items-center justify-center text-lg">
+              <div className="bg-white/20 rounded-xl w-9 h-9 flex items-center justify-center text-lg">
                 🍽
               </div>
               <span className="text-white font-bold text-lg">GourmetJobs</span>

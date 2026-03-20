@@ -119,14 +119,14 @@ function StarRating({ rating }: { rating: number }) {
       {[1, 2, 3, 4, 5].map((star) => (
         <svg
           key={star}
-          className={`w-3.5 h-3.5 ${star <= Math.round(rating) ? "text-orange" : "text-text3/30"}`}
+          className={`w-3.5 h-3.5 ${star <= Math.round(rating) ? "text-orange" : "text-[#7A5C48]/30"}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
         </svg>
       ))}
-      <span className="text-text2 text-xs ml-1">{rating.toFixed(1)}</span>
+      <span className="text-[#B89880] text-xs ml-1">{rating.toFixed(1)}</span>
     </div>
   );
 }
@@ -141,11 +141,11 @@ export default function Marquee() {
         <div className="relative z-10 max-w-6xl mx-auto px-4 mb-6 flex items-center justify-between">
           <div>
             <span className="label text-orange text-xs">En vivo</span>
-            <h3 className="text-2xl md:text-3xl font-extrabold text-bg mt-1 tracking-[-0.03em]">
+            <h3 className="text-2xl md:text-3xl font-extrabold text-[#1A0E05] mt-1 tracking-[-0.03em]">
               Talento disponible <span className="gradient-text">ahora</span>
             </h3>
           </div>
-          <div className="hidden md:flex items-center gap-2 text-text3 text-sm">
+          <div className="hidden md:flex items-center gap-2 text-[#7A5C48] text-sm">
             <span className="w-2 h-2 bg-green rounded-full animate-pulse" />
             {marqueeWorkers.length} profesionales activos
           </div>
@@ -179,13 +179,13 @@ export default function Marquee() {
                     )}
                   </div>
                   <div className="min-w-0">
-                    <h4 className="text-bg font-bold text-sm truncate">
+                    <h4 className="text-[#1A0E05] font-bold text-sm truncate">
                       {worker.name}
                     </h4>
                     <p className="text-orange text-xs font-medium mt-0.5">
                       {worker.role}
                     </p>
-                    <div className="flex items-center gap-1 mt-1 text-text3 text-[11px]">
+                    <div className="flex items-center gap-1 mt-1 text-[#7A5C48] text-[11px]">
                       <span>📍</span>
                       <span>{worker.zone}</span>
                     </div>
@@ -200,16 +200,16 @@ export default function Marquee() {
                 {/* Stats row */}
                 <div className="flex items-center gap-2 mt-3">
                   <div className="flex-1 bg-light-warm rounded-lg py-2 text-center border border-light-border">
-                    <div className="text-bg font-bold text-sm">
+                    <div className="text-[#1A0E05] font-bold text-sm">
                       {worker.turnos}
                     </div>
-                    <div className="text-text3 text-[10px]">turnos</div>
+                    <div className="text-[#7A5C48] text-[10px]">turnos</div>
                   </div>
                   <div className="flex-1 bg-light-warm rounded-lg py-2 text-center border border-light-border">
-                    <div className="text-bg font-bold text-sm">
+                    <div className="text-[#1A0E05] font-bold text-sm">
                       {worker.puntualidad}%
                     </div>
-                    <div className="text-text3 text-[10px]">puntualidad</div>
+                    <div className="text-[#7A5C48] text-[10px]">puntualidad</div>
                   </div>
                 </div>
 
@@ -236,7 +236,7 @@ export default function Marquee() {
                       ● Disponible hoy
                     </span>
                   )}
-                  <span className="text-text3 text-xs group-hover:text-orange transition-colors">
+                  <span className="text-[#7A5C48] text-xs group-hover:text-orange transition-colors">
                     Ver perfil →
                   </span>
                 </div>
@@ -247,7 +247,7 @@ export default function Marquee() {
 
         {/* CTA */}
         <div className="relative z-10 max-w-3xl mx-auto px-4 mt-8 text-center">
-          <p className="text-text3 text-sm">
+          <p className="text-[#7A5C48] text-sm">
             Profesionales verificados listos para cubrir tu turno hoy.{" "}
             <a href="#precios" className="text-orange font-semibold hover:text-orange2 transition underline underline-offset-4">
               Publica tu primer turno gratis →

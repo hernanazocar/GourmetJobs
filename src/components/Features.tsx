@@ -14,7 +14,7 @@ export default function Features() {
           </span>
 
           <h2 className="text-4xl md:text-5xl font-extrabold mt-4">
-            <span className="text-bg">Todo lo que necesitas.</span>
+            <span className="text-[#1A0E05]">Todo lo que necesitas.</span>
             <br />
             <span className="gradient-text">Nada que no.</span>
           </h2>
@@ -35,10 +35,10 @@ export default function Features() {
                 }`}
               >
                 <span className="text-2xl mb-3 block">{feature.icon}</span>
-                <h3 className="text-lg font-bold text-bg mb-1">{feature.title}</h3>
-                <p className="text-text3 text-sm">{feature.description}</p>
+                <h3 className="text-lg font-bold text-[#1A0E05] mb-1">{feature.title}</h3>
+                <p className="text-[#7A5C48] text-sm">{feature.description}</p>
                 {feature.chip && (
-                  <span className="mt-3 inline-block bg-light-warm text-text3 text-xs font-semibold px-3 py-1 rounded-full">
+                  <span className="mt-3 inline-block bg-[#FFF0E6] text-[#7A5C48] text-xs font-semibold px-3 py-1 rounded-full">
                     {feature.chip}
                   </span>
                 )}
@@ -49,10 +49,10 @@ export default function Features() {
                     {trustBars.map((bar) => (
                       <div key={bar.label} className="mt-3">
                         <div className="flex justify-between text-xs mb-1">
-                          <span className="text-text3">{bar.label}</span>
+                          <span className="text-[#7A5C48]">{bar.label}</span>
                           <span className="text-orange font-semibold">{bar.value}%</span>
                         </div>
-                        <div className="bg-light-warm rounded-full h-2">
+                        <div className="bg-[#FFF0E6] rounded-full h-2">
                           <div
                             className="bg-gradient-to-r from-orange to-orange3 rounded-full h-2"
                             style={{ width: `${bar.value}%` }}
@@ -69,7 +69,7 @@ export default function Features() {
                     {earningsData.map((item) => (
                       <div key={item.label} className="text-center">
                         <div className="text-lg font-bold gradient-text">{item.value}</div>
-                        <div className="text-text3 text-xs">{item.label}</div>
+                        <div className="text-[#7A5C48] text-xs">{item.label}</div>
                       </div>
                     ))}
                   </div>

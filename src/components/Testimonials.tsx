@@ -66,7 +66,7 @@ export default function Testimonials() {
     <section id="testimonios" className="sec-dark py-24 px-4">
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="flex justify-center">
-          <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-opal text-orange">
+          <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-white/15 text-white">
             TESTIMONIOS
           </span>
         </div>

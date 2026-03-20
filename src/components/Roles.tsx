@@ -31,11 +31,11 @@ export default function Roles() {
                   Para empresas
                 </span>
 
-                <h2 className="text-3xl md:text-4xl font-extrabold text-bg mt-5">
+                <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A0E05] mt-5">
                   Llena turnos en minutos, no semanas
                 </h2>
 
-                <p className="text-text3 mt-3 text-sm">
+                <p className="text-[#7A5C48] mt-3 text-sm">
                   Publica un turno y recibe candidatos verificados en tiempo récord. Sin papeleo, sin esperas.
                 </p>
 
@@ -45,7 +45,7 @@ export default function Roles() {
                       <span className="bg-orange/10 w-7 h-7 rounded-lg flex items-center justify-center text-orange text-sm">
                         ✓
                       </span>
-                      <span className="text-text3 text-sm">{item}</span>
+                      <span className="text-[#7A5C48] text-sm">{item}</span>
                     </li>
                   ))}
                 </ul>
