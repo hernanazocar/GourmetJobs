@@ -5,169 +5,180 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Blob from "./ui/Blob";
 import RevealWrapper from "./ui/RevealWrapper";
-import { heroStats } from "@/lib/data";
 
-const rotatingWords = [
-  "en tiempo real",
-  "cerca de ti, ahora",
-  "100% de confianza",
-  "listo en minutos",
-  "verificado y seguro",
-  "sin esperas, sin CVs",
-  "disponible ahora ya",
-  "a solo un click de ti",
+const liveMessages = [
+  "247 profesionales disponibles ahora",
+  "12 conectados en este momento",
+  "Último match: hace 3 min",
 ];
 
 export default function Hero() {
-  const [wordIndex, setWordIndex] = useState(0);
+  const [liveIndex, setLiveIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setWordIndex((prev) => (prev + 1) % rotatingWords.length);
-    }, 2800);
+      setLiveIndex((prev) => (prev + 1) % liveMessages.length);
+    }, 3500);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="sec-light min-h-screen flex flex-col items-center justify-center text-center relative overflow-hidden px-4 py-20">
+    <section className="sec-light flex flex-col items-center text-center relative overflow-hidden px-4 pt-12 pb-16">
       {/* Background Blobs */}
-      <Blob
-        className="absolute -top-32 -left-32 w-[500px] h-[500px] animate-float opacity-30"
-        color="rgba(232,85,32,0.15)"
-      />
-      <Blob
-        className="absolute top-1/3 -right-40 w-[450px] h-[450px] animate-float2 opacity-20"
-        color="rgba(232,85,32,0.1)"
-      />
-      <Blob
-        className="absolute -bottom-40 left-1/2 -translate-x-1/2 w-[550px] h-[550px] animate-float3 opacity-15"
-        color="rgba(232,85,32,0.12)"
-      />
+      <Blob className="absolute -top-32 -left-32 w-[500px] h-[500px] animate-float opacity-30" color="rgba(232,85,32,0.15)" />
+      <Blob className="absolute top-1/3 -right-40 w-[450px] h-[450px] animate-float2 opacity-20" color="rgba(232,85,32,0.1)" />
 
-      {/* Pill badge */}
+      {/* Live badge — rotating messages */}
       <RevealWrapper delay={0}>
         <div
-          className="inline-flex items-center gap-2.5 rounded-full pl-3.5 pr-5 py-2 text-sm font-semibold text-[#1A0E05] mb-8"
+          className="inline-flex items-center gap-2.5 rounded-full pl-3.5 pr-5 py-2 text-sm font-semibold text-[#1A0E05] mb-6"
           style={{ background: "rgba(255,255,255,0.55)", border: "1px solid rgba(255,255,255,0.75)" }}
         >
           <span className="relative flex h-3 w-3 shrink-0">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e]"></span>
             <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: "#22c55e", boxShadow: "0 0 8px #22c55e" }}></span>
           </span>
-          247 profesionales verificados en línea
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={liveIndex}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.3 }}
+            >
+              {liveMessages[liveIndex]}
+            </motion.span>
+          </AnimatePresence>
         </div>
       </RevealWrapper>
 
-      {/* Title */}
+      {/* Headline */}
       <RevealWrapper delay={0.1}>
-        <h1 className="max-w-4xl mx-auto text-center">
-          <span className="text-5xl md:text-7xl font-extrabold tracking-[-0.04em] leading-[1] text-[#1A0E05] block">Talento gastronómico</span>
-          <span className="block h-[1.15em] relative mt-2 overflow-visible text-5xl md:text-7xl tracking-[-0.04em] leading-[1]">
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={wordIndex}
-                initial={{ y: 40, opacity: 0, filter: "blur(8px)" }}
-                animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                exit={{ y: -40, opacity: 0, filter: "blur(8px)" }}
-                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute inset-x-0 font-extrabold"
-                style={{ color: "#E85520" }}
-              >
-                {rotatingWords[wordIndex]}
-              </motion.span>
-            </AnimatePresence>
-          </span>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-[-0.04em] leading-[1.05] text-[#1A0E05] max-w-4xl mx-auto">
+          Profesionales gastronómicos{" "}
+          <span className="gradient-text-orange">disponibles ahora mismo</span>
         </h1>
       </RevealWrapper>
 
-      {/* Subtitle */}
-      <RevealWrapper delay={0.2}>
-        <p className="text-[#7A5C48] text-xl max-w-[560px] mx-auto mt-8 leading-relaxed">
-          Conecta tu restaurante con trabajadores verificados disponibles ahora
-          mismo. Sin CVs, sin esperas, sin compromisos.
+      {/* Subheadline */}
+      <RevealWrapper delay={0.15}>
+        <p className="text-[#7A5C48] text-lg md:text-xl max-w-[620px] mx-auto mt-6 leading-relaxed">
+          Explora perfiles reales de garzones, chefs y baristas listos para trabajar hoy.
+          Sin CVs, sin procesos largos.
         </p>
       </RevealWrapper>
 
-      {/* CTA buttons */}
-      <RevealWrapper delay={0.3}>
-        <div className="flex flex-col sm:flex-row items-center gap-5 mt-12">
-          <a
-            href="#"
-            className="group relative overflow-hidden bg-orange text-white pl-6 pr-8 py-5 rounded-2xl text-base font-bold hover:bg-orange2 transition-all duration-300 flex items-center gap-4 hover:scale-[1.02]"
-            style={{ boxShadow: "0 12px 40px rgba(232, 85, 32, 0.35)" }}
-          >
-            <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
-            <span className="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
-            </span>
-            <span className="flex flex-col items-start leading-tight">
-              <span className="text-white/70 text-[11px] font-semibold uppercase tracking-wider">Restaurantes</span>
-              <span className="text-lg">Soy empresa</span>
-            </span>
-            <svg className="w-5 h-5 ml-2 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+      {/* Search bar */}
+      <RevealWrapper delay={0.2}>
+        <div
+          className="mt-10 w-full max-w-3xl mx-auto bg-white rounded-2xl p-2 flex flex-col sm:flex-row items-stretch gap-2 shadow-xl"
+          style={{ border: "1px solid rgba(232,85,32,0.1)" }}
+        >
+          <div className="flex-1 flex items-center gap-2 px-4 py-3 rounded-xl bg-[#FFF5EE]">
+            <svg className="w-5 h-5 text-orange shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
-          </a>
-
-          <a
-            href="#"
-            className="group relative overflow-hidden bg-[#1A0E05] text-white pl-6 pr-8 py-5 rounded-2xl text-base font-bold hover:bg-[#2A1A10] transition-all duration-300 flex items-center gap-4 hover:scale-[1.02]"
-            style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.15)" }}
-          >
-            <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
-            <span className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
-            </span>
-            <span className="flex flex-col items-start leading-tight">
-              <span className="text-white/50 text-[11px] font-semibold uppercase tracking-wider">Profesionales</span>
-              <span className="text-lg">Soy trabajador</span>
-            </span>
-            <svg className="w-5 h-5 ml-2 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            <select className="bg-transparent text-[#1A0E05] text-sm font-medium w-full outline-none appearance-none cursor-pointer">
+              <option>¿Qué necesitas?</option>
+              <option>Garzón</option>
+              <option>Chef</option>
+              <option>Barman</option>
+              <option>Mesero/a</option>
+              <option>Sous Chef</option>
+              <option>Pastelero/a</option>
+              <option>Hostess</option>
+              <option>Ayudante cocina</option>
+            </select>
+          </div>
+          <div className="flex-1 flex items-center gap-2 px-4 py-3 rounded-xl bg-[#FFF5EE]">
+            <svg className="w-5 h-5 text-orange shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-          </a>
+            <select className="bg-transparent text-[#1A0E05] text-sm font-medium w-full outline-none appearance-none cursor-pointer">
+              <option>¿Cuándo?</option>
+              <option>Hoy</option>
+              <option>Mañana</option>
+              <option>Esta semana</option>
+              <option>Próxima semana</option>
+            </select>
+          </div>
+          <div className="flex-1 flex items-center gap-2 px-4 py-3 rounded-xl bg-[#FFF5EE]">
+            <svg className="w-5 h-5 text-orange shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <select className="bg-transparent text-[#1A0E05] text-sm font-medium w-full outline-none appearance-none cursor-pointer">
+              <option>¿Dónde?</option>
+              <option>Providencia</option>
+              <option>Las Condes</option>
+              <option>Vitacura</option>
+              <option>Santiago Centro</option>
+              <option>Ñuñoa</option>
+              <option>La Reina</option>
+            </select>
+          </div>
+          <button
+            className="bg-orange text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-orange2 transition-all duration-300 flex items-center gap-2 justify-center shrink-0"
+            style={{ boxShadow: "0 4px 20px rgba(232,85,32,0.3)" }}
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            Buscar talento
+          </button>
         </div>
       </RevealWrapper>
 
-      {/* Stats */}
-      <RevealWrapper delay={0.4}>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-16 max-w-4xl mx-auto">
-          {[
-            { ...heroStats[0], color: "#E85520", light: "#FFF0EB", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
-            { ...heroStats[1], color: "#16a34a", light: "#ECFDF5", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
-            { ...heroStats[2], color: "#7C3AED", light: "#F3F0FF", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" },
-            { ...heroStats[3], color: "#0EA5E9", light: "#EFF9FF", icon: "M13 10V3L4 14h7v7l9-11h-7z" },
-          ].map((stat, i) => (
-            <div
-              key={i}
-              className="rounded-3xl px-6 py-8 text-center shadow-xl hover:-translate-y-1 transition-all duration-300"
-              style={{ background: stat.light, border: `1px solid ${stat.color}15` }}
-            >
-              <div className="flex justify-center mb-3">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: `${stat.color}15` }}>
-                  <svg className="w-5 h-5" style={{ color: stat.color }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d={stat.icon} />
-                  </svg>
-                </div>
-              </div>
-              <div className="text-4xl md:text-5xl font-extrabold tracking-tight" style={{ color: stat.color }}>
-                {stat.value}
-              </div>
-              <div className="text-[#1A0E05]/60 text-xs font-semibold uppercase tracking-wider mt-2">{stat.label}</div>
-            </div>
+      {/* Quick tags */}
+      <RevealWrapper delay={0.25}>
+        <div className="flex flex-wrap justify-center gap-2 mt-4">
+          <span className="text-[#9A7A60] text-xs">Popular:</span>
+          {["Garzón", "Chef", "Barman", "Pastelero"].map((tag) => (
+            <button key={tag} className="text-xs text-orange font-semibold bg-orange/10 px-3 py-1 rounded-full hover:bg-orange/20 transition">
+              {tag}
+            </button>
           ))}
         </div>
       </RevealWrapper>
 
-      <RevealWrapper delay={0.5}>
-        <div className="flex items-center justify-center gap-4 mt-12">
+      {/* CTAs */}
+      <RevealWrapper delay={0.3}>
+        <div className="flex flex-col sm:flex-row items-center gap-4 mt-10">
+          <a
+            href="#"
+            className="group bg-orange text-white px-8 py-4 rounded-2xl text-base font-bold hover:bg-orange2 transition-all duration-300 flex items-center gap-3 hover:scale-[1.02]"
+            style={{ boxShadow: "0 8px 30px rgba(232,85,32,0.35)" }}
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            Ver talento ahora
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <a
+            href="#"
+            className="group bg-[#1A0E05] text-white px-8 py-4 rounded-2xl text-base font-bold hover:bg-[#2A1A10] transition-all duration-300 flex items-center gap-3 hover:scale-[1.02]"
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2M3.5 10.5h17" />
+            </svg>
+            Encontrar trabajo
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </div>
+      </RevealWrapper>
+
+      {/* Social proof */}
+      <RevealWrapper delay={0.35}>
+        <div className="flex items-center justify-center gap-4 mt-8">
           <div className="flex -space-x-3">
             {[1, 11, 5, 12, 9].map((id) => (
-              <div key={id} className="w-9 h-9 rounded-full border-2 border-bg overflow-hidden">
+              <div key={id} className="w-9 h-9 rounded-full border-2 border-[#FFE4CC] overflow-hidden">
                 <Image src={`https://i.pravatar.cc/72?img=${id}`} alt="" width={36} height={36} className="object-cover" unoptimized />
               </div>
             ))}
@@ -177,9 +188,9 @@ export default function Hero() {
               {[1,2,3,4,5].map(i => (
                 <svg key={i} className="w-3.5 h-3.5 text-orange fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               ))}
-              <span className="text-text2 text-xs ml-1">4.9/5</span>
+              <span className="text-[#7A5C48] text-xs ml-1">4.9/5</span>
             </div>
-            <p className="text-text3 text-xs">de +3,200 trabajadores</p>
+            <p className="text-[#9A7A60] text-xs">+3,200 profesionales · +450 restaurantes</p>
           </div>
         </div>
       </RevealWrapper>
