@@ -3,25 +3,113 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #100A06;
+  --bg2: #180E08;
+  --bg3: #1E1208;
+  --card: #231408;
+  --card2: #2C1A0A;
+  --orange: #E85520;
+  --orange2: #FF7040;
+  --orange3: #FF9060;
+  --opal: rgba(232, 85, 32, 0.12);
+  --cream: #FFF8F2;
+  --text: #FFF4EC;
+  --text2: #B89880;
+  --text3: #7A5C48;
+  --green: #34D399;
+  --border: rgba(255, 255, 255, 0.07);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.gradient-text {
+  background: linear-gradient(135deg, #E85520, #FF9060);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.label {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gpal {
+  background: rgba(52, 211, 153, 0.12);
+}
+
+.sec-dark {
+  background: #140D08;
+  position: relative;
+  overflow: hidden;
+}
+.sec-dark::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: 10%;
+  width: 80%;
+  height: 60%;
+  background: radial-gradient(ellipse at center, rgba(232,85,32,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+.sec-light {
+  background: #FFF5EE;
+  position: relative;
+  overflow: hidden;
+}
+.sec-light::before {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  left: 10%;
+  width: 80%;
+  height: 60%;
+  background: radial-gradient(ellipse at center, rgba(232,85,32,0.05) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text3);
+  border-radius: 3px;
 }
