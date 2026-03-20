@@ -244,6 +244,16 @@ export default function Marquee() {
             </div>
           ))}
         </div>
+
+        {/* CTA */}
+        <div className="relative z-10 max-w-3xl mx-auto px-4 mt-8 text-center">
+          <p className="text-text3 text-sm">
+            Profesionales verificados listos para cubrir tu turno hoy.{" "}
+            <a href="#precios" className="text-orange font-semibold hover:text-orange2 transition underline underline-offset-4">
+              Publica tu primer turno gratis →
+            </a>
+          </p>
+        </div>
       </section>
 
       {selected && (
