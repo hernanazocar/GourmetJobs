@@ -206,9 +206,9 @@ export default function Marquee() {
 
           {/* Carousel — auto-scrolling */}
           <div className="overflow-hidden">
-            <div className="flex animate-marquee gap-3 px-4" style={{ animationDuration: "35s" }}>
+            <div className="flex animate-marquee gap-3 px-4" style={{ animationDuration: "20s" }}>
               {[...workers, ...workers].map((worker, i) => (
-                <div key={`${worker.name}-${i}`} className="shrink-0 w-[210px]">
+                <div key={`${worker.name}-${i}`} className="shrink-0 w-[240px]">
                   <div
                     onClick={() => setSelected(worker)}
                     className="group bg-white rounded-2xl p-4 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl shadow-lg h-full flex flex-col"
