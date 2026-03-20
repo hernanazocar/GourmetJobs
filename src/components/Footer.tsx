@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { footerLinks } from "@/lib/data";
 
 export default function Footer() {
@@ -7,11 +8,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
           {/* Brand column */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="bg-white/20 rounded-xl w-9 h-9 flex items-center justify-center text-lg">
-                🍽
-              </div>
-              <span className="text-white font-bold text-lg">GourmetJobs</span>
+            <div className="mb-4">
+              <Image
+                src="/logo.png"
+                alt="GourmetJobs"
+                width={160}
+                height={36}
+                className="h-8 w-auto"
+              />
             </div>
 
             <p className="text-text2 text-sm max-w-xs">

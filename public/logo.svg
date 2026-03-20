@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" fill="none">
+  <!-- G letter with serving tray -->
+  <path d="M40 0C17.9 0 0 17.9 0 40s17.9 40 40 40c16.5 0 30.8-10 36.8-24.3H48c-3.5 5.5-9.6 9.1-16.5 9.1C20.4 64.8 11.2 55.6 11.2 44.5h65.6c0.5-2.3 0.8-4.7 0.8-7.2C77.6 16.8 61 0 40 0zM11.2 35.5c1.8-10 10.5-18.3 21.3-18.3s19.5 8.3 21.3 18.3H11.2z" fill="#E85520"/>
+  <!-- Serving tray line -->
+  <line x1="28" y1="40" x2="72" y2="40" stroke="#E85520" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="50" cy="36" r="2" fill="#E85520"/>
+  <!-- Text -->
+  <text x="88" y="54" font-family="system-ui, -apple-system, sans-serif" font-size="38" font-weight="700" fill="#E85520" letter-spacing="-1">GourmetJobs</text>
+</svg>

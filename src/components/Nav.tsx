@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -42,11 +43,15 @@ export default function Nav() {
       >
         {/* Logo + Desktop links (grouped left) */}
         <div className="flex items-center gap-8">
-          <a href="#" className="flex items-center gap-2.5 shrink-0">
-            <div className="bg-orange rounded-xl w-9 h-9 flex items-center justify-center text-lg">
-              🍽
-            </div>
-            <span className="font-bold text-[#1A0E05] text-sm">GourmetJobs</span>
+          <a href="#" className="shrink-0">
+            <Image
+              src="/logo.png"
+              alt="GourmetJobs"
+              width={180}
+              height={40}
+              className="h-8 w-auto"
+              priority
+            />
           </a>
 
           <div className="hidden md:flex items-center gap-6">
