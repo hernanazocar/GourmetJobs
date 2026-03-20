@@ -7,12 +7,19 @@ import Blob from "./ui/Blob";
 import RevealWrapper from "./ui/RevealWrapper";
 import { useSearch } from "@/lib/SearchContext";
 
-const liveMessages = [
-  { text: "15 talentos conectados ahora" },
+
+const rotatingWords = [
+  "en tiempo real",
+  "cerca de ti",
+  "sin esperas",
+  "ahora mismo",
+  "de confianza",
+  "listo en minutos",
+  "a un click",
 ];
 
 export default function Hero() {
-  const [liveIndex, setLiveIndex] = useState(0);
+  const [wordIndex, setWordIndex] = useState(0);
   const { setSearch } = useSearch();
   const [localRole, setLocalRole] = useState("");
   const [localWhen, setLocalWhen] = useState("");
@@ -26,8 +33,8 @@ export default function Hero() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setLiveIndex((prev) => (prev + 1) % liveMessages.length);
-    }, 3500);
+      setWordIndex((prev) => (prev + 1) % rotatingWords.length);
+    }, 2800);
     return () => clearInterval(interval);
   }, []);
 
@@ -47,7 +54,7 @@ export default function Hero() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e]"></span>
             <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: "#22c55e", boxShadow: "0 0 8px #22c55e" }}></span>
           </span>
-          15 talentos conectados ahora
+          15 talentos activos ahora en Santiago
         </div>
       </RevealWrapper>
 
@@ -60,7 +67,7 @@ export default function Hero() {
           <span className="inline-block h-[1.1em] relative overflow-hidden align-bottom" style={{ minWidth: "4ch" }}>
             <AnimatePresence mode="wait">
               <motion.span
-                key={liveIndex}
+                key={wordIndex}
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -40, opacity: 0 }}
@@ -68,7 +75,7 @@ export default function Hero() {
                 className="absolute left-0 whitespace-nowrap"
                 style={{ color: "#E85520" }}
               >
-                {["en tiempo real", "cerca de ti", "sin esperas", "ahora mismo", "de confianza", "listo en minutos", "a un click"][liveIndex % 7]}
+                {rotatingWords[wordIndex]}
               </motion.span>
             </AnimatePresence>
           </span>
