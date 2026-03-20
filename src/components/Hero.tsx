@@ -70,7 +70,7 @@ export default function Hero() {
                 animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                 exit={{ y: -40, opacity: 0, filter: "blur(8px)" }}
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute inset-x-0 font-extrabold italic"
+                className="absolute inset-x-0 font-extrabold"
                 style={{ color: "#E85520" }}
               >
                 {rotatingWords[wordIndex]}
