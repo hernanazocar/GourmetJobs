@@ -1,6 +1,5 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import LogoBar from "@/components/LogoBar";
 import Marquee from "@/components/Marquee";
 import Problem from "@/components/Problem";
 import Comparison from "@/components/Comparison";
@@ -10,6 +9,7 @@ import Stats from "@/components/Stats";
 import Roles from "@/components/Roles";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
+import LogoBar from "@/components/LogoBar";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
@@ -20,7 +20,6 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <LogoBar />
         <Marquee />
         <Problem />
         <Comparison />
@@ -30,6 +29,7 @@ export default function Home() {
         <Roles />
         <Testimonials />
         <Pricing />
+        <LogoBar />
         <FAQ />
         <FinalCTA />
       </main>
