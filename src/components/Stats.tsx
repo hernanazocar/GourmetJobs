@@ -16,27 +16,37 @@ export default function Stats() {
       <div className="relative z-10 max-w-6xl mx-auto">
         <RevealWrapper>
           <div className="text-center">
-            <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-orange/10 text-orange">
-              IMPACTO
-            </span>
-            <h2 className="text-4xl md:text-5xl font-extrabold mt-4 text-center">
+            <div className="inline-flex items-center gap-2.5 bg-orange/10 rounded-full px-4 py-2 mb-5">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: "#E85520", boxShadow: "0 0 10px #E85520, 0 0 20px rgba(232,85,32,0.4)" }}></span>
+              </span>
+              <span className="text-orange text-xs font-bold uppercase tracking-wider">Impacto</span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-extrabold mt-4 text-center">
               <span className="text-[#1A0E05]">Números que</span>
               <br />
               <span className="gradient-text-orange">hablan solos</span>
             </h2>
+            <p className="text-[#7A5C48] text-lg mt-4 max-w-lg mx-auto">
+              Métricas que demuestran resultados reales
+            </p>
+            <div className="w-16 h-1 bg-orange rounded-full mx-auto mt-6" />
           </div>
         </RevealWrapper>
 
         <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
             <RevealWrapper key={index} delay={index * 0.15}>
-              <div className="bg-white/90 rounded-[28px] p-10 border border-light-border text-center hover:-translate-y-2 transition-all duration-300 hover:border-orange/30">
-                <span className="text-3xl mb-3 block">{stat.icon}</span>
+              <div className="bg-white rounded-3xl p-10 text-center shadow-xl border border-[rgba(232,85,32,0.08)] hover:-translate-y-2 transition-all duration-300">
+                <div className="w-14 h-14 rounded-2xl bg-orange/10 flex items-center justify-center text-2xl mx-auto mb-4">
+                  {stat.icon}
+                </div>
                 <AnimatedCounter
                   value={stat.number}
-                  className="text-5xl md:text-6xl font-extrabold gradient-text-orange"
+                  className="text-5xl md:text-6xl font-extrabold text-orange"
                 />
-                <p className="text-[#7A5C48] text-sm mt-3">{stat.label}</p>
+                <p className="text-[#7A5C48] text-sm font-semibold mt-3">{stat.label}</p>
                 <p className="text-[#9A7A60] text-xs mt-1">{stat.sublabel}</p>
               </div>
             </RevealWrapper>

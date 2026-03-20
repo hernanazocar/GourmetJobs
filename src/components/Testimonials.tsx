@@ -66,20 +66,23 @@ export default function Testimonials() {
     <section id="testimonios" className="sec-light py-24 px-4">
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="flex justify-center">
-          <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-orange/10 text-orange">
-            TESTIMONIOS
+          <span className="inline-flex items-center gap-2.5 bg-orange/10 rounded-full px-4 py-2">
+            <span className="w-2 h-2 bg-orange rounded-full animate-pulse" />
+            <span className="text-orange text-xs font-bold uppercase tracking-wider">TESTIMONIOS</span>
           </span>
         </div>
-        <h2 className="text-4xl md:text-5xl font-extrabold mt-4 text-center">
+        <h2 className="text-4xl md:text-6xl font-extrabold mt-4 text-center">
           <span className="text-[#1A0E05]">Lo que dicen</span>
           <br />
           <span className="gradient-text-orange">nuestros usuarios</span>
         </h2>
+        <p className="text-[#7A5C48] text-base mt-4 max-w-lg mx-auto text-center">Empresas y trabajadores que ya transformaron su forma de operar.</p>
+        <div className="w-16 h-1 bg-orange rounded-full mx-auto mt-6" />
 
         <div className="grid md:grid-cols-3 gap-6 mt-14">
           {testimonials.map((t, i) => (
             <RevealWrapper key={i} delay={i * 0.08}>
-              <div className="bg-white/90 rounded-[28px] p-7 border border-light-border transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-white/90 rounded-[28px] p-7 border border-light-border shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="flex gap-1">
                   <StarIcon />
                   <StarIcon />
@@ -114,6 +117,8 @@ export default function Testimonials() {
             </RevealWrapper>
           ))}
         </div>
+
+        <div className="text-center mt-14"><p className="text-[#9A7A60] text-sm">Únete a +3,200 profesionales que confían en GourmetJobs</p></div>
       </div>
     </section>
   );

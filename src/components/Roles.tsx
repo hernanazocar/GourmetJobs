@@ -23,10 +23,11 @@ export default function Roles() {
     <RevealWrapper>
       <section className="sec-dark py-24 px-4">
         <div className="relative z-10 max-w-6xl mx-auto">
-          <div className="rounded-card border border-border overflow-hidden shadow-xl shadow-orange/5">
+          <div className="rounded-card border border-border overflow-hidden shadow-2xl shadow-orange/5">
             <div className="grid md:grid-cols-2">
               {/* LEFT PANEL - Empresas */}
               <div className="bg-white p-10 md:p-14">
+                <div className="h-1 bg-gradient-to-r from-orange to-orange2 -mt-10 -mx-10 mb-10 md:-mt-14 md:-mx-14 md:mb-14 rounded-t-card" />
                 <span className="inline-block bg-orange/10 text-[#E85520] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
                   Para empresas
                 </span>
@@ -50,7 +51,7 @@ export default function Roles() {
                   ))}
                 </ul>
 
-                <button className="mt-8 bg-orange text-white px-7 py-3.5 rounded-btn font-semibold text-sm hover:bg-orange2 transition">
+                <button className="mt-8 bg-orange text-white px-8 py-4 rounded-xl text-base font-semibold hover:bg-orange2 transition">
                   Publicar turno
                 </button>
               </div>
@@ -86,7 +87,7 @@ export default function Roles() {
                   ))}
                 </ul>
 
-                <button className="mt-8 bg-white text-orange px-7 py-3.5 rounded-btn font-semibold text-sm hover:bg-cream transition">
+                <button className="mt-8 bg-white text-orange px-8 py-4 rounded-xl text-base font-semibold hover:bg-cream transition">
                   Buscar turnos
                 </button>
               </div>

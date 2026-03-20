@@ -10,12 +10,12 @@ export default function Problem() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto">
           <RevealWrapper>
-            <div className="inline-flex items-center gap-2.5 bg-orange/10 rounded-full px-4 py-2 mb-5">
+            <div className="inline-flex items-center gap-2.5 bg-red-50 rounded-full px-4 py-2 mb-5">
               <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#EF4444]"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: "#EF4444", boxShadow: "0 0 10px #EF4444, 0 0 20px rgba(239,68,68,0.4)" }}></span>
               </span>
-              <span className="text-orange text-xs font-bold uppercase tracking-wider">El problema</span>
+              <span className="text-red-600 text-xs font-bold uppercase tracking-wider">El problema</span>
             </div>
             <h2 className="text-4xl md:text-6xl font-extrabold leading-[1.05]">
               <span className="text-[#1A0E05]">La contratación gastronómica</span>
@@ -26,6 +26,7 @@ export default function Problem() {
               Los portales de empleo tradicionales no fueron diseñados para la velocidad
               que exige la gastronomía. Cada hora con un turno descubierto es dinero perdido.
             </p>
+            <div className="w-16 h-1 bg-orange rounded-full mx-auto mt-6" />
           </RevealWrapper>
         </div>
 
@@ -33,7 +34,8 @@ export default function Problem() {
         <div className="grid lg:grid-cols-2 gap-6 mt-16">
           {/* Problems column */}
           <RevealWrapper direction="left">
-            <div className="bg-white/90 rounded-[28px] p-8 md:p-10 border border-light-border h-full">
+            <div className="bg-white/90 rounded-[28px] p-8 md:p-10 border border-light-border h-full shadow-xl">
+              <div className="h-1 bg-gradient-to-r from-red-400 to-red-300 rounded-t-[28px] -mt-8 -mx-8 mb-8 md:-mt-10 md:-mx-10 md:mb-10" />
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-10 h-10 rounded-xl bg-orange/10 flex items-center justify-center">
                   <span className="text-[#1A0E05] text-lg">✕</span>
@@ -75,7 +77,7 @@ export default function Problem() {
           {/* Solutions column */}
           <RevealWrapper direction="right">
             <div
-              className="rounded-[28px] p-8 md:p-10 h-full relative overflow-hidden"
+              className="rounded-[28px] p-8 md:p-10 h-full relative overflow-hidden shadow-xl"
               style={{
                 background: "linear-gradient(145deg, #E85520, #C04010)",
               }}
@@ -125,12 +127,20 @@ export default function Problem() {
         {/* Bottom CTA */}
         <RevealWrapper>
           <div className="text-center mt-14">
-            <p className="text-[#9A7A60] text-sm">
-              ¿Cuánto te cuesta un turno descubierto?{" "}
-              <a href="#precios" className="text-[#1A0E05] hover:text-orange font-semibold transition underline underline-offset-4">
-                Calcula tu ahorro →
+            <div className="bg-white/90 rounded-2xl p-6 text-center shadow-lg border border-[rgba(232,85,32,0.1)] inline-block">
+              <p className="text-[#9A7A60] text-sm">
+                ¿Cuánto te cuesta un turno descubierto?
+              </p>
+              <a
+                href="#precios"
+                className="inline-flex items-center gap-2 bg-orange text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-orange2 transition mt-3"
+              >
+                Calcula tu ahorro
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </a>
-            </p>
+            </div>
           </div>
         </RevealWrapper>
       </div>

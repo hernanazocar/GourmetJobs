@@ -8,8 +8,11 @@ export default function Pricing() {
   return (
     <section id="precios" className="sec-dark py-24 px-4">
       <div className="relative z-10 max-w-5xl mx-auto text-center">
-        <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-white/15 text-white">
-          PRECIOS
+        <span className="inline-flex items-center gap-2.5 bg-white/15 rounded-full px-4 py-2 mb-5">
+          <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+          <span className="text-white text-xs font-bold uppercase tracking-wider">
+            Precios
+          </span>
         </span>
 
         <h2 className="text-4xl md:text-6xl font-extrabold mt-4 leading-[1.05]">
@@ -18,66 +21,73 @@ export default function Pricing() {
           <span className="gradient-text">Sin letra chica.</span>
         </h2>
 
-        <p className="text-white/65 text-lg mt-5 max-w-lg mx-auto leading-relaxed">
-          Empieza gratis. Escala cuando quieras. Cancela cuando quieras.
+        <p className="text-white/60 text-base mt-4 max-w-lg mx-auto leading-relaxed">
+          Empieza gratis. Escala cuando quieras.
         </p>
+
+        <div className="w-16 h-1 bg-white/30 rounded-full mx-auto mt-6" />
 
         <div className="grid md:grid-cols-3 gap-4 mt-14">
           {pricingPlans.map((plan, index) => (
             <RevealWrapper key={plan.name} delay={index * 0.1}>
               <div
-                className={`relative rounded-card p-8 border text-left transition-all duration-300 hover:-translate-y-1  ${
-                  plan.popular
-                    ? "bg-white border-orange/20"
-                    : "bg-white/15 border-border"
-                }`}
-                style={{ borderRadius: "28px" }}
+                className="relative bg-white rounded-3xl shadow-2xl overflow-hidden text-left transition-all duration-300 hover:-translate-y-1"
               >
                 {plan.popular && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange text-white text-xs font-bold px-4 py-1 rounded-full">
+                  <div className="h-1.5 bg-gradient-to-r from-orange to-orange2" />
+                )}
+
+                {plan.popular && (
+                  <span className="absolute -top-0 left-1/2 -translate-x-1/2 bg-orange text-white text-xs font-bold px-5 py-1.5 rounded-b-xl">
                     Más popular
                   </span>
                 )}
 
-                <p className={`text-sm font-semibold uppercase tracking-wider ${plan.popular ? "text-[#7A5C48]" : "text-white/65"}`}>
-                  {plan.name}
-                </p>
+                <div className="p-8">
+                  <p className="text-[#9A7A60] text-sm font-bold uppercase tracking-wider">
+                    {plan.name}
+                  </p>
 
-                <p className="text-4xl font-extrabold mt-2">
-                  <span className={plan.popular ? "gradient-text-orange" : "text-white"}>
-                    {plan.price}
-                  </span>
-                  <span className={`text-base font-normal ${plan.popular ? "text-[#7A5C48]" : "text-white/65"}`}>{plan.period}</span>
-                </p>
+                  <p className="mt-2">
+                    <span className="text-5xl font-extrabold text-[#1A0E05]">
+                      {plan.price}
+                    </span>
+                    <span className="text-[#9A7A60] text-base">{plan.period}</span>
+                  </p>
 
-                <p className={`text-sm mt-2 ${plan.popular ? "text-[#7A5C48]" : "text-white/65"}`}>{plan.description}</p>
+                  <p className="text-[#7A5C48] text-sm mt-2">{plan.description}</p>
 
-                <hr className={`border-t my-6 ${plan.popular ? "border-[#E5D5CC]" : "border-border"}`} />
+                  <hr className="border-t border-[#F0E6DC] my-6" />
 
-                <ul className="space-y-3">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-3">
-                      <span className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs ${plan.popular ? "bg-orange/10 text-[#E85520]" : "bg-white/15 text-white"}`}>
-                        ✓
-                      </span>
-                      <span className={`text-sm ${plan.popular ? "text-[#7A5C48]" : "text-white/65"}`}>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <ul className="space-y-3">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-center gap-3">
+                        <span className="w-6 h-6 rounded-lg flex items-center justify-center text-xs bg-orange/10 text-orange">
+                          ✓
+                        </span>
+                        <span className="text-sm text-[#7A5C48]">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                <button
-                  className={`mt-8 w-full py-3.5 rounded-btn font-semibold text-sm text-center transition ${
-                    plan.popular
-                      ? "bg-orange text-white hover:bg-orange2"
-                      : "bg-white/15 text-white hover:bg-white/25"
-                  }`}
-                >
-                  {plan.cta}
-                </button>
+                  <button
+                    className={`mt-8 w-full py-4 rounded-xl font-bold text-sm text-center transition ${
+                      plan.popular
+                        ? "bg-orange text-white hover:bg-orange2"
+                        : "bg-[#1A0E05] text-white hover:bg-[#2A1A10]"
+                    }`}
+                  >
+                    {plan.cta}
+                  </button>
+                </div>
               </div>
             </RevealWrapper>
           ))}
         </div>
+
+        <p className="text-white/50 text-sm text-center mt-8">
+          Sin contratos · Cancela cuando quieras · Soporte incluido
+        </p>
       </div>
     </section>
   );

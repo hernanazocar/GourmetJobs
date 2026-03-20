@@ -58,16 +58,19 @@ export default function FAQ() {
     <section id="faq" className="sec-light py-24 px-4">
       <div className="relative z-10 max-w-3xl mx-auto">
         <div className="flex justify-center">
-          <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-orange/10 text-orange">
-            FAQ
+          <span className="inline-flex items-center gap-2.5 bg-orange/10 rounded-full px-4 py-2">
+            <span className="w-2 h-2 bg-orange rounded-full animate-pulse" />
+            <span className="text-orange text-xs font-bold uppercase tracking-wider">FAQ</span>
           </span>
         </div>
-        <h2 className="text-4xl md:text-5xl font-extrabold mt-4 text-center">
+        <h2 className="text-4xl md:text-6xl font-extrabold mt-4 text-center">
           <span className="text-[#1A0E05]">Preguntas</span> <span className="gradient-text-orange">frecuentes</span>
         </h2>
+        <p className="text-[#7A5C48] text-base mt-4 max-w-lg mx-auto text-center">Todo lo que necesitas saber antes de empezar.</p>
+        <div className="w-16 h-1 bg-orange rounded-full mx-auto mt-6" />
 
         <RevealWrapper>
-          <div className="bg-white/90 rounded-[28px] border border-light-border p-2 mt-14">
+          <div className="bg-white/90 rounded-[28px] border border-light-border shadow-xl p-2 mt-14">
             {faqs.map((faq, i) => (
               <div
                 key={i}
@@ -83,7 +86,7 @@ export default function FAQ() {
                     {faq.question}
                   </span>
                   <span
-                    className={`w-8 h-8 rounded-full bg-[#FFF0E6] flex items-center justify-center text-[#1A0E05] text-lg font-bold shrink-0 transition-transform duration-300 ${
+                    className={`w-10 h-10 rounded-full bg-[#FFF0E6] flex items-center justify-center text-[#1A0E05] text-lg font-bold shrink-0 transition-transform duration-300 ${
                       openIndex === i ? "rotate-180" : ""
                     }`}
                   >
