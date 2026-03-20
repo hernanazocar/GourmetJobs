@@ -33,15 +33,15 @@ export default function Hero() {
       {/* Background Blobs */}
       <Blob
         className="absolute -top-32 -left-32 w-[500px] h-[500px] animate-float opacity-30"
-        color="var(--orange)"
+        color="rgba(0,0,0,0.3)"
       />
       <Blob
-        className="absolute top-1/3 -right-40 w-[450px] h-[450px] animate-float2 opacity-20"
-        color="var(--orange2)"
+        className="absolute top-1/3 -right-40 w-[450px] h-[450px] animate-float2 opacity-25"
+        color="rgba(255,255,255,0.1)"
       />
       <Blob
-        className="absolute -bottom-40 left-1/2 -translate-x-1/2 w-[550px] h-[550px] animate-float3 opacity-25"
-        color="var(--orange3)"
+        className="absolute -bottom-40 left-1/2 -translate-x-1/2 w-[550px] h-[550px] animate-float3 opacity-20"
+        color="rgba(0,0,0,0.2)"
       />
 
       {/* Pill badge */}
