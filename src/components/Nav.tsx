@@ -24,7 +24,7 @@ export default function Nav() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300"
+      className="relative w-full z-50 transition-all duration-300"
     >
       <div
         className="transition-all duration-300 px-6 md:px-10 py-3 flex items-center justify-between"

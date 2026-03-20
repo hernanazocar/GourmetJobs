@@ -29,7 +29,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="sec-light min-h-screen flex flex-col items-center justify-center text-center relative overflow-hidden px-4 pt-28 pb-20">
+    <section className="sec-light min-h-screen flex flex-col items-center justify-center text-center relative overflow-hidden px-4 py-20">
       {/* Background Blobs */}
       <Blob
         className="absolute -top-32 -left-32 w-[500px] h-[500px] animate-float opacity-30"
