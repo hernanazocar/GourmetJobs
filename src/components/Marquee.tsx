@@ -30,38 +30,104 @@ function Badge({ type }: { type: "fast" | "demand" | "new" | null }) {
 function ProfileModal({ worker, onClose }: { worker: Worker; onClose: () => void }) {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center px-4" onClick={onClose}>
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
-      <div className="relative bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl" onClick={(e) => e.stopPropagation()}>
-        <button onClick={onClose} className="absolute top-4 right-5 text-[#9A7A60] hover:text-[#1A0E05] transition text-xl">&times;</button>
-        <div className="flex items-center gap-5">
-          <div className="relative w-20 h-20 rounded-2xl overflow-hidden">
-            <Image src={worker.img} alt={worker.name} width={80} height={80} className="object-cover w-full h-full" unoptimized />
-          </div>
-          <div>
-            <h3 className="text-xl font-bold text-[#1A0E05]">{worker.name}</h3>
-            <p className="text-orange text-sm font-semibold">{worker.role}</p>
-            <div className="flex items-center gap-2 mt-1">
-              <span className="text-[#7A5C48] text-xs">📍 {worker.zone}</span>
-              <span className="text-[#7A5C48] text-xs">· {worker.experience}</span>
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-md" />
+      <div className="relative bg-white rounded-3xl max-w-lg w-full shadow-2xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
+        {/* Header con foto de fondo */}
+        <div className="relative h-32 bg-gradient-to-br from-orange to-[#C04515]">
+          <button onClick={onClose} className="absolute top-4 right-4 w-8 h-8 bg-black/20 rounded-full flex items-center justify-center text-white hover:bg-black/40 transition z-10">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+          </button>
+          <div className="absolute -bottom-10 left-8">
+            <div className="w-24 h-24 rounded-2xl overflow-hidden border-4 border-white shadow-lg">
+              <Image src={worker.img} alt={worker.name} width={96} height={96} className="object-cover w-full h-full" unoptimized />
             </div>
           </div>
+          {/* Badge */}
+          <div className="absolute top-4 left-4">
+            {worker.availability === "now" ? (
+              <span className="bg-green-500 text-white text-[11px] font-bold px-3 py-1 rounded-full flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+                Disponible ahora
+              </span>
+            ) : (
+              <span className="bg-amber-500 text-white text-[11px] font-bold px-3 py-1 rounded-full">Disponible esta semana</span>
+            )}
+          </div>
+          {worker.badge && (
+            <div className="absolute bottom-4 right-4"><Badge type={worker.badge} /></div>
+          )}
         </div>
-        <p className="text-[#7A5C48] text-sm mt-4 italic">&ldquo;{worker.tagline}&rdquo;</p>
-        <div className="grid grid-cols-3 gap-3 mt-5">
-          {[
-            { label: "Rating", value: worker.rating.toFixed(1) },
-            { label: "Precio", value: worker.price },
-            { label: "Horario", value: worker.hours.split(" ").slice(1).join(" ") },
-          ].map((s) => (
-            <div key={s.label} className="rounded-xl py-3 text-center bg-[#FFF0E6]">
-              <div className="text-base font-bold text-orange">{s.value}</div>
-              <div className="text-[#7A5C48] text-[11px]">{s.label}</div>
+
+        {/* Body */}
+        <div className="px-8 pt-14 pb-8">
+          {/* Name + Role */}
+          <div className="flex items-start justify-between">
+            <div>
+              <h3 className="text-2xl font-extrabold text-[#1A0E05]">{worker.name}</h3>
+              <p className="text-orange text-base font-semibold mt-0.5">{worker.role}</p>
             </div>
-          ))}
-        </div>
-        <div className="flex gap-3 mt-6">
-          <button className="flex-1 bg-orange text-white py-3.5 rounded-xl font-bold text-sm hover:bg-orange2 transition">Ver perfil completo</button>
-          <button className="flex-1 bg-[#1A0E05] text-white py-3.5 rounded-xl font-bold text-sm hover:bg-[#2A1A10] transition">Invitar a turno</button>
+            <div className="flex items-center gap-1 bg-[#FFF0E6] px-3 py-1.5 rounded-xl">
+              <svg className="w-4 h-4 text-orange fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <span className="text-[#1A0E05] font-bold text-sm">{worker.rating}</span>
+            </div>
+          </div>
+
+          {/* Meta */}
+          <div className="flex items-center gap-4 mt-3 text-[#7A5C48] text-sm">
+            <span className="flex items-center gap-1">📍 {worker.zone}</span>
+            <span className="flex items-center gap-1">⏱️ {worker.experience}</span>
+          </div>
+
+          {/* Tagline */}
+          <div className="mt-4 p-4 rounded-2xl bg-[#FFF8F2] border border-[rgba(232,85,32,0.08)]">
+            <p className="text-[#7A5C48] text-sm leading-relaxed italic">&ldquo;{worker.tagline}&rdquo;</p>
+          </div>
+
+          {/* Stats grid */}
+          <div className="grid grid-cols-3 gap-3 mt-5">
+            {[
+              { label: "Precio/hr", value: worker.price, icon: "💰" },
+              { label: "Horario", value: worker.hours.split(" ").slice(1).join(" "), icon: "🕒" },
+              { label: "Turnos", value: "127+", icon: "📋" },
+            ].map((s) => (
+              <div key={s.label} className="rounded-2xl py-3.5 text-center bg-[#FFF0E6]">
+                <div className="text-lg mb-0.5">{s.icon}</div>
+                <div className="text-sm font-bold text-[#1A0E05]">{s.value}</div>
+                <div className="text-[#9A7A60] text-[10px] mt-0.5">{s.label}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Skills */}
+          <div className="mt-5">
+            <p className="text-[#9A7A60] text-[10px] font-bold uppercase tracking-wider mb-2">Habilidades</p>
+            <div className="flex flex-wrap gap-2">
+              {worker.skills.map((s) => (
+                <span key={s} className="bg-orange/10 text-orange text-xs font-semibold px-3 py-1.5 rounded-full">{s}</span>
+              ))}
+            </div>
+          </div>
+
+          {/* CTAs */}
+          <div className="flex gap-3 mt-6">
+            <a
+              href={`https://wa.me/?text=${encodeURIComponent(`Hola ${worker.name}, te contacto por GourmetJobs para un turno.`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 bg-[#25D366] text-white py-4 rounded-2xl font-bold text-sm text-center hover:brightness-110 transition flex items-center justify-center gap-2"
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+              WhatsApp
+            </a>
+            <button className="flex-1 bg-orange text-white py-4 rounded-2xl font-bold text-sm hover:bg-orange2 transition flex items-center justify-center gap-2">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+              Ver perfil
+            </button>
+            <button className="flex-1 bg-[#1A0E05] text-white py-4 rounded-2xl font-bold text-sm hover:bg-[#2A1A10] transition flex items-center justify-center gap-2">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" /></svg>
+              Invitar
+            </button>
+          </div>
         </div>
       </div>
     </div>
