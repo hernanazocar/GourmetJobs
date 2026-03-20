@@ -47,12 +47,12 @@ export default function Hero() {
       {/* Pill badge */}
       <RevealWrapper delay={0}>
         <div
-          className="inline-flex items-center gap-3 rounded-full pl-3 pr-5 py-2 text-sm font-semibold text-emerald-700 mb-8"
-          style={{ background: "linear-gradient(135deg, #d1fae5, #a7f3d0)", border: "1px solid rgba(16, 185, 129, 0.25)", boxShadow: "0 2px 12px rgba(16, 185, 129, 0.15)" }}
+          className="inline-flex items-center gap-3 rounded-full pl-3.5 pr-6 py-2.5 text-sm font-semibold text-[#1A0E05] mb-8"
+          style={{ background: "rgba(255,255,255,0.5)", border: "1px solid rgba(255,255,255,0.7)", backdropFilter: "blur(8px)" }}
         >
-          <span className="relative flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500">
-            <span className="animate-ping absolute inline-flex h-4 w-4 rounded-full bg-emerald-400 opacity-60"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+          <span className="relative flex h-3 w-3">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" style={{ boxShadow: "0 0 8px rgba(34,197,94,0.8), 0 0 20px rgba(34,197,94,0.4)" }}></span>
           </span>
           <span>247 trabajadores en línea ahora</span>
         </div>
