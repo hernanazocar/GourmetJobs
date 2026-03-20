@@ -90,29 +90,43 @@ export default function Hero() {
 
       {/* CTA buttons */}
       <RevealWrapper delay={0.3}>
-        <div className="flex flex-col sm:flex-row items-center gap-4 mt-10">
+        <div className="flex flex-col sm:flex-row items-center gap-5 mt-12">
           <a
             href="#"
-            className="group bg-orange text-white px-10 py-5 rounded-2xl text-lg font-bold hover:bg-orange2 transition-all duration-300 flex items-center gap-3 hover:scale-[1.02]"
+            className="group relative overflow-hidden bg-orange text-white pl-6 pr-8 py-5 rounded-2xl text-base font-bold hover:bg-orange2 transition-all duration-300 flex items-center gap-4 hover:scale-[1.02]"
             style={{ boxShadow: "0 12px 40px rgba(232, 85, 32, 0.35)" }}
           >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-            </svg>
-            Soy empresa
-            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
+            <span className="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </span>
+            <span className="flex flex-col items-start leading-tight">
+              <span className="text-white/70 text-[11px] font-semibold uppercase tracking-wider">Restaurantes</span>
+              <span className="text-lg">Soy empresa</span>
+            </span>
+            <svg className="w-5 h-5 ml-2 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </a>
+
           <a
             href="#"
-            className="group bg-[#1A0E05] text-white px-10 py-5 rounded-2xl text-lg font-bold hover:bg-[#2A1A10] transition-all duration-300 flex items-center gap-3 hover:scale-[1.02]"
+            className="group relative overflow-hidden bg-[#1A0E05] text-white pl-6 pr-8 py-5 rounded-2xl text-base font-bold hover:bg-[#2A1A10] transition-all duration-300 flex items-center gap-4 hover:scale-[1.02]"
+            style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.15)" }}
           >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
-            Soy trabajador
-            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
+            <span className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            </span>
+            <span className="flex flex-col items-start leading-tight">
+              <span className="text-white/50 text-[11px] font-semibold uppercase tracking-wider">Profesionales</span>
+              <span className="text-lg">Soy trabajador</span>
+            </span>
+            <svg className="w-5 h-5 ml-2 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </a>
