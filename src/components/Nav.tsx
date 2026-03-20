@@ -46,7 +46,7 @@ export default function Nav() {
                 alt="GourmetJobs"
                 width={600}
                 height={120}
-                className="h-28 w-auto -my-8"
+                className="h-16 sm:h-28 w-auto -my-4 sm:-my-8"
                 priority
               />
           </a>

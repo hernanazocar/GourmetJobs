@@ -39,7 +39,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="sec-light flex flex-col items-center text-center relative overflow-hidden px-4 pt-12 pb-16">
+    <section className="sec-light flex flex-col items-center text-center relative overflow-hidden px-4 sm:px-6 pt-8 sm:pt-12 pb-12 sm:pb-16">
       {/* Background Blobs */}
       <Blob className="absolute -top-32 -left-32 w-[500px] h-[500px] animate-float opacity-30" color="rgba(232,85,32,0.15)" />
       <Blob className="absolute top-1/3 -right-40 w-[450px] h-[450px] animate-float2 opacity-20" color="rgba(232,85,32,0.1)" />
@@ -47,7 +47,7 @@ export default function Hero() {
       {/* Live badge — rotating messages */}
       <RevealWrapper delay={0}>
         <div
-          className="inline-flex items-center gap-2.5 rounded-full pl-3.5 pr-5 py-2 text-sm font-semibold text-[#1A0E05] mb-6"
+          className="inline-flex items-center gap-2 rounded-full pl-3 pr-4 py-1.5 text-xs sm:text-sm font-semibold text-[#1A0E05] mb-4 sm:mb-6"
           style={{ background: "rgba(255,255,255,0.55)", border: "1px solid rgba(255,255,255,0.75)" }}
         >
           <span className="relative flex h-3 w-3 shrink-0">
@@ -60,7 +60,7 @@ export default function Hero() {
 
       {/* Headline */}
       <RevealWrapper delay={0.1}>
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-[-0.04em] leading-[1.1] max-w-4xl mx-auto">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-[-0.04em] leading-[1.1] max-w-4xl mx-auto">
           <span className="text-[#1A0E05] block">Talento gastronómico</span>
           <span className="block h-[1.15em] relative overflow-hidden mt-1">
             <AnimatePresence mode="wait">
@@ -82,7 +82,7 @@ export default function Hero() {
 
       {/* Subheadline */}
       <RevealWrapper delay={0.15}>
-        <p className="text-[#7A5C48] text-lg md:text-xl max-w-[620px] mx-auto mt-6 leading-relaxed">
+        <p className="text-[#7A5C48] text-base sm:text-lg md:text-xl max-w-[620px] mx-auto mt-4 sm:mt-6 leading-relaxed px-2">
           Explora perfiles reales de garzones, chefs y baristas listos para trabajar hoy.
           Sin CVs, sin procesos largos.
         </p>
@@ -90,12 +90,12 @@ export default function Hero() {
 
       {/* Search bar */}
       <RevealWrapper delay={0.2}>
-        <p className="text-[#1A0E05] text-lg font-bold mt-12 mb-3">¿Qué necesitas hoy?</p>
+        <p className="text-[#1A0E05] text-base sm:text-lg font-bold mt-8 sm:mt-12 mb-3">¿Qué necesitas hoy?</p>
         <div
-          className="w-full max-w-3xl mx-auto bg-white rounded-2xl p-2 flex flex-col sm:flex-row items-stretch gap-2 shadow-xl"
+          className="w-full max-w-3xl mx-auto bg-white rounded-2xl p-2 flex flex-col sm:flex-row items-stretch gap-1.5 sm:gap-2 shadow-xl"
           style={{ border: "1px solid rgba(232,85,32,0.1)" }}
         >
-          <div className="flex-1 flex items-center gap-2 px-4 py-3 rounded-xl bg-[#FFF5EE]">
+          <div className="flex-1 flex items-center gap-2 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-[#FFF5EE]">
             <svg className="w-5 h-5 text-orange shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
@@ -112,7 +112,7 @@ export default function Hero() {
               <option value="Ayudante cocina">Ayudante cocina</option>
             </select>
           </div>
-          <div className="flex-1 flex items-center gap-2 px-4 py-3 rounded-xl bg-[#FFF5EE]">
+          <div className="flex-1 flex items-center gap-2 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-[#FFF5EE]">
             <svg className="w-5 h-5 text-orange shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
@@ -123,7 +123,7 @@ export default function Hero() {
               <option value="week">Esta semana</option>
             </select>
           </div>
-          <div className="flex-1 flex items-center gap-2 px-4 py-3 rounded-xl bg-[#FFF5EE]">
+          <div className="flex-1 flex items-center gap-2 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-[#FFF5EE]">
             <svg className="w-5 h-5 text-orange shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -141,7 +141,7 @@ export default function Hero() {
           </div>
           <button
             onClick={handleSearch}
-            className="bg-orange text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-orange2 transition-all duration-300 flex items-center gap-2 justify-center shrink-0"
+            className="bg-orange text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-bold text-sm hover:bg-orange2 transition-all duration-300 flex items-center gap-2 justify-center sm:shrink-0"
             style={{ boxShadow: "0 4px 20px rgba(232,85,32,0.3)" }}
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -182,10 +182,10 @@ export default function Hero() {
 
       {/* CTAs */}
       <RevealWrapper delay={0.3}>
-        <div className="flex flex-col sm:flex-row items-center gap-4 mt-14">
+        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mt-8 sm:mt-14 w-full sm:w-auto px-2 sm:px-0">
           <a
             href="#"
-            className="group bg-orange text-white px-8 py-4 rounded-2xl text-base font-bold hover:bg-orange2 transition-all duration-300 flex items-center gap-3 hover:scale-[1.02]"
+            className="group bg-orange text-white px-8 py-4 rounded-2xl text-base font-bold hover:bg-orange2 transition-all duration-300 flex items-center justify-center gap-3 hover:scale-[1.02] w-full sm:w-auto"
             style={{ boxShadow: "0 8px 30px rgba(232,85,32,0.35)" }}
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -199,7 +199,7 @@ export default function Hero() {
           </a>
           <a
             href="#"
-            className="group bg-[#1A0E05] text-white px-8 py-4 rounded-2xl text-base font-bold hover:bg-[#2A1A10] transition-all duration-300 flex items-center gap-3 hover:scale-[1.02]"
+            className="group bg-[#1A0E05] text-white px-8 py-4 rounded-2xl text-base font-bold hover:bg-[#2A1A10] transition-all duration-300 flex items-center justify-center gap-3 hover:scale-[1.02] w-full sm:w-auto"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2M3.5 10.5h17" />
@@ -214,7 +214,7 @@ export default function Hero() {
 
       {/* Micro urgency */}
       <RevealWrapper delay={0.35}>
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
+        <div className="hidden sm:flex flex-wrap items-center justify-center gap-4 mt-10">
           <div className="flex items-center gap-2 bg-white/80 rounded-full px-4 py-2" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e]"></span>
@@ -235,7 +235,7 @@ export default function Hero() {
 
       {/* Social proof */}
       <RevealWrapper delay={0.4}>
-        <div className="flex items-center justify-center gap-4 mt-6">
+        <div className="flex items-center justify-center gap-3 mt-6">
           <div className="flex -space-x-3">
             {[1, 11, 5, 12, 9].map((id) => (
               <div key={id} className="w-9 h-9 rounded-full border-2 border-[#FFE4CC] overflow-hidden">
