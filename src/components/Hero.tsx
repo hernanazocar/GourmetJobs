@@ -145,11 +145,27 @@ export default function Hero() {
 
       {/* Quick tags */}
       <RevealWrapper delay={0.25}>
-        <div className="flex flex-wrap justify-center gap-2 mt-4">
-          <span className="text-[#9A7A60] text-xs">Popular:</span>
-          {["Garzón", "Chef", "Barman", "Pastelero"].map((tag) => (
-            <button key={tag} className="text-xs text-orange font-semibold bg-orange/10 px-3 py-1 rounded-full hover:bg-orange/20 transition">
-              {tag}
+        <div className="flex flex-wrap justify-center items-center gap-2 mt-4">
+          <span className="text-[#9A7A60] text-xs font-semibold">Búsquedas rápidas:</span>
+          {[
+            { label: "Garzón", role: "Garzón" },
+            { label: "Chef", role: "Chef" },
+            { label: "Barman", role: "Barman" },
+            { label: "Pastelero", role: "Pastelera" },
+            { label: "Mesero/a", role: "Mesera" },
+            { label: "Sommelier", role: "Sommelier" },
+          ].map((tag) => (
+            <button
+              key={tag.label}
+              onClick={() => {
+                setLocalRole(tag.role);
+                setSearch({ role: tag.role, when: "", where: "" });
+                const marquee = document.getElementById("talento");
+                if (marquee) marquee.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="text-xs text-orange font-bold bg-orange/10 px-3.5 py-1.5 rounded-full hover:bg-orange hover:text-white transition-all duration-200 cursor-pointer"
+            >
+              {tag.label}
             </button>
           ))}
         </div>
