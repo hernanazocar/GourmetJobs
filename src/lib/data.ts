@@ -24,17 +24,19 @@ export const marqueeWorkers = [
 ];
 
 export const problems = [
-  { icon: "⏳", text: "Publicar → esperar → filtrar → entrevistar → rezar" },
-  { icon: "📄", text: "CVs genéricos que no dicen nada útil" },
-  { icon: "👻", text: "Candidatos fantasma que nunca llegan" },
-  { icon: "💸", text: "Turnos descubiertos = plata perdida" },
+  { icon: "⏳", title: "Proceso lento", text: "Publicar, filtrar, entrevistar y esperar semanas para cubrir un solo turno. Mientras tanto, tu operación sufre." },
+  { icon: "📄", title: "CVs irrelevantes", text: "Recibes cientos de postulaciones genéricas sin experiencia gastronómica verificable ni referencias reales." },
+  { icon: "👻", title: "No-shows frecuentes", text: "El 35% de los candidatos no se presenta el primer día. Sin garantía, sin reemplazo, sin solución." },
+  { icon: "💸", title: "Costos ocultos", text: "Comisiones de portales, horas de RRHH, turnos descubiertos. El costo real de contratar es 3x más de lo que crees." },
+  { icon: "📊", title: "Cero visibilidad", text: "No tienes datos de rendimiento, puntualidad ni historial. Contratas a ciegas cada vez." },
 ];
 
 export const solutions = [
-  { icon: "⚡", text: "Match automático en menos de 2 minutos" },
-  { icon: "✅", text: "Perfiles verificados con score de confiabilidad" },
-  { icon: "📍", text: "Solo trabajadores disponibles cerca de ti" },
-  { icon: "🔄", text: "Sin compromiso — paga por turno completado" },
+  { icon: "⚡", title: "Match en 2 min", text: "Nuestro algoritmo conecta tu turno con el trabajador verificado más cercano y disponible. Confirmación instantánea." },
+  { icon: "🛡️", title: "100% verificado", text: "Cada trabajador tiene GourmetScore: identidad validada, referencias comprobadas y rating actualizado en tiempo real." },
+  { icon: "🔄", title: "Garantía total", text: "Si un trabajador no se presenta, enviamos reemplazo inmediato sin costo. Nuestra tasa de cumplimiento es del 98%." },
+  { icon: "💰", title: "Paga por resultado", text: "Solo pagas por turnos completados exitosamente. Sin comisiones ocultas, sin contratos de permanencia." },
+  { icon: "📈", title: "Analytics completo", text: "Dashboard con métricas de cada turno: puntualidad, calidad, costos y proyecciones. Decisiones basadas en datos." },
 ];
 
 export const howItWorks = [

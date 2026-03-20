@@ -5,67 +5,130 @@ import RevealWrapper from "./ui/RevealWrapper";
 
 export default function Problem() {
   return (
-    <section id="problema" className="sec-dark py-24 px-4">
+    <section id="problema" className="sec-dark py-28 px-4">
       <div className="relative z-10 max-w-6xl mx-auto">
-        <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-opal text-orange">
-          EL DIAGNÓSTICO
-        </span>
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto">
+          <RevealWrapper>
+            <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-opal text-orange">
+              EL PROBLEMA
+            </span>
+            <h2 className="text-4xl md:text-6xl font-extrabold mt-5 leading-[1.05]">
+              <span className="text-white">La contratación gastronómica</span>
+              <br />
+              <span className="gradient-text">está rota</span>
+            </h2>
+            <p className="text-text2 text-lg mt-5 max-w-2xl mx-auto">
+              Los portales de empleo tradicionales no fueron diseñados para la velocidad
+              que exige la gastronomía. Cada hora con un turno descubierto es dinero perdido.
+            </p>
+          </RevealWrapper>
+        </div>
 
-        <h2 className="text-4xl md:text-5xl font-extrabold mt-4">
-          <span className="text-white">Los portales son lentos.</span>
-          <br />
-          <span className="gradient-text">La gastronomía no.</span>
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-6 mt-12">
+        {/* Two columns */}
+        <div className="grid lg:grid-cols-2 gap-6 mt-16">
+          {/* Problems column */}
           <RevealWrapper direction="left">
-            <div className="bg-card rounded-[28px] p-8 border border-border">
-              <h3 className="text-xl font-bold text-white mb-6">
-                El método tradicional
-              </h3>
-              <ul className="space-y-5">
+            <div className="bg-card rounded-[28px] p-8 md:p-10 border border-border h-full">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
+                  <span className="text-red-400 text-lg">✕</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white">
+                    El método tradicional
+                  </h3>
+                  <p className="text-text3 text-xs mt-0.5">Lo que sigues haciendo hoy</p>
+                </div>
+              </div>
+
+              <ul className="space-y-6">
                 {problems.map((item, i) => (
-                  <li key={i} className="flex gap-4 items-start">
-                    <div className="bg-bg2 rounded-xl w-10 h-10 flex items-center justify-center text-lg shrink-0">
+                  <li key={i} className="flex gap-4 items-start group">
+                    <div className="bg-bg2 rounded-xl w-11 h-11 flex items-center justify-center text-lg shrink-0 border border-border group-hover:border-red-500/20 transition">
                       {item.icon}
                     </div>
-                    <p className="text-text2 text-sm leading-relaxed">
-                      {item.text}
-                    </p>
+                    <div>
+                      <h4 className="text-white text-sm font-semibold">{item.title}</h4>
+                      <p className="text-text2 text-sm leading-relaxed mt-1">
+                        {item.text}
+                      </p>
+                    </div>
                   </li>
                 ))}
               </ul>
+
+              {/* Bottom stat */}
+              <div className="mt-8 pt-6 border-t border-border flex items-center gap-3">
+                <span className="text-3xl font-extrabold text-red-400/80">35%</span>
+                <p className="text-text3 text-xs leading-tight">
+                  de los candidatos en portales<br />tradicionales no se presentan
+                </p>
+              </div>
             </div>
           </RevealWrapper>
 
+          {/* Solutions column */}
           <RevealWrapper direction="right">
             <div
-              className="rounded-[28px] p-8"
+              className="rounded-[28px] p-8 md:p-10 h-full relative overflow-hidden"
               style={{
-                background: "linear-gradient(135deg, #E85520, #C04010)",
+                background: "linear-gradient(145deg, #E85520, #C04010)",
               }}
             >
-              <h3 className="text-xl font-bold text-white mb-6">
-                La forma GourmetJobs
-              </h3>
-              <ul className="space-y-5">
+              {/* Decorative circle */}
+              <div className="absolute -top-20 -right-20 w-60 h-60 bg-white/5 rounded-full blur-2xl pointer-events-none" />
+
+              <div className="flex items-center gap-3 mb-8 relative">
+                <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center">
+                  <span className="text-white text-lg">✓</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white">
+                    La forma GourmetJobs
+                  </h3>
+                  <p className="text-white/50 text-xs mt-0.5">Cómo debería funcionar</p>
+                </div>
+              </div>
+
+              <ul className="space-y-6 relative">
                 {solutions.map((item, i) => (
-                  <li key={i} className="flex gap-4 items-start">
-                    <div
-                      className="rounded-xl w-10 h-10 flex items-center justify-center text-lg shrink-0"
-                      style={{ background: "rgba(255,255,255,0.15)" }}
-                    >
+                  <li key={i} className="flex gap-4 items-start group">
+                    <div className="bg-white/10 rounded-xl w-11 h-11 flex items-center justify-center text-lg shrink-0 border border-white/10 group-hover:bg-white/20 transition">
                       {item.icon}
                     </div>
-                    <p className="text-white/90 text-sm leading-relaxed">
-                      {item.text}
-                    </p>
+                    <div>
+                      <h4 className="text-white text-sm font-semibold">{item.title}</h4>
+                      <p className="text-white/75 text-sm leading-relaxed mt-1">
+                        {item.text}
+                      </p>
+                    </div>
                   </li>
                 ))}
               </ul>
+
+              {/* Bottom stat */}
+              <div className="mt-8 pt-6 border-t border-white/15 flex items-center gap-3 relative">
+                <span className="text-3xl font-extrabold text-white">98%</span>
+                <p className="text-white/50 text-xs leading-tight">
+                  tasa de cumplimiento<br />con GourmetJobs
+                </p>
+              </div>
             </div>
           </RevealWrapper>
         </div>
+
+        {/* Bottom CTA */}
+        <RevealWrapper>
+          <div className="text-center mt-14">
+            <p className="text-text3 text-sm">
+              ¿Cuánto te cuesta un turno descubierto?{" "}
+              <a href="#precios" className="text-orange hover:text-orange2 font-semibold transition underline underline-offset-4">
+                Calcula tu ahorro →
+              </a>
+            </p>
+          </div>
+        </RevealWrapper>
       </div>
     </section>
   );
