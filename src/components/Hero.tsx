@@ -125,13 +125,14 @@ export default function Hero() {
           {heroStats.map((stat, i) => (
             <div
               key={i}
-              className="bg-white rounded-3xl px-6 py-8 text-center border border-orange/10 shadow-xl shadow-orange/10 hover:-translate-y-1 transition-all duration-300"
+              className="rounded-3xl px-6 py-8 text-center border border-white/20 shadow-xl hover:-translate-y-1 transition-all duration-300"
+              style={{ background: "linear-gradient(145deg, #E85520, #C94515)" }}
             >
-              <div className="text-4xl md:text-5xl font-extrabold text-orange tracking-tight">
+              <div className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
                 {stat.value}
               </div>
-              <div className="w-8 h-0.5 bg-orange/20 mx-auto mt-3 mb-2 rounded-full" />
-              <div className="text-[#7A5C48] text-xs font-semibold uppercase tracking-wider">{stat.label}</div>
+              <div className="w-8 h-0.5 bg-white/30 mx-auto mt-3 mb-2 rounded-full" />
+              <div className="text-white/75 text-xs font-semibold uppercase tracking-wider">{stat.label}</div>
             </div>
           ))}
         </div>
