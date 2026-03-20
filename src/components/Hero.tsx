@@ -9,13 +9,13 @@ import { heroStats } from "@/lib/data";
 
 const rotatingWords = [
   "en tiempo real",
-  "cerca de ti",
-  "de confianza",
-  "en 2 minutos",
-  "verificado",
-  "sin esperas",
-  "disponible ahora",
-  "a un click",
+  "cerca de ti, ahora",
+  "100% de confianza",
+  "listo en 2 minutos",
+  "verificado y seguro",
+  "sin esperas, sin CVs",
+  "disponible ahora ya",
+  "a solo un click de ti",
 ];
 
 export default function Hero() {
@@ -62,7 +62,7 @@ export default function Hero() {
       <RevealWrapper delay={0.1}>
         <h1 className="max-w-4xl mx-auto text-center">
           <span className="text-5xl md:text-7xl font-extrabold tracking-[-0.04em] leading-[1] text-[#1A0E05] block">Talento gastronómico</span>
-          <span className="block h-[1.15em] relative mt-2 overflow-hidden text-5xl md:text-7xl tracking-[-0.04em] leading-[1]">
+          <span className="block h-[1.15em] relative mt-2 overflow-visible text-5xl md:text-7xl tracking-[-0.04em] leading-[1]">
             <AnimatePresence mode="wait">
               <motion.span
                 key={wordIndex}
