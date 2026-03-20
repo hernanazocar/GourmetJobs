@@ -140,12 +140,12 @@ export default function Marquee() {
       <section className="sec-dark py-16 overflow-hidden">
         <div className="relative z-10 max-w-6xl mx-auto px-4 mb-10">
           <div className="text-center max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-white/15 rounded-full px-4 py-1.5 mb-4">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+            <div className="inline-flex items-center gap-2.5 bg-white/15 rounded-full px-4 py-2 mb-4">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500" style={{ boxShadow: "0 0 8px #22c55e" }}></span>
               </span>
-              <span className="text-white/80 text-xs font-semibold uppercase tracking-wider">{marqueeWorkers.length} profesionales activos</span>
+              <span className="text-white text-xs font-bold uppercase tracking-wider">{marqueeWorkers.length} profesionales activos ahora</span>
             </div>
             <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-[-0.03em]">
               Talento verificado, <span className="gradient-text">disponible ahora</span>
