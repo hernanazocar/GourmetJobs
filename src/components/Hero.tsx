@@ -90,35 +90,48 @@ export default function Hero() {
 
       {/* CTA buttons */}
       <RevealWrapper delay={0.3}>
-        <div className="flex flex-row items-center gap-4 mt-10">
+        <div className="flex flex-col sm:flex-row items-center gap-4 mt-10">
           <a
             href="#"
-            className="bg-orange text-white px-10 py-5 rounded-[16px] text-lg font-bold hover:bg-orange2 transition-all duration-200"
-            style={{ boxShadow: "0 12px 40px rgba(232, 85, 32, 0.4)" }}
+            className="group bg-orange text-white px-10 py-5 rounded-2xl text-lg font-bold hover:bg-orange2 transition-all duration-300 flex items-center gap-3 hover:scale-[1.02]"
+            style={{ boxShadow: "0 12px 40px rgba(232, 85, 32, 0.35)" }}
           >
-            🏢 Soy empresa →
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+            Soy empresa
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
           </a>
           <a
             href="#"
-            className="bg-[#1A0E05] text-white px-10 py-5 rounded-[16px] text-lg font-bold hover:bg-[#2A1A10] transition-all duration-200"
+            className="group bg-[#1A0E05] text-white px-10 py-5 rounded-2xl text-lg font-bold hover:bg-[#2A1A10] transition-all duration-300 flex items-center gap-3 hover:scale-[1.02]"
           >
-            🧑‍🍳 Soy trabajador
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            Soy trabajador
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
           </a>
         </div>
       </RevealWrapper>
 
       {/* Stats */}
       <RevealWrapper delay={0.4}>
-        <div className="grid grid-cols-2 md:flex md:flex-row gap-4 mt-16 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-16 max-w-4xl mx-auto">
           {heroStats.map((stat, i) => (
             <div
               key={i}
-              className="bg-white/90 rounded-2xl px-7 py-6 text-center border border-light-border shadow-lg shadow-orange/10"
+              className="bg-white rounded-3xl px-6 py-8 text-center border border-orange/10 shadow-xl shadow-orange/10 hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="text-3xl md:text-4xl font-extrabold gradient-text-orange">
+              <div className="text-4xl md:text-5xl font-extrabold text-orange tracking-tight">
                 {stat.value}
               </div>
-              <div className="text-[#7A5C48] text-xs mt-1.5 font-medium">{stat.label}</div>
+              <div className="w-8 h-0.5 bg-orange/20 mx-auto mt-3 mb-2 rounded-full" />
+              <div className="text-[#7A5C48] text-xs font-semibold uppercase tracking-wider">{stat.label}</div>
             </div>
           ))}
         </div>
