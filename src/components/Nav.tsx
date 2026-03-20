@@ -30,14 +30,14 @@ export default function Nav() {
         className="transition-all duration-300 px-6 md:px-10 py-3 flex items-center justify-between"
         style={{
           background: scrolled
-            ? "rgba(20, 10, 5, 0.95)"
-            : "rgba(20, 10, 5, 0.85)",
+            ? "rgba(210, 70, 20, 0.98)"
+            : "rgba(232, 85, 32, 0.95)",
           backdropFilter: "blur(24px)",
           WebkitBackdropFilter: "blur(24px)",
-          borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.15)",
           boxShadow: scrolled
-            ? "0 8px 32px rgba(0, 0, 0, 0.3)"
-            : "0 4px 16px rgba(0, 0, 0, 0.15)",
+            ? "0 8px 32px rgba(0, 0, 0, 0.2)"
+            : "none",
         }}
       >
         {/* Logo + Desktop links (grouped left) */}
@@ -75,7 +75,7 @@ export default function Nav() {
           </a>
           <a
             href="#"
-            className="text-sm font-semibold text-white bg-orange hover:bg-orange2 px-5 py-2.5 rounded-[14px] transition-all duration-200"
+            className="text-sm font-semibold text-orange bg-white hover:bg-cream px-5 py-2.5 rounded-[14px] transition-all duration-200"
           >
             Empezar gratis →
           </a>
@@ -114,10 +114,10 @@ export default function Nav() {
         <div
           className="px-6 py-5 flex flex-col gap-3"
           style={{
-            background: "rgba(20, 10, 5, 0.95)",
+            background: "rgba(210, 70, 20, 0.98)",
             backdropFilter: "blur(24px)",
             WebkitBackdropFilter: "blur(24px)",
-            borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+            borderBottom: "1px solid rgba(255, 255, 255, 0.15)",
           }}
         >
           {links.map((link) => (
@@ -144,7 +144,7 @@ export default function Nav() {
           </a>
           <a
             href="#"
-            className="text-sm font-semibold text-white bg-orange hover:bg-orange2 px-5 py-2.5 rounded-[14px] transition-all duration-200 text-center"
+            className="text-sm font-semibold text-orange bg-white hover:bg-cream px-5 py-2.5 rounded-[14px] transition-all duration-200 text-center"
           >
             Empezar gratis →
           </a>

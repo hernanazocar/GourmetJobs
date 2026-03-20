@@ -2,7 +2,7 @@ import { footerLinks } from "@/lib/data";
 
 export default function Footer() {
   return (
-    <footer className="sec-dark border-t border-border pt-16 pb-8 px-4">
+    <footer className="sec-light border-t border-border pt-16 pb-8 px-4">
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
           {/* Brand column */}

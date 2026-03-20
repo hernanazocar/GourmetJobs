@@ -55,23 +55,23 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="sec-dark py-24 px-4">
+    <section id="faq" className="sec-light py-24 px-4">
       <div className="relative z-10 max-w-3xl mx-auto">
         <div className="flex justify-center">
-          <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-white/15 text-white">
+          <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-orange/10 text-white">
             FAQ
           </span>
         </div>
         <h2 className="text-4xl md:text-5xl font-extrabold mt-4 text-center">
-          <span className="text-white">Preguntas</span> <span className="gradient-text">frecuentes</span>
+          <span className="text-[#1A0E05]">Preguntas</span> <span className="gradient-text-orange">frecuentes</span>
         </h2>
 
         <RevealWrapper>
-          <div className="bg-card rounded-[28px] border border-border p-2 mt-14">
+          <div className="bg-white/90 rounded-[28px] border border-light-border p-2 mt-14">
             {faqs.map((faq, i) => (
               <div
                 key={i}
-                className={`border-b border-border ${
+                className={`border-b border-light-border ${
                   i === faqs.length - 1 ? "border-b-0" : ""
                 }`}
               >
@@ -79,11 +79,11 @@ export default function FAQ() {
                   onClick={() => toggle(i)}
                   className="w-full py-5 flex items-center justify-between text-left px-5"
                 >
-                  <span className="text-white text-base font-semibold pr-4">
+                  <span className="text-[#1A0E05] text-base font-semibold pr-4">
                     {faq.question}
                   </span>
                   <span
-                    className={`w-8 h-8 rounded-full bg-black/15 flex items-center justify-center text-white text-lg font-bold shrink-0 transition-transform duration-300 ${
+                    className={`w-8 h-8 rounded-full bg-[#FFF0E6] flex items-center justify-center text-[#1A0E05] text-lg font-bold shrink-0 transition-transform duration-300 ${
                       openIndex === i ? "rotate-180" : ""
                     }`}
                   >
@@ -97,7 +97,7 @@ export default function FAQ() {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="text-text2 text-sm leading-relaxed px-5">
+                  <p className="text-[#7A5C48] text-sm leading-relaxed px-5">
                     {faq.answer}
                   </p>
                 </div>

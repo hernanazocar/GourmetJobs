@@ -29,28 +29,28 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center text-center relative overflow-hidden px-4 pt-28 pb-20">
+    <section className="sec-light min-h-screen flex flex-col items-center justify-center text-center relative overflow-hidden px-4 pt-28 pb-20">
       {/* Background Blobs */}
       <Blob
         className="absolute -top-32 -left-32 w-[500px] h-[500px] animate-float opacity-30"
-        color="rgba(0,0,0,0.3)"
+        color="rgba(232,85,32,0.15)"
       />
       <Blob
-        className="absolute top-1/3 -right-40 w-[450px] h-[450px] animate-float2 opacity-25"
-        color="rgba(255,255,255,0.1)"
+        className="absolute top-1/3 -right-40 w-[450px] h-[450px] animate-float2 opacity-20"
+        color="rgba(232,85,32,0.1)"
       />
       <Blob
-        className="absolute -bottom-40 left-1/2 -translate-x-1/2 w-[550px] h-[550px] animate-float3 opacity-20"
-        color="rgba(0,0,0,0.2)"
+        className="absolute -bottom-40 left-1/2 -translate-x-1/2 w-[550px] h-[550px] animate-float3 opacity-15"
+        color="rgba(232,85,32,0.12)"
       />
 
       {/* Pill badge */}
       <RevealWrapper delay={0}>
         <div
-          className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium text-white mb-8"
-          style={{ background: "rgba(0, 0, 0, 0.2)" }}
+          className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium text-[#1A0E05] mb-8"
+          style={{ background: "rgba(232, 85, 32, 0.12)" }}
         >
-          <span className="text-green animate-pulse font-bold">●</span>
+          <span className="text-orange animate-pulse font-bold">●</span>
           247 trabajadores disponibles ahora · Santiago
         </div>
       </RevealWrapper>
@@ -58,7 +58,7 @@ export default function Hero() {
       {/* Title */}
       <RevealWrapper delay={0.1}>
         <h1 className="text-6xl md:text-8xl font-extrabold tracking-[-0.04em] leading-[1] max-w-4xl mx-auto">
-          <span className="text-white block">Talento gastronómico</span>
+          <span className="text-[#1A0E05] block">Talento gastronómico</span>
           <span className="block h-[1.1em] relative mt-2 overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.span
@@ -67,7 +67,7 @@ export default function Hero() {
                 animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                 exit={{ y: -40, opacity: 0, filter: "blur(8px)" }}
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                className="gradient-text italic absolute inset-x-0"
+                className="gradient-text-orange italic absolute inset-x-0"
                 style={{ fontFamily: "var(--font-accent)", fontWeight: 600 }}
               >
                 {rotatingWords[wordIndex]}
@@ -79,7 +79,7 @@ export default function Hero() {
 
       {/* Subtitle */}
       <RevealWrapper delay={0.2}>
-        <p className="text-white/90 text-xl max-w-[560px] mx-auto mt-8 leading-relaxed">
+        <p className="text-[#7A5C48] text-xl max-w-[560px] mx-auto mt-8 leading-relaxed">
           Conecta tu restaurante con trabajadores verificados disponibles ahora
           mismo. Sin CVs, sin esperas, sin compromisos.
         </p>
@@ -90,14 +90,14 @@ export default function Hero() {
         <div className="flex flex-row items-center gap-4 mt-10">
           <a
             href="#"
-            className="bg-white text-orange px-10 py-5 rounded-[16px] text-lg font-bold hover:bg-cream transition-all duration-200"
-            style={{ boxShadow: "0 12px 40px rgba(0, 0, 0, 0.25)" }}
+            className="bg-orange text-white px-10 py-5 rounded-[16px] text-lg font-bold hover:bg-orange2 transition-all duration-200"
+            style={{ boxShadow: "0 12px 40px rgba(232, 85, 32, 0.4)" }}
           >
             🏢 Soy empresa →
           </a>
           <a
             href="#"
-            className="bg-black/20 border-2 border-white/30 text-white px-10 py-5 rounded-[16px] text-lg font-bold hover:bg-black/30 transition-all duration-200"
+            className="bg-[#1A0E05] text-white px-10 py-5 rounded-[16px] text-lg font-bold hover:bg-[#2A1A10] transition-all duration-200"
           >
             🧑‍🍳 Soy trabajador
           </a>
@@ -110,12 +110,12 @@ export default function Hero() {
           {heroStats.map((stat, i) => (
             <div
               key={i}
-              className="bg-black/30 backdrop-blur-sm rounded-2xl px-7 py-6 text-center border border-white/20"
+              className="bg-white/90 rounded-2xl px-7 py-6 text-center border border-light-border shadow-lg shadow-orange/10"
             >
-              <div className="text-3xl md:text-4xl font-extrabold text-white">
+              <div className="text-3xl md:text-4xl font-extrabold gradient-text-orange">
                 {stat.value}
               </div>
-              <div className="text-white/70 text-xs mt-1.5 font-medium">{stat.label}</div>
+              <div className="text-[#7A5C48] text-xs mt-1.5 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>

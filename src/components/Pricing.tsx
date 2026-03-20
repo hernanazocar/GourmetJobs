@@ -6,19 +6,19 @@ import RevealWrapper from "./ui/RevealWrapper";
 
 export default function Pricing() {
   return (
-    <section id="precios" className="sec-light py-24 px-4">
+    <section id="precios" className="sec-dark py-24 px-4">
       <div className="relative z-10 max-w-5xl mx-auto text-center">
-        <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-orange/10 text-orange">
+        <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-white/15 text-orange">
           PRECIOS
         </span>
 
         <h2 className="text-4xl md:text-6xl font-extrabold mt-4 leading-[1.05]">
-          <span className="text-[#1A0E05]">Simple, transparente.</span>
+          <span className="text-white">Simple, transparente.</span>
           <br />
-          <span className="gradient-text-orange">Sin letra chica.</span>
+          <span className="gradient-text">Sin letra chica.</span>
         </h2>
 
-        <p className="text-[#7A5C48] text-lg mt-5 max-w-lg mx-auto leading-relaxed">
+        <p className="text-white/65 text-lg mt-5 max-w-lg mx-auto leading-relaxed">
           Empieza gratis. Escala cuando quieras. Cancela cuando quieras.
         </p>
 
@@ -26,10 +26,10 @@ export default function Pricing() {
           {pricingPlans.map((plan, index) => (
             <RevealWrapper key={plan.name} delay={index * 0.1}>
               <div
-                className={`relative rounded-card p-8 border text-left transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-orange/5 ${
+                className={`relative rounded-card p-8 border text-left transition-all duration-300 hover:-translate-y-1  ${
                   plan.popular
                     ? "bg-gradient-to-b from-orange/10 to-white border-orange/20"
-                    : "bg-white/90 border-light-border"
+                    : "bg-card border-border"
                 }`}
                 style={{ borderRadius: "28px" }}
               >
@@ -39,28 +39,28 @@ export default function Pricing() {
                   </span>
                 )}
 
-                <p className="text-[#7A5C48] text-sm font-semibold uppercase tracking-wider">
+                <p className="text-white/65 text-sm font-semibold uppercase tracking-wider">
                   {plan.name}
                 </p>
 
                 <p className="text-4xl font-extrabold mt-2">
-                  <span className={plan.popular ? "gradient-text-orange" : "text-[#1A0E05]"}>
+                  <span className={plan.popular ? "gradient-text" : "text-white"}>
                     {plan.price}
                   </span>
-                  <span className="text-[#7A5C48] text-base font-normal">{plan.period}</span>
+                  <span className="text-white/65 text-base font-normal">{plan.period}</span>
                 </p>
 
-                <p className="text-[#7A5C48] text-sm mt-2">{plan.description}</p>
+                <p className="text-white/65 text-sm mt-2">{plan.description}</p>
 
-                <hr className="border-t border-light-border my-6" />
+                <hr className="border-t border-border my-6" />
 
                 <ul className="space-y-3">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
-                      <span className="bg-orange/10 w-6 h-6 rounded-lg flex items-center justify-center text-orange text-xs">
+                      <span className="bg-white/15 w-6 h-6 rounded-lg flex items-center justify-center text-orange text-xs">
                         ✓
                       </span>
-                      <span className="text-[#7A5C48] text-sm">{feature}</span>
+                      <span className="text-white/65 text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -69,7 +69,7 @@ export default function Pricing() {
                   className={`mt-8 w-full py-3.5 rounded-btn font-semibold text-sm text-center transition ${
                     plan.popular
                       ? "bg-orange text-white hover:bg-orange2"
-                      : "text-[#1A0E05] border border-[#1A0E05]/20 hover:bg-[#1A0E05]/5"
+                      : "text-white border border-[#1A0E05]/20 hover:bg-[#1A0E05]/5"
                   }`}
                 >
                   {plan.cta}

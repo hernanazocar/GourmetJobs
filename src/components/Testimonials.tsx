@@ -63,23 +63,23 @@ function StarIcon() {
 
 export default function Testimonials() {
   return (
-    <section id="testimonios" className="sec-dark py-24 px-4">
+    <section id="testimonios" className="sec-light py-24 px-4">
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="flex justify-center">
-          <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-white/15 text-white">
+          <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-orange/10 text-white">
             TESTIMONIOS
           </span>
         </div>
         <h2 className="text-4xl md:text-5xl font-extrabold mt-4 text-center">
-          <span className="text-white">Lo que dicen</span>
+          <span className="text-[#1A0E05]">Lo que dicen</span>
           <br />
-          <span className="gradient-text">nuestros usuarios</span>
+          <span className="gradient-text-orange">nuestros usuarios</span>
         </h2>
 
         <div className="grid md:grid-cols-3 gap-6 mt-14">
           {testimonials.map((t, i) => (
             <RevealWrapper key={i} delay={i * 0.08}>
-              <div className="bg-card rounded-[28px] p-7 border border-border transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-white/90 rounded-[28px] p-7 border border-light-border transition-all duration-300 hover:-translate-y-1">
                 <div className="flex gap-1">
                   <StarIcon />
                   <StarIcon />
@@ -106,8 +106,8 @@ export default function Testimonials() {
                     />
                   </div>
                   <div>
-                    <p className="text-white text-sm font-semibold">{t.name}</p>
-                    <p className="text-text3 text-xs">{t.role}</p>
+                    <p className="text-[#1A0E05] text-sm font-semibold">{t.name}</p>
+                    <p className="text-[#9A7A60] text-xs">{t.role}</p>
                   </div>
                 </div>
               </div>

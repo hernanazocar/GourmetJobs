@@ -6,20 +6,20 @@ import RevealWrapper from "./ui/RevealWrapper";
 
 export default function Features() {
   return (
-    <section id="features" className="sec-light py-24 px-4">
+    <section id="features" className="sec-dark py-24 px-4">
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="text-center">
-          <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-orange/10 text-orange">
+          <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-white/15 text-orange">
             FEATURES
           </span>
 
           <h2 className="text-4xl md:text-6xl font-extrabold mt-4 leading-[1.05]">
-            <span className="text-[#1A0E05]">Todo lo que necesitas.</span>
+            <span className="text-white">Todo lo que necesitas.</span>
             <br />
-            <span className="gradient-text-orange">Nada que no.</span>
+            <span className="gradient-text">Nada que no.</span>
           </h2>
 
-          <p className="text-[#7A5C48] text-lg mt-5 max-w-xl mx-auto leading-relaxed">
+          <p className="text-white/65 text-lg mt-5 max-w-xl mx-auto leading-relaxed">
             Herramientas diseñadas para que gestiones tu equipo gastronómico sin fricción.
           </p>
         </div>
@@ -32,17 +32,17 @@ export default function Features() {
               className={feature.size === "span4" ? "md:col-span-4" : "md:col-span-2"}
             >
               <div
-                className={`rounded-[28px] p-7 border transition-all duration-300 hover:-translate-y-1 h-full shadow-lg shadow-orange/5 ${
+                className={`rounded-[28px] p-7 border transition-all duration-300 hover:-translate-y-1 h-full  ${
                   feature.accent
-                    ? "bg-orange/10 border-orange/20"
-                    : "bg-white/90 border-light-border"
+                    ? "bg-white/15 border-orange/20"
+                    : "bg-card border-border"
                 }`}
               >
                 <span className="text-2xl mb-3 block">{feature.icon}</span>
-                <h3 className="text-lg font-bold text-[#1A0E05] mb-1">{feature.title}</h3>
-                <p className="text-[#7A5C48] text-sm">{feature.description}</p>
+                <h3 className="text-lg font-bold text-white mb-1">{feature.title}</h3>
+                <p className="text-white/65 text-sm">{feature.description}</p>
                 {feature.chip && (
-                  <span className="mt-3 inline-block bg-[#FFF0E6] text-[#7A5C48] text-xs font-semibold px-3 py-1 rounded-full">
+                  <span className="mt-3 inline-block bg-black/15 text-white/65 text-xs font-semibold px-3 py-1 rounded-full">
                     {feature.chip}
                   </span>
                 )}
@@ -53,10 +53,10 @@ export default function Features() {
                     {trustBars.map((bar) => (
                       <div key={bar.label} className="mt-3">
                         <div className="flex justify-between text-xs mb-1">
-                          <span className="text-[#7A5C48]">{bar.label}</span>
+                          <span className="text-white/65">{bar.label}</span>
                           <span className="text-orange font-semibold">{bar.value}%</span>
                         </div>
-                        <div className="bg-[#FFF0E6] rounded-full h-2">
+                        <div className="bg-black/15 rounded-full h-2">
                           <div
                             className="bg-gradient-to-r from-orange to-orange3 rounded-full h-2"
                             style={{ width: `${bar.value}%` }}
@@ -72,8 +72,8 @@ export default function Features() {
                   <div className="grid grid-cols-3 gap-3 mt-4">
                     {earningsData.map((item) => (
                       <div key={item.label} className="text-center">
-                        <div className="text-lg font-bold gradient-text-orange">{item.value}</div>
-                        <div className="text-[#7A5C48] text-xs">{item.label}</div>
+                        <div className="text-lg font-bold gradient-text">{item.value}</div>
+                        <div className="text-white/65 text-xs">{item.label}</div>
                       </div>
                     ))}
                   </div>

@@ -5,7 +5,7 @@ import RevealWrapper from "./ui/RevealWrapper";
 
 export default function FinalCTA() {
   return (
-    <section className="sec-light py-24 px-4 md:px-8">
+    <section className="sec-dark py-24 px-4 md:px-8">
       <div className="relative z-10 max-w-6xl mx-auto rounded-[28px] border border-orange/20 bg-white/90 overflow-hidden py-20 px-6 text-center shadow-xl shadow-orange/10">
         <Blob className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-float opacity-20" size="500px" />
 

@@ -17,7 +17,7 @@ export default function LogoBar() {
   const doubled = [...brands, ...brands];
 
   return (
-    <section className="sec-dark py-12 px-4">
+    <section className="sec-light py-12 px-4">
       <div className="relative z-10">
         <RevealWrapper>
           <p className="text-text3 text-xs uppercase tracking-widest font-semibold text-center mb-8">

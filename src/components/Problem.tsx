@@ -5,20 +5,20 @@ import RevealWrapper from "./ui/RevealWrapper";
 
 export default function Problem() {
   return (
-    <section id="problema" className="sec-dark py-28 px-4">
+    <section id="problema" className="sec-light py-28 px-4">
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto">
           <RevealWrapper>
-            <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-white/15 text-white">
+            <span className="label inline-block px-4 py-1.5 rounded-full text-xs bg-orange/10 text-white">
               EL PROBLEMA
             </span>
             <h2 className="text-4xl md:text-6xl font-extrabold mt-5 leading-[1.05]">
-              <span className="text-white">La contratación gastronómica</span>
+              <span className="text-[#1A0E05]">La contratación gastronómica</span>
               <br />
-              <span className="gradient-text">está rota</span>
+              <span className="gradient-text-orange">está rota</span>
             </h2>
-            <p className="text-text2 text-lg mt-5 max-w-2xl mx-auto">
+            <p className="text-[#7A5C48] text-lg mt-5 max-w-2xl mx-auto">
               Los portales de empleo tradicionales no fueron diseñados para la velocidad
               que exige la gastronomía. Cada hora con un turno descubierto es dinero perdido.
             </p>
@@ -29,28 +29,28 @@ export default function Problem() {
         <div className="grid lg:grid-cols-2 gap-6 mt-16">
           {/* Problems column */}
           <RevealWrapper direction="left">
-            <div className="bg-card rounded-[28px] p-8 md:p-10 border border-border h-full">
+            <div className="bg-white/90 rounded-[28px] p-8 md:p-10 border border-light-border h-full">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center">
-                  <span className="text-white text-lg">✕</span>
+                <div className="w-10 h-10 rounded-xl bg-orange/10 flex items-center justify-center">
+                  <span className="text-[#1A0E05] text-lg">✕</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">
                     El método tradicional
                   </h3>
-                  <p className="text-text3 text-xs mt-0.5">Lo que sigues haciendo hoy</p>
+                  <p className="text-[#9A7A60] text-xs mt-0.5">Lo que sigues haciendo hoy</p>
                 </div>
               </div>
 
               <ul className="space-y-6">
                 {problems.map((item, i) => (
                   <li key={i} className="flex gap-4 items-start group">
-                    <div className="bg-black/15 rounded-xl w-11 h-11 flex items-center justify-center text-lg shrink-0 border border-border group-hover:border-white/30 transition">
+                    <div className="bg-[#FFF0E6] rounded-xl w-11 h-11 flex items-center justify-center text-lg shrink-0 border border-light-border group-hover:border-white/30 transition">
                       {item.icon}
                     </div>
                     <div>
-                      <h4 className="text-white text-sm font-semibold">{item.title}</h4>
-                      <p className="text-text2 text-sm leading-relaxed mt-1">
+                      <h4 className="text-[#1A0E05] text-sm font-semibold">{item.title}</h4>
+                      <p className="text-[#7A5C48] text-sm leading-relaxed mt-1">
                         {item.text}
                       </p>
                     </div>
@@ -59,9 +59,9 @@ export default function Problem() {
               </ul>
 
               {/* Bottom stat */}
-              <div className="mt-8 pt-6 border-t border-border flex items-center gap-3">
+              <div className="mt-8 pt-6 border-t border-light-border flex items-center gap-3">
                 <span className="text-3xl font-extrabold text-white">35%</span>
-                <p className="text-text3 text-xs leading-tight">
+                <p className="text-[#9A7A60] text-xs leading-tight">
                   de los candidatos en portales<br />tradicionales no se presentan
                 </p>
               </div>
@@ -80,8 +80,8 @@ export default function Problem() {
               <div className="absolute -top-20 -right-20 w-60 h-60 bg-white/5 rounded-full blur-2xl pointer-events-none" />
 
               <div className="flex items-center gap-3 mb-8 relative">
-                <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center">
-                  <span className="text-white text-lg">✓</span>
+                <div className="w-10 h-10 rounded-xl bg-orange/10 flex items-center justify-center">
+                  <span className="text-[#1A0E05] text-lg">✓</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">
@@ -98,7 +98,7 @@ export default function Problem() {
                       {item.icon}
                     </div>
                     <div>
-                      <h4 className="text-white text-sm font-semibold">{item.title}</h4>
+                      <h4 className="text-[#1A0E05] text-sm font-semibold">{item.title}</h4>
                       <p className="text-white/75 text-sm leading-relaxed mt-1">
                         {item.text}
                       </p>
@@ -121,9 +121,9 @@ export default function Problem() {
         {/* Bottom CTA */}
         <RevealWrapper>
           <div className="text-center mt-14">
-            <p className="text-text3 text-sm">
+            <p className="text-[#9A7A60] text-sm">
               ¿Cuánto te cuesta un turno descubierto?{" "}
-              <a href="#precios" className="text-white hover:text-white/80 font-semibold transition underline underline-offset-4">
+              <a href="#precios" className="text-[#1A0E05] hover:text-white/80 font-semibold transition underline underline-offset-4">
                 Calcula tu ahorro →
               </a>
             </p>
