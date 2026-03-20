@@ -47,11 +47,14 @@ export default function Hero() {
       {/* Pill badge */}
       <RevealWrapper delay={0}>
         <div
-          className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium text-[#1A0E05] mb-8"
-          style={{ background: "rgba(232, 85, 32, 0.12)" }}
+          className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-green-700 mb-8"
+          style={{ background: "rgba(34, 197, 94, 0.12)", border: "1px solid rgba(34, 197, 94, 0.2)" }}
         >
-          <span className="text-orange animate-pulse font-bold">●</span>
-          247 trabajadores disponibles ahora · Santiago
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+          </span>
+          247 trabajadores en línea ahora · Santiago
         </div>
       </RevealWrapper>
 
