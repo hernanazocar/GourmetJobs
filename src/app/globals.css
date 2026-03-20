@@ -69,6 +69,8 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(52, 211, 153, 0.12);
 }
 
+/* === SECTION BACKGROUNDS === */
+
 .sec-dark {
   background: #140D08;
   position: relative;
@@ -77,13 +79,22 @@ h1, h2, h3, h4, h5, h6 {
 .sec-dark::before {
   content: "";
   position: absolute;
-  top: -20%;
-  left: 10%;
-  width: 80%;
-  height: 60%;
-  background: radial-gradient(ellipse at center, rgba(232,85,32,0.08) 0%, transparent 70%);
+  top: -30%;
+  left: 5%;
+  width: 90%;
+  height: 70%;
+  background: radial-gradient(ellipse at center, rgba(232,85,32,0.07) 0%, transparent 65%);
   pointer-events: none;
-  filter: blur(40px);
+  filter: blur(60px);
+}
+.sec-dark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 .sec-light {
@@ -94,14 +105,48 @@ h1, h2, h3, h4, h5, h6 {
 .sec-light::before {
   content: "";
   position: absolute;
-  bottom: -20%;
-  left: 10%;
-  width: 80%;
-  height: 60%;
-  background: radial-gradient(ellipse at center, rgba(232,85,32,0.05) 0%, transparent 70%);
+  bottom: -30%;
+  left: 5%;
+  width: 90%;
+  height: 70%;
+  background: radial-gradient(ellipse at center, rgba(232,85,32,0.04) 0%, transparent 65%);
   pointer-events: none;
-  filter: blur(40px);
+  filter: blur(60px);
 }
+
+/* === SECTION DIVIDERS === */
+
+.divider-to-light {
+  position: relative;
+}
+.divider-to-light::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: #FFF5EE;
+  clip-path: ellipse(55% 100% at 50% 100%);
+  z-index: 5;
+}
+
+.divider-to-dark {
+  position: relative;
+}
+.divider-to-dark::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: #140D08;
+  clip-path: ellipse(55% 100% at 50% 100%);
+  z-index: 5;
+}
+
+/* === SCROLLBAR === */
 
 ::-webkit-scrollbar {
   width: 6px;
