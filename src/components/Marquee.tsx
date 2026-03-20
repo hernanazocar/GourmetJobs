@@ -156,7 +156,7 @@ export default function Marquee() {
             <div key={i} className="shrink-0 px-2.5">
               <button
                 onClick={() => setSelected(worker)}
-                className="group w-[280px] bg-white rounded-[22px] p-5 text-left transition-all duration-300 hover:bg-cream hover:scale-[1.03] hover:-translate-y-1 cursor-pointer shadow-lg shadow-orange/5"
+                className="group w-[280px] bg-white/90 rounded-[22px] p-5 text-left transition-all duration-300 hover:bg-cream hover:scale-[1.03] hover:-translate-y-1 cursor-pointer shadow-lg shadow-orange/5"
                 style={{
                   border: "1px solid rgba(232,85,32,0.1)",
                 }}

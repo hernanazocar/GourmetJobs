@@ -80,7 +80,7 @@ export default function Comparison() {
         </p>
 
         <RevealWrapper>
-          <div className="mt-14 bg-white rounded-[28px] border border-light-border overflow-hidden shadow-lg shadow-orange/5">
+          <div className="mt-14 bg-white/90 rounded-[28px] border border-light-border overflow-hidden shadow-lg shadow-orange/5">
             {/* Header */}
             <div className="hidden sm:grid grid-cols-3 bg-light-warm px-6 py-4 border-b border-border">
               <span className="text-[#7A5C48] text-sm font-semibold">

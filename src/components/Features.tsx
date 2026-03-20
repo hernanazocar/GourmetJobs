@@ -35,7 +35,7 @@ export default function Features() {
                 className={`rounded-[28px] p-7 border transition-all duration-300 hover:-translate-y-1 h-full shadow-lg shadow-orange/5 ${
                   feature.accent
                     ? "bg-orange/10 border-orange/20"
-                    : "bg-white border-light-border"
+                    : "bg-white/90 border-light-border"
                 }`}
               >
                 <span className="text-2xl mb-3 block">{feature.icon}</span>

@@ -26,7 +26,7 @@ export default function Roles() {
           <div className="rounded-card border border-light-border overflow-hidden shadow-xl shadow-orange/5">
             <div className="grid md:grid-cols-2">
               {/* LEFT PANEL - Empresas */}
-              <div className="bg-white p-10 md:p-14">
+              <div className="bg-white/90 p-10 md:p-14">
                 <span className="inline-block bg-orange/10 text-orange text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
                   Para empresas
                 </span>

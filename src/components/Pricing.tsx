@@ -29,7 +29,7 @@ export default function Pricing() {
                 className={`relative rounded-card p-8 border text-left transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-orange/5 ${
                   plan.popular
                     ? "bg-gradient-to-b from-orange/10 to-white border-orange/20"
-                    : "bg-white border-light-border"
+                    : "bg-white/90 border-light-border"
                 }`}
                 style={{ borderRadius: "28px" }}
               >
