@@ -12,7 +12,7 @@
   --orange2: #FF7040;
   --orange3: #FF9060;
   --opal: rgba(255, 255, 255, 0.2);
-  --cream: #FFF8F2;
+  --cream: #FFE8D4;
   --text: #FFFFFF;
   --text2: rgba(255, 255, 255, 0.85);
   --text3: rgba(255, 255, 255, 0.65);
@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sec-light {
-  background: #FFF5EE;
+  background: #FFE4CC;
   position: relative;
   overflow: hidden;
 }
