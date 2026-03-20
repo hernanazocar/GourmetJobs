@@ -204,13 +204,13 @@ export default function Marquee() {
 
                 {/* Stats row */}
                 <div className="flex items-center gap-2 mt-3">
-                  <div className="flex-1 bg-white rounded-lg py-2 text-center">
+                  <div className="flex-1 rounded-lg py-2 text-center" style={{ background: "#FFE4CC" }}>
                     <div className="text-[#1A0E05] font-bold text-sm">
                       {worker.turnos}
                     </div>
                     <div className="text-[#7A5C48] text-[10px]">turnos</div>
                   </div>
-                  <div className="flex-1 bg-white rounded-lg py-2 text-center">
+                  <div className="flex-1 rounded-lg py-2 text-center" style={{ background: "#FFE4CC" }}>
                     <div className="text-[#1A0E05] font-bold text-sm">
                       {worker.puntualidad}%
                     </div>
