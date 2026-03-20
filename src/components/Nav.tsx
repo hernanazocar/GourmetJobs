@@ -43,9 +43,9 @@ export default function Nav() {
             <Image
               src="/logo-white.png"
               alt="GourmetJobs"
-              width={280}
-              height={44}
-              className="h-11 w-auto"
+              width={400}
+              height={80}
+              className="h-14 w-auto -my-3"
               priority
             />
         </a>
