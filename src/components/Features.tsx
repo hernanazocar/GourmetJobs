@@ -42,7 +42,7 @@ export default function Features() {
                 <h3 className="text-lg font-bold text-white mb-1">{feature.title}</h3>
                 <p className="text-white/65 text-sm">{feature.description}</p>
                 {feature.chip && (
-                  <span className="mt-3 inline-block bg-black/15 text-white/65 text-xs font-semibold px-3 py-1 rounded-full">
+                  <span className="mt-3 inline-block bg-white/15 text-white/65 text-xs font-semibold px-3 py-1 rounded-full">
                     {feature.chip}
                   </span>
                 )}
@@ -56,7 +56,7 @@ export default function Features() {
                           <span className="text-white/65">{bar.label}</span>
                           <span className="text-orange font-semibold">{bar.value}%</span>
                         </div>
-                        <div className="bg-black/15 rounded-full h-2">
+                        <div className="bg-white/15 rounded-full h-2">
                           <div
                             className="bg-gradient-to-r from-orange to-orange3 rounded-full h-2"
                             style={{ width: `${bar.value}%` }}
