@@ -61,18 +61,16 @@ export default function Hero() {
       {/* Headline */}
       <RevealWrapper delay={0.1}>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-[-0.04em] leading-[1.1] max-w-4xl mx-auto">
-          <span className="text-[#1A0E05]">Talento gastronómico</span>
-          <br />
-          <span className="text-[#1A0E05]">disponible </span>
-          <span className="inline-block h-[1.1em] relative overflow-hidden align-bottom" style={{ minWidth: "4ch" }}>
+          <span className="text-[#1A0E05] block">Talento gastronómico</span>
+          <span className="block h-[1.15em] relative overflow-hidden mt-1">
             <AnimatePresence mode="wait">
               <motion.span
                 key={wordIndex}
-                initial={{ y: 40, opacity: 0 }}
+                initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -40, opacity: 0 }}
+                exit={{ y: -50, opacity: 0 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute left-0 whitespace-nowrap"
+                className="absolute inset-x-0"
                 style={{ color: "#E85520" }}
               >
                 {rotatingWords[wordIndex]}
