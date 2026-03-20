@@ -54,7 +54,7 @@ export default function Nav() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-text2 hover:text-white transition-colors duration-200 text-sm"
+                className="text-white/80 hover:text-white transition-colors duration-200 text-sm"
               >
                 {link.label}
               </a>
@@ -125,7 +125,7 @@ export default function Nav() {
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="text-text2 hover:text-white transition-colors duration-200 text-sm py-2"
+              className="text-white/80 hover:text-white transition-colors duration-200 text-sm py-2"
             >
               {link.label}
             </a>
