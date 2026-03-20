@@ -161,9 +161,10 @@ export default function Marquee() {
             <div key={i} className="shrink-0 px-2.5">
               <button
                 onClick={() => setSelected(worker)}
-                className="group w-[280px] bg-white rounded-[22px] p-5 text-left transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 cursor-pointer shadow-lg"
+                className="group w-[280px] rounded-[22px] p-5 text-left transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 cursor-pointer shadow-lg"
                 style={{
-                  border: "1px solid rgba(255,255,255,0.9)",
+                  background: "#FFE4CC",
+                  border: "1px solid rgba(232,85,32,0.1)",
                 }}
               >
                 {/* Top: avatar + info */}
@@ -204,13 +205,13 @@ export default function Marquee() {
 
                 {/* Stats row */}
                 <div className="flex items-center gap-2 mt-3">
-                  <div className="flex-1 bg-[#FFF0E6] rounded-lg py-2 text-center">
+                  <div className="flex-1 bg-white rounded-lg py-2 text-center">
                     <div className="text-[#1A0E05] font-bold text-sm">
                       {worker.turnos}
                     </div>
                     <div className="text-[#7A5C48] text-[10px]">turnos</div>
                   </div>
-                  <div className="flex-1 bg-[#FFF0E6] rounded-lg py-2 text-center">
+                  <div className="flex-1 bg-white rounded-lg py-2 text-center">
                     <div className="text-[#1A0E05] font-bold text-sm">
                       {worker.puntualidad}%
                     </div>
