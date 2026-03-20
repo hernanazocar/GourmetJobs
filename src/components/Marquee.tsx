@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { marqueeWorkers } from "@/lib/data";
+import { useSearch } from "@/lib/SearchContext";
 
 type Worker = (typeof marqueeWorkers)[number];
 
@@ -133,12 +134,24 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 export default function Marquee() {
-  const doubled = [...marqueeWorkers, ...marqueeWorkers];
+  const { search, isFiltering } = useSearch();
   const [selected, setSelected] = useState<Worker | null>(null);
+
+  const filtered = useMemo(() => {
+    if (!isFiltering) return marqueeWorkers;
+    return marqueeWorkers.filter((w) => {
+      const matchRole = !search.role || w.role.toLowerCase().includes(search.role.toLowerCase());
+      const matchZone = !search.where || w.zone.toLowerCase().includes(search.where.toLowerCase());
+      return matchRole && matchZone;
+    });
+  }, [search, isFiltering]);
+
+  const workers = filtered.length > 0 ? filtered : marqueeWorkers;
+  const doubled = [...workers, ...workers];
 
   return (
     <>
-      <section className="sec-dark py-16 overflow-hidden">
+      <section id="talento" className="sec-dark py-16 overflow-hidden">
         <div className="relative z-10 max-w-6xl mx-auto px-4 mb-10">
           <div className="text-center max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2.5 bg-white/15 rounded-full px-4 py-2 mb-4">
@@ -146,7 +159,9 @@ export default function Marquee() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e]"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: "#22c55e", boxShadow: "0 0 10px #22c55e, 0 0 20px rgba(34,197,94,0.4)" }}></span>
               </span>
-              <span className="text-white text-xs font-bold uppercase tracking-wider">{marqueeWorkers.length} profesionales activos ahora</span>
+              <span className="text-white text-xs font-bold uppercase tracking-wider">
+                {isFiltering ? `${filtered.length} resultado${filtered.length !== 1 ? "s" : ""} encontrado${filtered.length !== 1 ? "s" : ""}` : `${marqueeWorkers.length} profesionales activos ahora`}
+              </span>
             </div>
             <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-[-0.03em]">
               Talento verificado, <span className="gradient-text">disponible ahora</span>

@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Blob from "./ui/Blob";
 import RevealWrapper from "./ui/RevealWrapper";
+import { useSearch } from "@/lib/SearchContext";
 
 const liveMessages = [
   "247 profesionales disponibles ahora",
@@ -14,6 +15,16 @@ const liveMessages = [
 
 export default function Hero() {
   const [liveIndex, setLiveIndex] = useState(0);
+  const { setSearch } = useSearch();
+  const [localRole, setLocalRole] = useState("");
+  const [localWhen, setLocalWhen] = useState("");
+  const [localWhere, setLocalWhere] = useState("");
+
+  function handleSearch() {
+    setSearch({ role: localRole, when: localWhen, where: localWhere });
+    const marquee = document.getElementById("talento");
+    if (marquee) marquee.scrollIntoView({ behavior: "smooth" });
+  }
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -70,36 +81,37 @@ export default function Hero() {
 
       {/* Search bar */}
       <RevealWrapper delay={0.2}>
+        <p className="text-[#1A0E05] text-lg font-bold mt-10 mb-3">¿Qué necesitas hoy?</p>
         <div
-          className="mt-10 w-full max-w-3xl mx-auto bg-white rounded-2xl p-2 flex flex-col sm:flex-row items-stretch gap-2 shadow-xl"
+          className="w-full max-w-3xl mx-auto bg-white rounded-2xl p-2 flex flex-col sm:flex-row items-stretch gap-2 shadow-xl"
           style={{ border: "1px solid rgba(232,85,32,0.1)" }}
         >
           <div className="flex-1 flex items-center gap-2 px-4 py-3 rounded-xl bg-[#FFF5EE]">
             <svg className="w-5 h-5 text-orange shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
-            <select className="bg-transparent text-[#1A0E05] text-sm font-medium w-full outline-none appearance-none cursor-pointer">
-              <option>¿Qué necesitas?</option>
-              <option>Garzón</option>
-              <option>Chef</option>
-              <option>Barman</option>
-              <option>Mesero/a</option>
-              <option>Sous Chef</option>
-              <option>Pastelero/a</option>
-              <option>Hostess</option>
-              <option>Ayudante cocina</option>
+            <select value={localRole} onChange={(e) => setLocalRole(e.target.value)} className="bg-transparent text-[#1A0E05] text-sm font-medium w-full outline-none appearance-none cursor-pointer">
+              <option value="">Cargo</option>
+              <option value="Barman">Barman</option>
+              <option value="Mesera">Mesero/a</option>
+              <option value="Chef">Chef</option>
+              <option value="Sous Chef">Sous Chef</option>
+              <option value="Pastelera">Pastelero/a</option>
+              <option value="Hostess">Hostess</option>
+              <option value="Garzón">Garzón</option>
+              <option value="Sommelier">Sommelier</option>
+              <option value="Ayudante cocina">Ayudante cocina</option>
             </select>
           </div>
           <div className="flex-1 flex items-center gap-2 px-4 py-3 rounded-xl bg-[#FFF5EE]">
             <svg className="w-5 h-5 text-orange shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <select className="bg-transparent text-[#1A0E05] text-sm font-medium w-full outline-none appearance-none cursor-pointer">
-              <option>¿Cuándo?</option>
-              <option>Hoy</option>
-              <option>Mañana</option>
-              <option>Esta semana</option>
-              <option>Próxima semana</option>
+            <select value={localWhen} onChange={(e) => setLocalWhen(e.target.value)} className="bg-transparent text-[#1A0E05] text-sm font-medium w-full outline-none appearance-none cursor-pointer">
+              <option value="">¿Cuándo?</option>
+              <option value="now">Hoy</option>
+              <option value="today">Mañana</option>
+              <option value="week">Esta semana</option>
             </select>
           </div>
           <div className="flex-1 flex items-center gap-2 px-4 py-3 rounded-xl bg-[#FFF5EE]">
@@ -107,24 +119,26 @@ export default function Hero() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            <select className="bg-transparent text-[#1A0E05] text-sm font-medium w-full outline-none appearance-none cursor-pointer">
-              <option>¿Dónde?</option>
-              <option>Providencia</option>
-              <option>Las Condes</option>
-              <option>Vitacura</option>
-              <option>Santiago Centro</option>
-              <option>Ñuñoa</option>
-              <option>La Reina</option>
+            <select value={localWhere} onChange={(e) => setLocalWhere(e.target.value)} className="bg-transparent text-[#1A0E05] text-sm font-medium w-full outline-none appearance-none cursor-pointer">
+              <option value="">¿Dónde?</option>
+              <option value="Providencia">Providencia</option>
+              <option value="Las Condes">Las Condes</option>
+              <option value="Vitacura">Vitacura</option>
+              <option value="Santiago Centro">Santiago Centro</option>
+              <option value="Ñuñoa">Ñuñoa</option>
+              <option value="La Reina">La Reina</option>
+              <option value="Maipú">Maipú</option>
             </select>
           </div>
           <button
+            onClick={handleSearch}
             className="bg-orange text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-orange2 transition-all duration-300 flex items-center gap-2 justify-center shrink-0"
             style={{ boxShadow: "0 4px 20px rgba(232,85,32,0.3)" }}
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
-            Buscar talento
+            Ver disponibles
           </button>
         </div>
       </RevealWrapper>

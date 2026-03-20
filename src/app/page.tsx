@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import ChatBot from "@/components/ChatBot";
+import LiveToast from "@/components/LiveToast";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import Problem from "@/components/Problem";
@@ -14,10 +15,11 @@ import LogoBar from "@/components/LogoBar";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import { SearchProvider } from "@/lib/SearchContext";
 
 export default function Home() {
   return (
-    <>
+    <SearchProvider>
       <Nav />
       <main>
         <Hero />
@@ -36,6 +38,7 @@ export default function Home() {
       </main>
       <Footer />
       <ChatBot />
-    </>
+      <LiveToast />
+    </SearchProvider>
   );
 }
