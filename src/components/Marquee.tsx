@@ -206,27 +206,27 @@ export default function Marquee() {
 
           {/* Carousel — auto-scrolling */}
           <div className="overflow-hidden">
-            <div className="flex animate-marquee gap-4 px-4" style={{ animationDuration: "25s" }}>
+            <div className="flex animate-marquee gap-5 px-4" style={{ animationDuration: "12s" }}>
               {[...workers, ...workers].map((worker, i) => (
-                <div key={`${worker.name}-${i}`} className="shrink-0 w-[270px]">
+                <div key={`${worker.name}-${i}`} className="shrink-0 w-[320px]">
                   <div
                     onClick={() => setSelected(worker)}
-                    className="group bg-white rounded-2xl p-4 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl shadow-lg h-full flex flex-col"
+                    className="group bg-white rounded-2xl p-5 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl shadow-lg h-full flex flex-col"
                   >
                     {/* Avatar + name + role */}
                     <div className="flex items-center gap-3">
                       <div className="relative shrink-0">
-                        <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-orange/20 ring-offset-1 ring-offset-white">
-                          <Image src={worker.img} alt={worker.name} width={48} height={48} className="object-cover w-full h-full" unoptimized />
+                        <div className="w-14 h-14 rounded-full overflow-hidden ring-2 ring-orange/20 ring-offset-2 ring-offset-white">
+                          <Image src={worker.img} alt={worker.name} width={56} height={56} className="object-cover w-full h-full" unoptimized />
                         </div>
                         {worker.availability === "now" && (
                           <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-[#22c55e] rounded-full border-2 border-white" />
                         )}
                       </div>
                       <div className="min-w-0">
-                        <h4 className="text-[#1A0E05] font-bold text-sm truncate">{worker.name}</h4>
-                        <p className="text-orange text-xs font-semibold">{worker.role}</p>
-                        <p className="text-[#7A5C48] text-[10px]">📍 {worker.zone}</p>
+                        <h4 className="text-[#1A0E05] font-bold text-base truncate">{worker.name}</h4>
+                        <p className="text-orange text-sm font-semibold">{worker.role}</p>
+                        <p className="text-[#7A5C48] text-xs">📍 {worker.zone}</p>
                       </div>
                     </div>
 
