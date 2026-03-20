@@ -122,17 +122,28 @@ export default function Hero() {
       {/* Stats */}
       <RevealWrapper delay={0.4}>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-16 max-w-4xl mx-auto">
-          {heroStats.map((stat, i) => (
+          {[
+            { ...heroStats[0], color: "#E85520", light: "#FFF0EB", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
+            { ...heroStats[1], color: "#16a34a", light: "#ECFDF5", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
+            { ...heroStats[2], color: "#7C3AED", light: "#F3F0FF", icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" },
+            { ...heroStats[3], color: "#0EA5E9", light: "#EFF9FF", icon: "M13 10V3L4 14h7v7l9-11h-7z" },
+          ].map((stat, i) => (
             <div
               key={i}
-              className="rounded-3xl px-6 py-8 text-center border border-white/20 shadow-xl hover:-translate-y-1 transition-all duration-300"
-              style={{ background: "linear-gradient(145deg, #E85520, #C94515)" }}
+              className="rounded-3xl px-6 py-8 text-center shadow-xl hover:-translate-y-1 transition-all duration-300"
+              style={{ background: stat.light, border: `1px solid ${stat.color}15` }}
             >
-              <div className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+              <div className="flex justify-center mb-3">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: `${stat.color}15` }}>
+                  <svg className="w-5 h-5" style={{ color: stat.color }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d={stat.icon} />
+                  </svg>
+                </div>
+              </div>
+              <div className="text-4xl md:text-5xl font-extrabold tracking-tight" style={{ color: stat.color }}>
                 {stat.value}
               </div>
-              <div className="w-8 h-0.5 bg-white/30 mx-auto mt-3 mb-2 rounded-full" />
-              <div className="text-white/75 text-xs font-semibold uppercase tracking-wider">{stat.label}</div>
+              <div className="text-[#1A0E05]/60 text-xs font-semibold uppercase tracking-wider mt-2">{stat.label}</div>
             </div>
           ))}
         </div>
