@@ -60,10 +60,9 @@ export default function Hero() {
 
       {/* Title */}
       <RevealWrapper delay={0.1}>
-        <h1 className="text-6xl md:text-8xl font-extrabold tracking-[-0.04em] leading-[1] max-w-4xl mx-auto">
-          <span className="text-[#1A0E05] block">Talento gastronómico</span>
-          <span className="text-[#1A0E05] block">en tiempo real</span>
-          <span className="block h-[1.1em] relative mt-2 overflow-hidden">
+        <h1 className="max-w-4xl mx-auto">
+          <span className="text-5xl md:text-7xl font-extrabold tracking-[-0.04em] leading-[1] text-[#1A0E05] block">Talento gastronómico en tiempo real</span>
+          <span className="block h-[1.1em] relative mt-3 overflow-hidden text-4xl md:text-6xl font-extrabold tracking-[-0.04em] leading-[1]">
             <AnimatePresence mode="wait">
               <motion.span
                 key={wordIndex}
