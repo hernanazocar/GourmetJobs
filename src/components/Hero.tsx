@@ -39,7 +39,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="sec-light flex flex-col items-center text-center relative overflow-hidden px-4 sm:px-6 pt-8 sm:pt-12 pb-12 sm:pb-16">
+    <section className="sec-light flex flex-col items-center text-center relative overflow-hidden px-4 sm:px-6 pt-10 sm:pt-16 pb-14 sm:pb-20">
       {/* Background Blobs */}
       <Blob className="absolute -top-32 -left-32 w-[500px] h-[500px] animate-float opacity-30" color="rgba(232,85,32,0.15)" />
       <Blob className="absolute top-1/3 -right-40 w-[450px] h-[450px] animate-float2 opacity-20" color="rgba(232,85,32,0.1)" />
@@ -47,7 +47,7 @@ export default function Hero() {
       {/* Live badge — rotating messages */}
       <RevealWrapper delay={0}>
         <div
-          className="inline-flex items-center gap-2 rounded-full pl-3 pr-4 py-1.5 text-xs sm:text-sm font-semibold text-[#1A0E05] mb-4 sm:mb-6"
+          className="inline-flex items-center gap-2 rounded-full pl-3 pr-4 py-1.5 text-xs sm:text-sm font-semibold text-[#1A0E05] mb-8 sm:mb-10"
           style={{ background: "rgba(255,255,255,0.55)", border: "1px solid rgba(255,255,255,0.75)" }}
         >
           <span className="relative flex h-3 w-3 shrink-0">
@@ -82,7 +82,7 @@ export default function Hero() {
 
       {/* Subheadline */}
       <RevealWrapper delay={0.15}>
-        <p className="text-[#7A5C48] text-base sm:text-lg md:text-xl max-w-[620px] mx-auto mt-4 sm:mt-6 leading-relaxed px-2">
+        <p className="text-[#7A5C48] text-base sm:text-lg md:text-xl max-w-[620px] mx-auto mt-5 sm:mt-8 leading-relaxed px-2">
           Explora perfiles reales de garzones, chefs y baristas listos para trabajar hoy.
           Sin CVs, sin procesos largos.
         </p>
@@ -90,7 +90,7 @@ export default function Hero() {
 
       {/* Search bar */}
       <RevealWrapper delay={0.2}>
-        <p className="text-[#1A0E05] text-base sm:text-lg font-bold mt-8 sm:mt-12 mb-3">¿Qué necesitas hoy?</p>
+        <p className="text-[#1A0E05] text-base sm:text-lg font-bold mt-10 sm:mt-16 mb-4">¿Qué necesitas hoy?</p>
         <div
           className="w-full max-w-3xl mx-auto bg-white rounded-2xl p-2 flex flex-col sm:flex-row items-stretch gap-1.5 sm:gap-2 shadow-xl"
           style={{ border: "1px solid rgba(232,85,32,0.1)" }}
@@ -154,7 +154,7 @@ export default function Hero() {
 
       {/* Quick tags */}
       <RevealWrapper delay={0.25}>
-        <div className="flex flex-wrap justify-center items-center gap-2 mt-6">
+        <div className="flex flex-wrap justify-center items-center gap-2 mt-5">
           <span className="text-[#9A7A60] text-xs font-semibold">Búsquedas rápidas:</span>
           {[
             { label: "Garzón", role: "Garzón" },
@@ -182,7 +182,7 @@ export default function Hero() {
 
       {/* CTAs */}
       <RevealWrapper delay={0.3}>
-        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mt-8 sm:mt-14 w-full sm:w-auto px-2 sm:px-0">
+        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mt-10 sm:mt-16 w-full sm:w-auto px-2 sm:px-0">
           <a
             href="#"
             className="group bg-orange text-white px-8 py-4 rounded-2xl text-base font-bold hover:bg-orange2 transition-all duration-300 flex items-center justify-center gap-3 hover:scale-[1.02] w-full sm:w-auto"
@@ -214,7 +214,7 @@ export default function Hero() {
 
       {/* Micro urgency */}
       <RevealWrapper delay={0.35}>
-        <div className="hidden sm:flex flex-wrap items-center justify-center gap-4 mt-10">
+        <div className="hidden sm:flex flex-wrap items-center justify-center gap-4 mt-14">
           <div className="flex items-center gap-2 bg-white/80 rounded-full px-4 py-2" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e]"></span>
@@ -235,7 +235,7 @@ export default function Hero() {
 
       {/* Social proof */}
       <RevealWrapper delay={0.4}>
-        <div className="flex items-center justify-center gap-3 mt-6">
+        <div className="flex items-center justify-center gap-3 mt-8 sm:mt-10">
           <div className="flex -space-x-3">
             {[1, 11, 5, 12, 9].map((id) => (
               <div key={id} className="w-9 h-9 rounded-full border-2 border-[#FFE4CC] overflow-hidden">

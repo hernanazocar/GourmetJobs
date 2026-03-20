@@ -52,14 +52,14 @@ export default function LiveToast() {
   const toast = toasts[currentIndex];
 
   return (
-    <div className="fixed bottom-6 left-6 z-[80]">
+    <div className="fixed top-16 right-6 z-[80]">
       <AnimatePresence mode="wait">
         {visible && (
           <motion.div
             key={currentIndex}
-            initial={{ x: -100, opacity: 0 }}
+            initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -100, opacity: 0 }}
+            exit={{ x: 100, opacity: 0 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
             className="bg-white rounded-2xl p-4 shadow-2xl flex items-center gap-3 max-w-sm border border-[rgba(0,0,0,0.06)]"
           >
