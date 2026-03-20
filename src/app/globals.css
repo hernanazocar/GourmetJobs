@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --bg: #612400;
-  --bg2: #753000;
-  --bg3: #853A00;
-  --card: #8B3E00;
-  --card2: #9E4A06;
+  --bg: #C04000;
+  --bg2: #D04A06;
+  --bg3: #DA5210;
+  --card: #B83C00;
+  --card2: #A83600;
   --orange: #E85520;
   --orange2: #FF7040;
   --orange3: #FF9060;
@@ -17,7 +17,7 @@
   --text2: #B89880;
   --text3: #7A5C48;
   --green: #34D399;
-  --border: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.15);
 }
 
 * {
@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 /* === SECTION BACKGROUNDS === */
 
 .sec-dark {
-  background: #612400;
+  background: #C04000;
   position: relative;
   overflow: hidden;
 }
