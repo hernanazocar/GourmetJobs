@@ -50,10 +50,9 @@ export default function Hero() {
           className="inline-flex items-center gap-3 rounded-full pl-4 pr-6 py-3 text-[13px] font-bold tracking-wide text-[#1A0E05] mb-8 uppercase"
           style={{ background: "rgba(255,255,255,0.65)", border: "1.5px solid rgba(255,255,255,0.85)", backdropFilter: "blur(12px)", boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}
         >
-          <span className="relative flex h-3.5 w-3.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-100"></span>
-            <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-50" style={{ animationDuration: "1s" }}></span>
-            <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-green-500" style={{ boxShadow: "0 0 6px rgba(34,197,94,1), 0 0 16px rgba(34,197,94,0.6), 0 0 32px rgba(34,197,94,0.3)" }}></span>
+          <span className="relative flex h-4 w-4">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-4 w-4 bg-green-500 border-[3px] border-white" style={{ boxShadow: "0 0 8px rgba(34,197,94,0.8), 0 0 20px rgba(34,197,94,0.4)" }}></span>
           </span>
           <span>247 profesionales verificados disponibles ahora mismo</span>
         </div>
