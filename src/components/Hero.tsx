@@ -203,9 +203,30 @@ export default function Hero() {
         </div>
       </RevealWrapper>
 
-      {/* Social proof */}
+      {/* Micro urgency */}
       <RevealWrapper delay={0.35}>
-        <div className="flex items-center justify-center gap-4 mt-8">
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
+          <div className="flex items-center gap-2 bg-white/80 rounded-full px-4 py-2" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e]"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#22c55e]"></span>
+            </span>
+            <span className="text-[#1A0E05] text-xs font-semibold">10 profesionales activos ahora en Santiago</span>
+          </div>
+          <div className="flex items-center gap-2 bg-white/80 rounded-full px-4 py-2" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
+            <span className="text-orange text-sm">🔥</span>
+            <span className="text-[#1A0E05] text-xs font-semibold">5 restaurantes buscando personal hoy</span>
+          </div>
+          <div className="flex items-center gap-2 bg-white/80 rounded-full px-4 py-2" style={{ border: "1px solid rgba(0,0,0,0.06)" }}>
+            <span className="text-orange text-sm">⚡</span>
+            <span className="text-[#1A0E05] text-xs font-semibold">Último match hace 3 min</span>
+          </div>
+        </div>
+      </RevealWrapper>
+
+      {/* Social proof */}
+      <RevealWrapper delay={0.4}>
+        <div className="flex items-center justify-center gap-4 mt-6">
           <div className="flex -space-x-3">
             {[1, 11, 5, 12, 9].map((id) => (
               <div key={id} className="w-9 h-9 rounded-full border-2 border-[#FFE4CC] overflow-hidden">
