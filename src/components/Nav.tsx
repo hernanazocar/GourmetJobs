@@ -16,9 +16,6 @@ export default function Nav() {
 
   const links = [
     { label: "Cómo funciona", href: "#como-funciona" },
-    { label: "Comparación", href: "#comparacion" },
-    { label: "Features", href: "#features" },
-    { label: "Testimonios", href: "#testimonios" },
     { label: "Precios", href: "#precios" },
     { label: "FAQ", href: "#faq" },
   ];
