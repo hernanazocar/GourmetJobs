@@ -54,7 +54,7 @@ export default function Hero() {
             <span className="animate-ping absolute inline-flex h-4 w-4 rounded-full bg-emerald-400 opacity-60"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
           </span>
-          <span>247 trabajadores en línea · <span className="font-bold text-emerald-600">Santiago</span></span>
+          <span>247 trabajadores en línea ahora</span>
         </div>
       </RevealWrapper>
 
