@@ -20,18 +20,18 @@ function ProfileModal({
     >
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
       <div
-        className="relative bg-card rounded-[28px] max-w-md w-full p-8 border border-border"
+        className="relative bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-5 text-text3 hover:text-white transition text-xl"
+          className="absolute top-4 right-5 text-[#9A7A60] hover:text-[#1A0E05] transition text-xl"
         >
           &times;
         </button>
 
         <div className="flex items-center gap-5">
-          <div className="relative w-20 h-20 rounded-full overflow-hidden shrink-0 ring-2 ring-orange/50 ring-offset-4 ring-offset-card">
+          <div className="relative w-20 h-20 rounded-full overflow-hidden shrink-0 ring-2 ring-orange/30 ring-offset-4 ring-offset-white">
             <Image
               src={worker.img}
               alt={worker.name}
@@ -42,16 +42,16 @@ function ProfileModal({
             />
           </div>
           <div>
-            <h3 className="text-xl font-bold text-white">{worker.name}</h3>
-            <p className="text-text2 text-sm mt-0.5">{worker.role}</p>
+            <h3 className="text-xl font-bold text-[#1A0E05]">{worker.name}</h3>
+            <p className="text-orange text-sm font-semibold mt-0.5">{worker.role}</p>
             <div className="flex items-center gap-2 mt-1.5">
-              <span className="text-text3 text-xs">📍 {worker.zone}</span>
+              <span className="text-[#7A5C48] text-xs">📍 {worker.zone}</span>
               {worker.availability === "now" ? (
-                <span className="bg-opal text-orange px-2 py-0.5 rounded-full text-[11px] font-semibold">
+                <span className="bg-green-50 text-green-600 px-2 py-0.5 rounded-full text-[11px] font-semibold">
                   Disponible ahora
                 </span>
               ) : (
-                <span className="gpal text-green px-2 py-0.5 rounded-full text-[11px] font-semibold">
+                <span className="bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full text-[11px] font-semibold">
                   Disponible hoy
                 </span>
               )}
@@ -67,25 +67,26 @@ function ProfileModal({
           ].map((stat) => (
             <div
               key={stat.label}
-              className="bg-bg2 rounded-xl py-3 text-center border border-border"
+              className="rounded-xl py-3 text-center"
+              style={{ background: "#FFF0E6" }}
             >
-              <div className="text-lg font-bold gradient-text">
+              <div className="text-lg font-bold text-orange">
                 {stat.value}
               </div>
-              <div className="text-text3 text-[11px] mt-0.5">{stat.label}</div>
+              <div className="text-[#7A5C48] text-[11px] mt-0.5">{stat.label}</div>
             </div>
           ))}
         </div>
 
         <div className="mt-6">
-          <h4 className="text-xs text-text3 font-semibold uppercase tracking-wider mb-2">
+          <h4 className="text-xs text-[#9A7A60] font-semibold uppercase tracking-wider mb-2">
             Habilidades
           </h4>
           <div className="flex flex-wrap gap-2">
             {worker.skills.map((skill) => (
               <span
                 key={skill}
-                className="bg-bg2 text-text2 text-xs px-3 py-1.5 rounded-full border border-border"
+                className="bg-orange/10 text-orange text-xs px-3 py-1.5 rounded-full font-medium"
               >
                 {skill}
               </span>
@@ -100,11 +101,11 @@ function ProfileModal({
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 bg-[#25D366] text-white py-3.5 rounded-[14px] font-semibold text-sm text-center hover:brightness-110 transition"
+            className="flex-1 bg-[#25D366] text-white py-3.5 rounded-xl font-semibold text-sm text-center hover:brightness-110 transition"
           >
             💬 WhatsApp
           </a>
-          <button className="flex-1 bg-orange text-white py-3.5 rounded-[14px] font-semibold text-sm text-center hover:bg-orange2 transition">
+          <button className="flex-1 bg-orange text-white py-3.5 rounded-xl font-semibold text-sm text-center hover:bg-orange2 transition">
             📋 Contratar turno
           </button>
         </div>
@@ -180,7 +181,7 @@ export default function Marquee() {
                       />
                     </div>
                     {worker.availability === "now" && (
-                      <span className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-green rounded-full border-2 border-white" />
+                      <span className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-[#22c55e] rounded-full border-2 border-white" />
                     )}
                   </div>
                   <div className="min-w-0">
