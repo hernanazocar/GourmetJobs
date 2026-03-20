@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --bg: #C04000;
-  --bg2: #D04A06;
-  --bg3: #DA5210;
-  --card: #B83C00;
-  --card2: #A83600;
+  --bg: #E85520;
+  --bg2: #F06028;
+  --bg3: #F56B30;
+  --card: #D84E1A;
+  --card2: #CC4515;
   --orange: #E85520;
   --orange2: #FF7040;
   --orange3: #FF9060;
@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 /* === SECTION BACKGROUNDS === */
 
 .sec-dark {
-  background: #C04000;
+  background: #E85520;
   position: relative;
   overflow: hidden;
 }
