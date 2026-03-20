@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useRef, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { marqueeWorkers, WorkerCategory } from "@/lib/data";
 import { useSearch } from "@/lib/SearchContext";
 
@@ -72,7 +72,6 @@ export default function Marquee() {
   const { search, isFiltering } = useSearch();
   const [selected, setSelected] = useState<Worker | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>("all");
-  const scrollRef = useRef<HTMLDivElement>(null);
 
   const workers = useMemo(() => {
     let result = marqueeWorkers;
@@ -96,10 +95,6 @@ export default function Marquee() {
     return result.length > 0 ? result : marqueeWorkers;
   }, [search, isFiltering, activeFilter]);
 
-  function scroll(dir: "left" | "right") {
-    if (!scrollRef.current) return;
-    scrollRef.current.scrollBy({ left: dir === "left" ? -320 : 320, behavior: "smooth" });
-  }
 
   return (
     <>
@@ -143,82 +138,54 @@ export default function Marquee() {
             </span>
           </div>
 
-          {/* Carousel */}
-          <div className="relative">
-            {/* Arrows */}
-            <button onClick={() => scroll("left")} className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white rounded-full shadow-xl items-center justify-center hover:scale-110 transition">
-              <svg className="w-5 h-5 text-[#1A0E05]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button onClick={() => scroll("right")} className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white rounded-full shadow-xl items-center justify-center hover:scale-110 transition">
-              <svg className="w-5 h-5 text-[#1A0E05]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-
-            {/* Cards */}
-            <div
-              ref={scrollRef}
-              className="flex gap-3 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory px-4"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
-            >
-              <style>{`div::-webkit-scrollbar { display: none; }`}</style>
-              {workers.map((worker, i) => (
-                <div key={`${worker.name}-${i}`} className="snap-start shrink-0 w-[220px]">
+          {/* Carousel — auto-scrolling */}
+          <div className="overflow-hidden">
+            <div className="flex animate-marquee gap-3 px-4" style={{ animationDuration: "35s" }}>
+              {[...workers, ...workers].map((worker, i) => (
+                <div key={`${worker.name}-${i}`} className="shrink-0 w-[230px]">
                   <div
                     onClick={() => setSelected(worker)}
-                    className="group bg-white rounded-2xl p-3.5 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl shadow-lg h-full flex flex-col"
+                    className="group bg-white rounded-2xl cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl shadow-lg h-full flex flex-col overflow-hidden"
                   >
-                    {/* Header: photo + availability */}
-                    <div className="relative">
-                      <div className="w-full h-24 rounded-xl overflow-hidden bg-[#FFF0E6]">
-                        <Image src={worker.img} alt={worker.name} width={220} height={96} className="object-cover w-full h-full" unoptimized />
-                      </div>
-                      <span className={`absolute top-1.5 right-1.5 text-[9px] font-bold px-2 py-0.5 rounded-full ${
-                        worker.availability === "now"
-                          ? "bg-green-500 text-white"
-                          : "bg-amber-500 text-white"
+                    {/* Photo strip */}
+                    <div className="relative h-20 bg-[#FFF0E6]">
+                      <Image src={worker.img} alt={worker.name} width={230} height={80} className="object-cover w-full h-full" unoptimized />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                      <span className={`absolute top-2 right-2 text-[9px] font-bold px-2 py-0.5 rounded-full ${
+                        worker.availability === "now" ? "bg-green-500 text-white" : "bg-amber-500 text-white"
                       }`}>
-                        {worker.availability === "now" ? "Hoy" : "Esta semana"}
+                        {worker.availability === "now" ? "🟢 Hoy" : "🟡 Esta semana"}
                       </span>
-                      {worker.badge && (
-                        <div className="absolute top-1.5 left-1.5">
-                          <Badge type={worker.badge} />
-                        </div>
-                      )}
+                      {worker.badge && <div className="absolute bottom-2 left-2"><Badge type={worker.badge} /></div>}
+                      <div className="absolute bottom-2 right-2 text-white text-[10px] font-bold">{worker.price}</div>
                     </div>
 
-                    {/* Info */}
-                    <div className="mt-3 flex-1">
-                      <div className="flex items-center justify-between">
-                        <h4 className="text-[#1A0E05] font-bold text-sm">{worker.name}</h4>
-                        <div className="flex items-center gap-0.5">
-                          <svg className="w-3.5 h-3.5 text-orange fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                          <span className="text-[#1A0E05] text-xs font-bold">{worker.rating}</span>
+                    {/* Body */}
+                    <div className="p-3.5 flex-1 flex flex-col">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h4 className="text-[#1A0E05] font-bold text-[13px] leading-tight">{worker.name}</h4>
+                          <p className="text-orange text-[11px] font-semibold">{worker.role}</p>
+                        </div>
+                        <div className="flex items-center gap-0.5 bg-[#FFF0E6] px-1.5 py-0.5 rounded-md">
+                          <svg className="w-3 h-3 text-orange fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                          <span className="text-[#1A0E05] text-[11px] font-bold">{worker.rating}</span>
                         </div>
                       </div>
-                      <p className="text-orange text-xs font-semibold">{worker.role}</p>
 
-                      <div className="flex items-center gap-2 mt-1.5 text-[#7A5C48] text-[10px]">
+                      <div className="flex items-center gap-3 mt-2 text-[#7A5C48] text-[10px]">
                         <span>⏱️ {worker.experience}</span>
                         <span>📍 {worker.zone}</span>
                       </div>
 
-                      <div className="flex items-center justify-between mt-2 text-[10px]">
-                        <span className="text-[#1A0E05] font-bold">{worker.price}</span>
-                        <span className="text-[#7A5C48]">{worker.hours.split(" ").slice(0, 2).join(" ")}</span>
+                      <div className="mt-auto pt-3 flex gap-1.5">
+                        <button className="flex-1 bg-orange text-white py-2 rounded-lg text-[11px] font-bold hover:bg-orange2 transition">
+                          Ver perfil
+                        </button>
+                        <button className="flex-1 bg-[#1A0E05]/90 text-white py-2 rounded-lg text-[11px] font-bold hover:bg-[#1A0E05] transition">
+                          Invitar
+                        </button>
                       </div>
-                    </div>
-
-                    {/* Actions */}
-                    <div className="flex gap-1.5 mt-3">
-                      <button className="flex-1 bg-orange text-white py-2 rounded-lg text-[11px] font-bold hover:bg-orange2 transition">
-                        Ver perfil
-                      </button>
-                      <button className="flex-1 bg-[#1A0E05] text-white py-2 rounded-lg text-[11px] font-bold hover:bg-[#2A1A10] transition">
-                        Invitar
-                      </button>
                     </div>
                   </div>
                 </div>
