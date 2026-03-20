@@ -70,8 +70,8 @@ export default function Hero() {
                 animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                 exit={{ y: -40, opacity: 0, filter: "blur(8px)" }}
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                className="italic absolute inset-x-0 text-[0.85em]"
-                style={{ fontFamily: "var(--font-accent)", fontWeight: 900, color: "#E85520" }}
+                className="italic absolute inset-x-0"
+                style={{ fontFamily: "var(--font-accent)", fontWeight: 900, color: "#E85520", fontSize: "inherit" }}
               >
                 {rotatingWords[wordIndex]}
               </motion.span>
