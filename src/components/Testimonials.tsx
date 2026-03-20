@@ -3,7 +3,6 @@
 import Image from "next/image";
 import RevealWrapper from "./ui/RevealWrapper";
 
-
 const testimonials = [
   {
     quote:
@@ -68,21 +67,28 @@ export default function Testimonials() {
         <div className="flex justify-center">
           <span className="inline-flex items-center gap-2.5 bg-white/15 rounded-full px-4 py-2">
             <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
-            <span className="text-white text-xs font-bold uppercase tracking-wider">TESTIMONIOS</span>
+            <span className="text-white text-xs font-bold uppercase tracking-wider">
+              TESTIMONIOS
+            </span>
           </span>
         </div>
-        <h2 className="text-4xl md:text-6xl font-extrabold mt-4 text-center">
+
+        <h2 className="text-4xl md:text-6xl font-extrabold mt-4 text-center leading-[1.05]">
           <span className="text-white">Lo que dicen</span>
           <br />
           <span className="gradient-text">nuestros usuarios</span>
         </h2>
-        <p className="text-white/70 text-base mt-4 max-w-lg mx-auto text-center">Empresas y trabajadores que ya transformaron su forma de operar.</p>
+
+        <p className="text-white/60 text-lg mt-5 max-w-2xl mx-auto text-center leading-relaxed">
+          Empresas y trabajadores que ya transformaron su operación.
+        </p>
+
         <div className="w-16 h-1 bg-white/30 rounded-full mx-auto mt-6" />
 
         <div className="grid md:grid-cols-3 gap-6 mt-14">
           {testimonials.map((t, i) => (
             <RevealWrapper key={i} delay={i * 0.08}>
-              <div className="bg-white/90 rounded-[28px] p-7 border border-light-border shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-white rounded-3xl p-7 shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="flex gap-1">
                   <StarIcon />
                   <StarIcon />
@@ -91,7 +97,7 @@ export default function Testimonials() {
                   <StarIcon />
                 </div>
 
-                <p className="text-[#7A5C48] text-sm leading-relaxed mt-4">
+                <p className="text-[#1A0E05] text-sm leading-relaxed mt-4">
                   <span className="text-orange text-3xl font-bold block mb-1">
                     &ldquo;
                   </span>
@@ -109,7 +115,9 @@ export default function Testimonials() {
                     />
                   </div>
                   <div>
-                    <p className="text-[#1A0E05] text-sm font-semibold">{t.name}</p>
+                    <p className="text-[#1A0E05] text-sm font-semibold">
+                      {t.name}
+                    </p>
                     <p className="text-[#9A7A60] text-xs">{t.role}</p>
                   </div>
                 </div>
@@ -118,7 +126,9 @@ export default function Testimonials() {
           ))}
         </div>
 
-        <div className="text-center mt-14"><p className="text-white/50 text-sm">Únete a +3,200 profesionales que confían en GourmetJobs</p></div>
+        <p className="text-white/50 text-sm text-center mt-14">
+          Únete a +3,200 profesionales que confían en GourmetJobs
+        </p>
       </div>
     </section>
   );

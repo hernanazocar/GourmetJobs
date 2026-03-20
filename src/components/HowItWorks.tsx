@@ -5,40 +5,74 @@ import RevealWrapper from "./ui/RevealWrapper";
 
 export default function HowItWorks() {
   return (
-    <section id="como-funciona" className="sec-light py-24 px-4">
+    <section id="como-funciona" className="sec-light py-28 px-4">
       <div className="relative z-10 max-w-6xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2.5 bg-orange/10 rounded-full px-4 py-2 mb-5">
-          <span className="relative flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange"></span>
-            <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: "#E85520", boxShadow: "0 0 10px #E85520, 0 0 20px rgba(232,85,32,0.4)" }}></span>
-          </span>
-          <span className="text-orange text-xs font-bold uppercase tracking-wider">Proceso</span>
-        </div>
+        {/* Badge */}
+        <RevealWrapper>
+          <div className="inline-flex items-center gap-2.5 bg-orange/10 rounded-full px-4 py-2 mb-5">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange" />
+              <span
+                className="relative inline-flex rounded-full h-3 w-3"
+                style={{
+                  background: "#E85520",
+                  boxShadow: "0 0 10px #E85520, 0 0 20px rgba(232,85,32,0.4)",
+                }}
+              />
+            </span>
+            <span className="text-orange text-xs font-bold uppercase tracking-wider">
+              Proceso
+            </span>
+          </div>
+        </RevealWrapper>
 
-        <h2 className="text-4xl md:text-5xl font-extrabold mt-4">
-          <span className="text-[#1A0E05]">Tres pasos.</span>
-          <br />
-          <span className="gradient-text-orange">Cero fricción.</span>
-        </h2>
+        {/* Title */}
+        <RevealWrapper delay={0.05}>
+          <h2 className="text-4xl md:text-6xl font-extrabold leading-[1.05] mt-4">
+            <span className="text-[#1A0E05]">As&iacute; de simple.</span>
+            <br />
+            <span className="gradient-text-orange">3 pasos, 0 fricci&oacute;n.</span>
+          </h2>
+        </RevealWrapper>
 
-        <p className="text-[#7A5C48] text-lg mt-4 max-w-md mx-auto">
-          Desde publicar tu turno hasta tener a alguien trabajando. Así de simple.
-        </p>
+        {/* Subtitle */}
+        <RevealWrapper delay={0.1}>
+          <p className="text-[#7A5C48] text-lg mt-5 max-w-xl mx-auto leading-relaxed">
+            Desde que publicas tu turno hasta que llega el profesional. Todo en
+            minutos.
+          </p>
+        </RevealWrapper>
 
-        <div className="w-16 h-1 bg-orange rounded-full mx-auto mt-6" />
+        {/* Decorative line */}
+        <RevealWrapper delay={0.12}>
+          <div className="w-16 h-1 bg-orange rounded-full mx-auto mt-6" />
+        </RevealWrapper>
 
-        <div className="grid md:grid-cols-3 gap-6 mt-14">
+        {/* Cards */}
+        <div className="grid md:grid-cols-3 gap-8 mt-16">
           {howItWorks.map((step, index) => (
-            <RevealWrapper key={step.number} delay={index * 0.08}>
-              <div className="group relative bg-white/90 rounded-[28px] p-8 border border-light-border text-left overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-orange/20 shadow-xl shadow-orange/5">
-                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-orange/30 to-orange/10 opacity-0 group-hover:opacity-100 transition" />
-                <span className="absolute top-4 right-4 text-7xl font-extrabold text-orange/10 group-hover:text-orange/20 transition">
+            <RevealWrapper key={step.number} delay={0.15 + index * 0.1}>
+              <div className="bg-white rounded-3xl p-8 shadow-xl hover:-translate-y-2 transition-all duration-300 text-center h-full">
+                {/* Step number */}
+                <div className="w-16 h-16 rounded-2xl bg-orange text-white text-2xl font-extrabold flex items-center justify-center mx-auto">
                   {step.number}
-                </span>
-                <span className="text-3xl mb-4 block">{step.icon}</span>
-                <h3 className="text-lg font-bold text-[#1A0E05] mb-2">{step.title}</h3>
-                <p className="text-[#7A5C48] text-sm leading-relaxed">{step.description}</p>
-                <span className="mt-4 inline-block bg-orange text-white text-xs font-bold px-4 py-1.5 rounded-full">
+                </div>
+
+                {/* Icon */}
+                <span className="text-3xl mt-4 block">{step.icon}</span>
+
+                {/* Title */}
+                <h3 className="text-xl font-bold text-[#1A0E05] mt-3">
+                  {step.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-[#7A5C48] text-sm leading-relaxed mt-2">
+                  {step.description}
+                </p>
+
+                {/* Time chip */}
+                <span className="bg-orange text-white rounded-full px-4 py-1.5 text-xs font-bold mt-4 inline-block">
                   {step.chip}
                 </span>
               </div>
@@ -46,16 +80,32 @@ export default function HowItWorks() {
           ))}
         </div>
 
-        <div className="text-center mt-14">
-          <p className="text-[#9A7A60] text-sm mb-4">¿Listo para simplificar tu contratación?</p>
-          <a
-            href="#precios"
-            className="inline-flex items-center gap-2 bg-orange text-white px-8 py-4 rounded-2xl font-bold hover:bg-orange2 transition"
-            style={{ boxShadow: "0 8px 30px rgba(232,85,32,0.3)" }}
-          >
-            Empezar gratis →
-          </a>
-        </div>
+        {/* Connector line on desktop */}
+        <RevealWrapper delay={0.5}>
+          <div className="hidden md:flex items-center justify-center gap-0 mt-10">
+            <div className="w-4 h-4 rounded-full bg-orange" />
+            <div className="w-24 h-0.5 bg-orange/30" />
+            <div className="w-4 h-4 rounded-full bg-orange" />
+            <div className="w-24 h-0.5 bg-orange/30" />
+            <div className="w-4 h-4 rounded-full bg-orange" />
+          </div>
+        </RevealWrapper>
+
+        {/* Bottom CTA */}
+        <RevealWrapper delay={0.6}>
+          <div className="mt-14">
+            <p className="text-[#9A7A60] text-sm mb-4">
+              &iquest;Listo para simplificar tu contrataci&oacute;n?
+            </p>
+            <a
+              href="#precios"
+              className="inline-flex items-center gap-2 bg-orange text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-orange2 transition-all duration-300"
+              style={{ boxShadow: "0 8px 30px rgba(232,85,32,0.3)" }}
+            >
+              Publica tu primer turno gratis &rarr;
+            </a>
+          </div>
+        </RevealWrapper>
       </div>
     </section>
   );

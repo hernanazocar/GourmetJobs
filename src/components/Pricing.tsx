@@ -22,7 +22,7 @@ export default function Pricing() {
         </h2>
 
         <p className="text-[#7A5C48] text-base mt-4 max-w-lg mx-auto leading-relaxed">
-          Empieza gratis. Escala cuando quieras.
+          Empieza gratis. Escala cuando quieras. Cancela cuando quieras.
         </p>
 
         <div className="w-16 h-1 bg-orange/30 rounded-full mx-auto mt-6" />
@@ -30,21 +30,23 @@ export default function Pricing() {
         <div className="grid md:grid-cols-3 gap-4 mt-14">
           {pricingPlans.map((plan, index) => (
             <RevealWrapper key={plan.name} delay={index * 0.1}>
-              <div
-                className="relative bg-white rounded-3xl shadow-2xl overflow-hidden text-left transition-all duration-300 hover:-translate-y-1"
-              >
+              <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden text-left transition-all duration-300 hover:-translate-y-1">
                 {plan.popular && (
-                  <div className="h-1.5 bg-gradient-to-r from-orange to-orange2" />
+                  <div className="h-2 bg-gradient-to-r from-orange to-orange2" />
                 )}
 
                 {plan.popular && (
-                  <span className="absolute -top-0 left-1/2 -translate-x-1/2 bg-orange text-white text-xs font-bold px-5 py-1.5 rounded-b-xl">
+                  <span className="absolute top-0 left-1/2 -translate-x-1/2 bg-orange text-white text-xs font-bold px-5 py-1.5 rounded-b-xl">
                     Más popular
                   </span>
                 )}
 
                 <div className="p-8">
-                  <p className="text-[#9A7A60] text-sm font-bold uppercase tracking-wider">
+                  <p
+                    className={`text-[#9A7A60] text-sm font-bold uppercase tracking-wider ${
+                      plan.popular ? "mt-4" : "mt-8"
+                    }`}
+                  >
                     {plan.name}
                   </p>
 
@@ -52,10 +54,14 @@ export default function Pricing() {
                     <span className="text-5xl font-extrabold text-[#1A0E05]">
                       {plan.price}
                     </span>
-                    <span className="text-[#9A7A60] text-base">{plan.period}</span>
+                    <span className="text-[#9A7A60] text-base">
+                      {plan.period}
+                    </span>
                   </p>
 
-                  <p className="text-[#7A5C48] text-sm mt-2">{plan.description}</p>
+                  <p className="text-[#7A5C48] text-sm mt-2">
+                    {plan.description}
+                  </p>
 
                   <hr className="border-t border-[#F0E6DC] my-6" />
 
@@ -65,7 +71,9 @@ export default function Pricing() {
                         <span className="w-6 h-6 rounded-lg flex items-center justify-center text-xs bg-orange/10 text-orange">
                           ✓
                         </span>
-                        <span className="text-sm text-[#7A5C48]">{feature}</span>
+                        <span className="text-sm text-[#7A5C48]">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -86,7 +94,7 @@ export default function Pricing() {
         </div>
 
         <p className="text-[#9A7A60] text-sm text-center mt-8">
-          Sin contratos · Cancela cuando quieras · Soporte incluido
+          Sin contratos · Cancela cuando quieras · Soporte 24/7
         </p>
       </div>
     </section>

@@ -2,7 +2,6 @@
 
 import RevealWrapper from "./ui/RevealWrapper";
 
-
 interface Row {
   criteria: string;
   traditional: string;
@@ -39,22 +38,22 @@ const rows: Row[] = [
   },
   {
     criteria: "Calidad garantizada",
-    traditional: "\u274C",
-    gourmet: "\u2705",
+    traditional: "\u2715",
+    gourmet: "\u2713",
     isIcon: true,
     gourmetIsGreen: true,
   },
   {
     criteria: "Pago por turno",
-    traditional: "\u274C",
-    gourmet: "\u2705",
+    traditional: "\u2715",
+    gourmet: "\u2713",
     isIcon: true,
     gourmetIsGreen: true,
   },
   {
     criteria: "App para trabajadores",
-    traditional: "\u274C",
-    gourmet: "\u2705",
+    traditional: "\u2715",
+    gourmet: "\u2713",
     isIcon: true,
     gourmetIsGreen: true,
   },
@@ -67,7 +66,7 @@ export default function Comparison() {
         <span className="inline-flex items-center gap-2.5 bg-white/15 rounded-full px-4 py-2 mb-5">
           <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
           <span className="text-white text-xs font-bold uppercase tracking-wider">
-            Comparación
+            VS COMPETENCIA
           </span>
         </span>
 
@@ -77,22 +76,21 @@ export default function Comparison() {
           <span className="gradient-text">de empleo tradicional?</span>
         </h2>
 
-        <p className="text-white/70 text-lg mt-5 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-white/60 text-lg mt-5 max-w-2xl mx-auto leading-relaxed">
           Los portales genéricos no entienden la urgencia de la gastronomía.
-          Mira cómo GourmetJobs supera cada métrica que importa.
         </p>
 
         <div className="w-16 h-1 bg-white/30 rounded-full mx-auto mt-6" />
 
         <RevealWrapper>
           <div className="mt-14 bg-white rounded-3xl shadow-2xl overflow-hidden">
-            {/* Header */}
+            {/* Desktop Header */}
             <div className="hidden sm:grid grid-cols-3 bg-[#FFF5EE] px-8 py-5">
               <span className="text-[#7A5C48] text-sm font-semibold text-left">
                 Criterio
               </span>
-              <span className="text-[#7A5C48] text-sm font-semibold text-left">
-                Portales tradicionales
+              <span className="text-[#9A7A60] text-sm font-semibold text-left">
+                Tradicional
               </span>
               <span className="text-orange text-sm font-bold text-left">
                 GourmetJobs
@@ -101,8 +99,8 @@ export default function Comparison() {
 
             {/* Mobile Header */}
             <div className="grid grid-cols-2 sm:hidden bg-[#FFF5EE] px-8 py-5">
-              <span className="text-[#7A5C48] text-sm font-semibold">
-                Portales tradicionales
+              <span className="text-[#9A7A60] text-sm font-semibold">
+                Tradicional
               </span>
               <span className="text-orange text-sm font-bold">
                 GourmetJobs
@@ -150,18 +148,18 @@ export default function Comparison() {
                   <div
                     className={`hidden sm:grid grid-cols-3 px-8 py-5 ${borderClass} ${evenBg}`}
                   >
-                    <span className="text-[#7A5C48] text-sm font-medium">
+                    <span className="text-[#7A5C48] text-sm font-medium text-left">
                       {row.criteria}
                     </span>
                     <span
-                      className={`text-[#9A7A60] ${
+                      className={`text-[#9A7A60] text-left ${
                         row.isIcon ? "text-red-400 text-lg" : ""
                       }`}
                     >
                       {row.traditional}
                     </span>
                     <span
-                      className={`${
+                      className={`text-left ${
                         row.gourmetIsGreen
                           ? "text-green-500 text-lg"
                           : "text-[#1A0E05] font-bold"
@@ -175,6 +173,10 @@ export default function Comparison() {
             })}
           </div>
         </RevealWrapper>
+
+        <p className="text-white/50 text-sm mt-10">
+          Datos basados en +3,200 matches completados
+        </p>
       </div>
     </section>
   );

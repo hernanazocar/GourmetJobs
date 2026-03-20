@@ -3,7 +3,6 @@
 import { useState } from "react";
 import RevealWrapper from "./ui/RevealWrapper";
 
-
 const faqs = [
   {
     question: "¿Cómo funciona el proceso de verificación?",
@@ -60,22 +59,32 @@ export default function FAQ() {
         <div className="flex justify-center">
           <span className="inline-flex items-center gap-2.5 bg-white/15 rounded-full px-4 py-2">
             <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
-            <span className="text-white text-xs font-bold uppercase tracking-wider">FAQ</span>
+            <span className="text-white text-xs font-bold uppercase tracking-wider">
+              FAQ
+            </span>
           </span>
         </div>
+
         <h2 className="text-4xl md:text-6xl font-extrabold mt-4 text-center">
-          <span className="text-white">Preguntas</span> <span className="gradient-text">frecuentes</span>
+          <span className="text-white">Preguntas</span>{" "}
+          <span className="gradient-text">frecuentes</span>
         </h2>
-        <p className="text-white/70 text-base mt-4 max-w-lg mx-auto text-center">Todo lo que necesitas saber antes de empezar.</p>
+
+        <p className="text-white/60 text-base mt-4 max-w-lg mx-auto text-center">
+          Todo lo que necesitas saber antes de empezar.
+        </p>
+
         <div className="w-16 h-1 bg-white/30 rounded-full mx-auto mt-6" />
 
         <RevealWrapper>
-          <div className="bg-white/90 rounded-[28px] border border-light-border shadow-xl p-2 mt-14">
+          <div className="bg-white rounded-3xl shadow-2xl p-3 mt-14">
             {faqs.map((faq, i) => (
               <div
                 key={i}
-                className={`border-b border-light-border ${
-                  i === faqs.length - 1 ? "border-b-0" : ""
+                className={`${
+                  i === faqs.length - 1
+                    ? ""
+                    : "border-b border-[#F0E6DC]"
                 }`}
               >
                 <button
@@ -86,11 +95,11 @@ export default function FAQ() {
                     {faq.question}
                   </span>
                   <span
-                    className={`w-10 h-10 rounded-full bg-[#FFF0E6] flex items-center justify-center text-[#1A0E05] text-lg font-bold shrink-0 transition-transform duration-300 ${
-                      openIndex === i ? "rotate-180" : ""
+                    className={`w-10 h-10 rounded-xl bg-[#FFF0E6] flex items-center justify-center text-orange text-lg font-bold shrink-0 transition-transform duration-300 ${
+                      openIndex === i ? "rotate-45" : ""
                     }`}
                   >
-                    {openIndex === i ? "−" : "+"}
+                    +
                   </span>
                 </button>
                 <div
@@ -108,6 +117,10 @@ export default function FAQ() {
             ))}
           </div>
         </RevealWrapper>
+
+        <p className="text-white/50 text-sm text-center mt-8">
+          ¿Tienes otra pregunta? Escríbenos por chat
+        </p>
       </div>
     </section>
   );
