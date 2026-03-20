@@ -12,11 +12,15 @@ export default function Pricing() {
           PRECIOS
         </span>
 
-        <h2 className="text-4xl md:text-5xl font-extrabold mt-4">
+        <h2 className="text-4xl md:text-6xl font-extrabold mt-4 leading-[1.05]">
           <span className="text-[#1A0E05]">Simple, transparente.</span>
           <br />
-          <span className="gradient-text">Sin letra chica.</span>
+          <span className="gradient-text-orange">Sin letra chica.</span>
         </h2>
+
+        <p className="text-[#7A5C48] text-lg mt-5 max-w-lg mx-auto leading-relaxed">
+          Empieza gratis. Escala cuando quieras. Cancela cuando quieras.
+        </p>
 
         <div className="grid md:grid-cols-3 gap-4 mt-14">
           {pricingPlans.map((plan, index) => (
@@ -40,7 +44,7 @@ export default function Pricing() {
                 </p>
 
                 <p className="text-4xl font-extrabold mt-2">
-                  <span className={plan.popular ? "gradient-text" : "text-[#1A0E05]"}>
+                  <span className={plan.popular ? "gradient-text-orange" : "text-[#1A0E05]"}>
                     {plan.price}
                   </span>
                   <span className="text-[#7A5C48] text-base font-normal">{plan.period}</span>

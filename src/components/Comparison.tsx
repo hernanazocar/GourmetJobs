@@ -68,15 +68,15 @@ export default function Comparison() {
           COMPARACIÓN
         </span>
 
-        <h2 className="text-4xl md:text-5xl font-extrabold mt-4">
+        <h2 className="text-4xl md:text-6xl font-extrabold mt-4 leading-[1.05]">
           <span className="text-[#1A0E05]">¿Por qué no un portal</span>
           <br />
-          <span className="gradient-text">de empleo tradicional?</span>
+          <span className="gradient-text-orange">de empleo tradicional?</span>
         </h2>
 
-        <p className="text-[#7A5C48] text-lg mt-4 max-w-2xl">
-          Diseñamos GourmetJobs específicamente para la velocidad que necesita
-          la gastronomía.
+        <p className="text-[#7A5C48] text-lg mt-5 max-w-2xl leading-relaxed">
+          Los portales genéricos no entienden la urgencia de la gastronomía.
+          Mira cómo GourmetJobs supera cada métrica que importa.
         </p>
 
         <RevealWrapper>

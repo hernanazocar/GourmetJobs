@@ -43,7 +43,7 @@ export default function Nav() {
         {/* Logo + Desktop links (grouped left) */}
         <div className="flex items-center gap-8">
           <a href="#" className="flex items-center gap-2.5 shrink-0">
-            <div className="bg-orange rounded-xl w-9 h-9 flex items-center justify-center text-lg">
+            <div className="bg-white/20 rounded-xl w-9 h-9 flex items-center justify-center text-lg">
               🍽
             </div>
             <span className="font-bold text-white text-sm">GourmetJobs</span>

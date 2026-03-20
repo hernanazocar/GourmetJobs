@@ -57,7 +57,7 @@ export default function Hero() {
 
       {/* Title */}
       <RevealWrapper delay={0.1}>
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-[-0.04em] leading-[1] max-w-4xl mx-auto">
+        <h1 className="text-6xl md:text-8xl font-extrabold tracking-[-0.04em] leading-[1] max-w-4xl mx-auto">
           <span className="text-white block">Talento gastronómico</span>
           <span className="block h-[1.1em] relative mt-2 overflow-hidden">
             <AnimatePresence mode="wait">
@@ -79,7 +79,7 @@ export default function Hero() {
 
       {/* Subtitle */}
       <RevealWrapper delay={0.2}>
-        <p className="text-text2 text-lg max-w-[520px] mx-auto mt-8">
+        <p className="text-white/90 text-xl max-w-[560px] mx-auto mt-8 leading-relaxed">
           Conecta tu restaurante con trabajadores verificados disponibles ahora
           mismo. Sin CVs, sin esperas, sin compromisos.
         </p>
@@ -90,14 +90,14 @@ export default function Hero() {
         <div className="flex flex-row items-center gap-4 mt-10">
           <a
             href="#"
-            className="bg-white text-orange px-8 py-4 rounded-[16px] text-base font-semibold hover:bg-cream transition-all duration-200"
-            style={{ boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)" }}
+            className="bg-white text-orange px-10 py-5 rounded-[16px] text-lg font-bold hover:bg-cream transition-all duration-200"
+            style={{ boxShadow: "0 12px 40px rgba(0, 0, 0, 0.25)" }}
           >
             🏢 Soy empresa →
           </a>
           <a
             href="#"
-            className="glass text-white px-8 py-4 rounded-[16px] text-base font-semibold transition-all duration-200"
+            className="bg-black/20 border-2 border-white/30 text-white px-10 py-5 rounded-[16px] text-lg font-bold hover:bg-black/30 transition-all duration-200"
           >
             🧑‍🍳 Soy trabajador
           </a>
@@ -110,13 +110,12 @@ export default function Hero() {
           {heroStats.map((stat, i) => (
             <div
               key={i}
-              className="bg-card/60 rounded-2xl px-6 py-5 text-center"
-              style={{ border: "1px solid rgba(255, 255, 255, 0.07)" }}
+              className="bg-black/30 backdrop-blur-sm rounded-2xl px-7 py-6 text-center border border-white/20"
             >
-              <div className="text-2xl md:text-3xl font-extrabold gradient-text">
+              <div className="text-3xl md:text-4xl font-extrabold text-white">
                 {stat.value}
               </div>
-              <div className="text-text2 text-xs mt-1">{stat.label}</div>
+              <div className="text-white/70 text-xs mt-1.5 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>

@@ -13,11 +13,15 @@ export default function Features() {
             FEATURES
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-extrabold mt-4">
+          <h2 className="text-4xl md:text-6xl font-extrabold mt-4 leading-[1.05]">
             <span className="text-[#1A0E05]">Todo lo que necesitas.</span>
             <br />
-            <span className="gradient-text">Nada que no.</span>
+            <span className="gradient-text-orange">Nada que no.</span>
           </h2>
+
+          <p className="text-[#7A5C48] text-lg mt-5 max-w-xl mx-auto leading-relaxed">
+            Herramientas diseñadas para que gestiones tu equipo gastronómico sin fricción.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mt-14">
@@ -68,7 +72,7 @@ export default function Features() {
                   <div className="grid grid-cols-3 gap-3 mt-4">
                     {earningsData.map((item) => (
                       <div key={item.label} className="text-center">
-                        <div className="text-lg font-bold gradient-text">{item.value}</div>
+                        <div className="text-lg font-bold gradient-text-orange">{item.value}</div>
                         <div className="text-[#7A5C48] text-xs">{item.label}</div>
                       </div>
                     ))}

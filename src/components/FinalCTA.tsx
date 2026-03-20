@@ -17,7 +17,7 @@ export default function FinalCTA() {
 
             <h2 className="text-4xl md:text-6xl font-extrabold mt-6 max-w-3xl mx-auto text-[#1A0E05]">
               Tu próximo turno cubierto{" "}
-              <span className="gradient-text">en minutos</span>
+              <span className="gradient-text-orange">en minutos</span>
             </h2>
 
             <p className="text-[#7A5C48] text-lg mt-5 max-w-lg mx-auto">

@@ -69,7 +69,7 @@ function ProfileModal({
               key={stat.label}
               className="bg-bg2 rounded-xl py-3 text-center border border-border"
             >
-              <div className="text-lg font-bold gradient-text">
+              <div className="text-lg font-bold gradient-text-orange">
                 {stat.value}
               </div>
               <div className="text-text3 text-[11px] mt-0.5">{stat.label}</div>
@@ -142,7 +142,7 @@ export default function Marquee() {
           <div>
             <span className="label text-orange text-xs">En vivo</span>
             <h3 className="text-2xl md:text-3xl font-extrabold text-[#1A0E05] mt-1 tracking-[-0.03em]">
-              Talento disponible <span className="gradient-text">ahora</span>
+              Talento disponible <span className="gradient-text-orange">ahora</span>
             </h3>
           </div>
           <div className="hidden md:flex items-center gap-2 text-[#7A5C48] text-sm">
