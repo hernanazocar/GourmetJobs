@@ -114,38 +114,6 @@ h1, h2, h3, h4, h5, h6 {
   filter: blur(60px);
 }
 
-/* === SECTION DIVIDERS === */
-
-.divider-to-light {
-  position: relative;
-}
-.divider-to-light::after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background: #FFF5EE;
-  clip-path: ellipse(55% 100% at 50% 100%);
-  z-index: 5;
-}
-
-.divider-to-dark {
-  position: relative;
-}
-.divider-to-dark::after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background: #140D08;
-  clip-path: ellipse(55% 100% at 50% 100%);
-  z-index: 5;
-}
-
 /* === SCROLLBAR === */
 
 ::-webkit-scrollbar {

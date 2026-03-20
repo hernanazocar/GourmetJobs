@@ -13,7 +13,6 @@ import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
-import SectionDivider from "@/components/ui/SectionDivider";
 
 export default function Home() {
   return (
@@ -22,29 +21,17 @@ export default function Home() {
       <main>
         <Hero />
         <LogoBar />
-        <SectionDivider to="light" />
         <Marquee />
-        <SectionDivider to="dark" />
         <Problem />
-        <SectionDivider to="light" />
         <Comparison />
-        <SectionDivider to="dark" />
         <HowItWorks />
-        <SectionDivider to="light" />
         <Features />
-        <SectionDivider to="dark" />
         <Stats />
-        <SectionDivider to="light" />
         <Roles />
-        <SectionDivider to="dark" />
         <Testimonials />
-        <SectionDivider to="light" />
         <Pricing />
-        <SectionDivider to="dark" />
         <FAQ />
-        <SectionDivider to="light" />
         <FinalCTA />
-        <SectionDivider to="dark" />
       </main>
       <Footer />
     </>
