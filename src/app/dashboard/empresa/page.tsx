@@ -114,7 +114,7 @@ export default function EmpresaDashboard() {
             title="Buenos dias, La Mision"
             subtitle="Tienes 3 turnos activos hoy"
             actionLabel="Publicar turno"
-            onAction={() => {}}
+            onAction={() => window.location.href = "/dashboard/empresa/necesidad"}
           />
 
           {/* Stats Row */}
@@ -292,22 +292,22 @@ export default function EmpresaDashboard() {
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#F0E6DC]/50">
                 <h2 className="text-lg font-bold text-[#1A0E05] mb-4">Acciones rapidas</h2>
                 <div className="grid grid-cols-2 gap-3">
-                  <button className="flex flex-col items-center gap-2 p-4 rounded-xl bg-[#E85520]/10 hover:bg-[#E85520]/15 text-[#E85520] transition-colors">
+                  <a href="/dashboard/empresa/necesidad" className="flex flex-col items-center gap-2 p-4 rounded-xl bg-[#E85520]/10 hover:bg-[#E85520]/15 text-[#E85520] transition-colors">
                     <IconPlus />
                     <span className="text-xs font-semibold">Publicar turno</span>
-                  </button>
-                  <button className="flex flex-col items-center gap-2 p-4 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-600 transition-colors">
+                  </a>
+                  <a href="/dashboard/empresa/buscar" className="flex flex-col items-center gap-2 p-4 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-600 transition-colors">
                     <IconSearch />
                     <span className="text-xs font-semibold">Buscar talento</span>
-                  </button>
-                  <button className="flex flex-col items-center gap-2 p-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-600 transition-colors">
+                  </a>
+                  <a href="/dashboard/empresa/equipo" className="flex flex-col items-center gap-2 p-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-600 transition-colors">
                     <IconWhatsApp />
                     <span className="text-xs font-semibold text-center leading-tight">WhatsApp broadcast</span>
-                  </button>
-                  <button className="flex flex-col items-center gap-2 p-4 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-600 transition-colors">
+                  </a>
+                  <a href="/dashboard/empresa" className="flex flex-col items-center gap-2 p-4 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-600 transition-colors">
                     <IconChart />
                     <span className="text-xs font-semibold">Ver analytics</span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

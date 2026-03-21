@@ -276,9 +276,9 @@ export default function TrabajadorDashboard() {
                   </div>
                 </div>
 
-                <button className="mt-5 w-full py-2.5 text-sm font-medium rounded-xl border-2 border-[#E85520] text-[#E85520] hover:bg-[#E85520] hover:text-white transition">
+                <a href="/dashboard/trabajador/perfil" className="mt-5 w-full py-2.5 text-sm font-medium rounded-xl border-2 border-[#E85520] text-[#E85520] hover:bg-[#E85520] hover:text-white transition block text-center">
                   Editar perfil
-                </button>
+                </a>
               </div>
 
               {/* Ganancias */}

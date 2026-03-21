@@ -279,7 +279,7 @@ export default function Marquee() {
           {/* Bottom CTA */}
           <div className="text-center mt-10 px-4">
             <a
-              href="#"
+              href="/dashboard/empresa/buscar"
               className="inline-flex items-center gap-2 bg-white text-orange px-8 py-4 rounded-2xl font-bold text-base hover:bg-cream transition-all duration-300 hover:scale-[1.02] shadow-xl"
             >
               Ver todo el talento

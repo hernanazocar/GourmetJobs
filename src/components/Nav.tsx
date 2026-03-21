@@ -40,7 +40,7 @@ export default function Nav() {
       >
         {/* Logo + Links (left) */}
         <div className="flex items-center gap-8">
-          <a href="#" className="shrink-0">
+          <a href="/" className="shrink-0">
               <Image
                 src="/logo-white.png"
                 alt="GourmetJobs"
@@ -143,7 +143,7 @@ export default function Nav() {
           <hr className="border-orange/10 my-1" />
 
           <a
-            href="#"
+            href="/login"
             className="text-sm font-semibold text-orange px-5 py-2.5 rounded-[14px] transition-all duration-200 text-center hover:bg-orange/5"
             style={{
               border: "2px solid rgba(232, 85, 32, 0.3)",
@@ -152,7 +152,7 @@ export default function Nav() {
             Ingresar
           </a>
           <a
-            href="#"
+            href="/registro"
             className="text-sm font-semibold text-white bg-orange hover:bg-orange2 px-5 py-2.5 rounded-[14px] transition-all duration-200 text-center"
           >
             Empezar gratis →
