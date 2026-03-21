@@ -34,5 +34,7 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/dashboard/:path*']
+  // Temporarily disabled until Supabase is connected
+  // matcher: ['/dashboard/:path*']
+  matcher: []
 }
