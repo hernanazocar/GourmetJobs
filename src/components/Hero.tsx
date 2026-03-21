@@ -84,7 +84,9 @@ export default function Hero() {
       <RevealWrapper delay={0.15}>
         <p className="text-[#7A5C48] text-base sm:text-lg md:text-xl max-w-[620px] mx-auto mt-3 sm:mt-4 leading-relaxed px-2">
           Explora perfiles reales de garzones, chefs y baristas listos para trabajar hoy.
-          Sin CVs, sin procesos largos.
+        </p>
+        <p className="text-[#9A7A60] text-sm sm:text-base max-w-[520px] mx-auto mt-2 px-2">
+          Sin publicaciones · Sin CVs · Sin procesos largos
         </p>
       </RevealWrapper>
 
