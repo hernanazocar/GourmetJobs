@@ -46,24 +46,24 @@ export const solutions = [
 export const howItWorks = [
   {
     number: "01",
-    icon: "📋",
-    title: "Publica tu turno",
-    description: "Describe el rol, horario y zona. Toma menos de 30 segundos.",
-    chip: "30 seg",
+    icon: "🔍",
+    title: "Explora o crea tu búsqueda",
+    description: "Ve profesionales disponibles en tiempo real o define lo que necesitas y deja que el sistema encuentre los mejores candidatos.",
+    chip: "Disponible ahora",
   },
   {
     number: "02",
-    icon: "🤖",
-    title: "Match inteligente",
-    description: "Nuestro algoritmo conecta con trabajadores verificados disponibles cerca.",
-    chip: "~2 min",
+    icon: "🤝",
+    title: "Contacta o recibe candidatos",
+    description: "Invita directamente a trabajadores o revisa los perfiles recomendados según tu necesidad.",
+    chip: "En minutos",
   },
   {
     number: "03",
-    icon: "🤝",
-    title: "Confirma y listo",
-    description: "El trabajador llega, hace su turno, y tú calificas. Sin contratos largos.",
-    chip: "0 papeleo",
+    icon: "⚡",
+    title: "Contrata y cubre tu turno",
+    description: "Coordina, confirma y ten a tu equipo listo cuando lo necesites.",
+    chip: "Sin CVs",
   },
 ];
 

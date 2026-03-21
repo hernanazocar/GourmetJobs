@@ -21,7 +21,7 @@ export default function HowItWorks() {
               />
             </span>
             <span className="text-orange text-xs font-bold uppercase tracking-wider">
-              Proceso
+              Cómo funciona
             </span>
           </div>
         </RevealWrapper>
@@ -29,16 +29,16 @@ export default function HowItWorks() {
         {/* Title */}
         <RevealWrapper delay={0.05}>
           <h2 className="text-4xl md:text-6xl font-extrabold leading-[1.05] mt-4">
-            <span className="text-[#1A0E05]">As&iacute; de simple.</span>
+            <span className="text-[#1A0E05]">Así de simple.</span>
             <br />
-            <span className="gradient-text-orange">3 pasos, 0 fricci&oacute;n.</span>
+            <span className="gradient-text-orange">Contrata en minutos.</span>
           </h2>
         </RevealWrapper>
 
         {/* Subtitle */}
         <RevealWrapper delay={0.1}>
           <p className="text-[#7A5C48] text-lg mt-5 max-w-xl mx-auto leading-relaxed">
-            Desde que publicas tu turno hasta que llega el profesional. Todo en
+            Encuentra talento disponible o recibe candidatos recomendados. Todo en
             minutos.
           </p>
         </RevealWrapper>
