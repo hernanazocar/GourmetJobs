@@ -67,7 +67,7 @@ export default function Nav() {
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="#"
+            href="/login"
             className="group text-sm font-bold text-white px-5 py-2.5 rounded-[14px] transition-all duration-200 hover:bg-white/10 flex items-center gap-2"
             style={{
               border: "2px solid rgba(255, 255, 255, 0.4)",
@@ -79,7 +79,7 @@ export default function Nav() {
             Ingresar
           </a>
           <a
-            href="#"
+            href="/registro"
             className="group text-sm font-bold text-orange bg-white hover:bg-cream px-5 py-2.5 rounded-[14px] transition-all duration-200 flex items-center gap-2"
             style={{ boxShadow: "0 2px 10px rgba(0,0,0,0.1)" }}
           >

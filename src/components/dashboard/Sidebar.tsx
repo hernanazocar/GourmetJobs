@@ -120,23 +120,23 @@ interface NavItem {
 }
 
 const empresaNavItems: NavItem[] = [
-  { label: "Dashboard", icon: IconHome, href: "#" },
-  { label: "Buscar talento", icon: IconSearch, href: "#" },
-  { label: "Mis turnos", icon: IconCalendar, href: "#" },
-  { label: "Mi equipo", icon: IconUsers, href: "#" },
-  { label: "Mensajes", icon: IconChat, href: "#" },
-  { label: "Analytics", icon: IconChart, href: "#" },
-  { label: "Configuracion", icon: IconGear, href: "#" },
+  { label: "Dashboard", icon: IconHome, href: "/dashboard/empresa" },
+  { label: "Buscar talento", icon: IconSearch, href: "/dashboard/empresa/buscar" },
+  { label: "Mis turnos", icon: IconCalendar, href: "/dashboard/empresa/necesidad" },
+  { label: "Mi equipo", icon: IconUsers, href: "/dashboard/empresa/equipo" },
+  { label: "Mensajes", icon: IconChat, href: "/dashboard/empresa" },
+  { label: "Analytics", icon: IconChart, href: "/dashboard/empresa" },
+  { label: "Configuracion", icon: IconGear, href: "/dashboard/empresa" },
 ];
 
 const trabajadorNavItems: NavItem[] = [
-  { label: "Dashboard", icon: IconHome, href: "#" },
-  { label: "Turnos disponibles", icon: IconBriefcase, href: "#" },
-  { label: "Mis turnos", icon: IconCalendar, href: "#" },
-  { label: "Mi perfil", icon: IconUser, href: "#" },
-  { label: "Mensajes", icon: IconChat, href: "#" },
-  { label: "Mis ganancias", icon: IconDollar, href: "#" },
-  { label: "Configuracion", icon: IconGear, href: "#" },
+  { label: "Dashboard", icon: IconHome, href: "/dashboard/trabajador" },
+  { label: "Turnos disponibles", icon: IconBriefcase, href: "/dashboard/trabajador/turnos" },
+  { label: "Mis turnos", icon: IconCalendar, href: "/dashboard/trabajador/turnos" },
+  { label: "Mi perfil", icon: IconUser, href: "/dashboard/trabajador/perfil" },
+  { label: "Mensajes", icon: IconChat, href: "/dashboard/trabajador" },
+  { label: "Mis ganancias", icon: IconDollar, href: "/dashboard/trabajador/ganancias" },
+  { label: "Configuracion", icon: IconGear, href: "/dashboard/trabajador" },
 ];
 
 // ── Props ───────────────────────────────────────────────────────────────────
