@@ -1,9 +1,13 @@
 "use client";
 
-import { howItWorks } from "@/lib/data";
+import { useState } from "react";
+import { howItWorks, howItWorksWorkers } from "@/lib/data";
 import RevealWrapper from "./ui/RevealWrapper";
 
 export default function HowItWorks() {
+  const [tab, setTab] = useState<"empresa" | "trabajador">("empresa");
+  const steps = tab === "empresa" ? howItWorks : howItWorksWorkers;
+
   return (
     <section id="como-funciona" className="sec-light py-28 px-4">
       <div className="relative z-10 max-w-6xl mx-auto text-center">
@@ -43,14 +47,35 @@ export default function HowItWorks() {
           </p>
         </RevealWrapper>
 
-        {/* Decorative line */}
+        {/* Tabs */}
         <RevealWrapper delay={0.12}>
-          <div className="w-16 h-1 bg-orange rounded-full mx-auto mt-6" />
+          <div className="flex justify-center gap-2 mt-8">
+            <button
+              onClick={() => setTab("empresa")}
+              className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-200 ${
+                tab === "empresa"
+                  ? "bg-orange text-white shadow-lg"
+                  : "bg-white text-[#7A5C48] hover:bg-orange/10"
+              }`}
+            >
+              🏢 Soy empresa
+            </button>
+            <button
+              onClick={() => setTab("trabajador")}
+              className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-200 ${
+                tab === "trabajador"
+                  ? "bg-orange text-white shadow-lg"
+                  : "bg-white text-[#7A5C48] hover:bg-orange/10"
+              }`}
+            >
+              👨‍🍳 Soy trabajador
+            </button>
+          </div>
         </RevealWrapper>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mt-16">
-          {howItWorks.map((step, index) => (
+        <div className="grid md:grid-cols-3 gap-8 mt-14">
+          {steps.map((step, index) => (
             <RevealWrapper key={step.number} delay={0.15 + index * 0.1}>
               <div className="bg-white rounded-3xl p-8 shadow-xl hover:-translate-y-2 transition-all duration-300 text-center h-full">
                 {/* Step number */}

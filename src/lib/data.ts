@@ -67,6 +67,30 @@ export const howItWorks = [
   },
 ];
 
+export const howItWorksWorkers = [
+  {
+    number: "01",
+    icon: "👤",
+    title: "Crea tu perfil",
+    description: "Muestra tu experiencia, habilidades y disponibilidad.",
+    chip: "Gratis",
+  },
+  {
+    number: "02",
+    icon: "👀",
+    title: "Aparece y recibe oportunidades",
+    description: "Restaurantes ven tu perfil o te invitan según lo que necesitan.",
+    chip: "Visible ahora",
+  },
+  {
+    number: "03",
+    icon: "⚡",
+    title: "Acepta y trabaja",
+    description: "Elige turnos o propuestas y empieza a trabajar cuando quieras.",
+    chip: "Sin CVs",
+  },
+];
+
 export type BentoSize = "span4" | "span2";
 
 export interface Feature {
