@@ -96,10 +96,10 @@ export const features: Feature[] = [
   },
   {
     icon: "💬",
-    title: "WhatsApp Disponibilidad",
-    description: "Los trabajadores actualizan su disponibilidad directamente por WhatsApp.",
-    chip: "Integración",
-    size: "span2",
+    title: "WhatsApp Broadcast Automático",
+    description: "Envía ofertas de turnos a todos tus candidatos registrados con un click. Broadcast masivo por WhatsApp con respuesta automática y confirmación instantánea.",
+    chip: "Automatización",
+    size: "span4",
   },
   {
     icon: "🏪",
@@ -125,7 +125,7 @@ export const features: Feature[] = [
   {
     icon: "👥",
     title: "Mi Equipo Flex",
-    description: "Arma tu equipo de confianza y re-contrátalos con un tap. Sin re-negociar.",
+    description: "Arma tu equipo de confianza y re-contrátalos con un tap.",
     chip: "Favoritos",
     size: "span4",
   },
