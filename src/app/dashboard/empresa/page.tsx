@@ -1,6 +1,7 @@
 "use client";
 
 import Sidebar from "@/components/dashboard/Sidebar";
+import AIAgentEmpresa from "@/components/dashboard/AIAgentEmpresa";
 import { useState } from "react";
 
 // -- Matches recientes data --------------------------------------------------
@@ -438,6 +439,7 @@ export default function EmpresaDashboard() {
 
         </div>
       </main>
+      <AIAgentEmpresa />
     </div>
   );
 }

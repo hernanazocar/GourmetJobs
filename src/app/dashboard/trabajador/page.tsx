@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Sidebar from "@/components/dashboard/Sidebar";
+import AIAgentTrabajador from "@/components/dashboard/AIAgentTrabajador";
 
 // -- Mock Data ----------------------------------------------------------------
 
@@ -555,6 +556,7 @@ export default function TrabajadorDashboard() {
           </a>
         </div>
       </main>
+      <AIAgentTrabajador />
     </div>
   );
 }
