@@ -85,15 +85,12 @@ export default function Hero() {
         <p className="text-[#7A5C48] text-base sm:text-lg md:text-xl max-w-[620px] mx-auto mt-3 sm:mt-4 leading-relaxed px-2">
           Explora perfiles reales de garzones, chefs y baristas listos para trabajar hoy.
         </p>
-        <div className="flex flex-wrap justify-center gap-3 mt-4">
-          {["Sin publicaciones", "Sin CVs", "Sin procesos largos"].map((item) => (
-            <span key={item} className="inline-flex items-center gap-2 bg-white/80 rounded-full px-4 py-2 text-sm font-semibold text-[#1A0E05]" style={{ border: "1px solid rgba(232,85,32,0.15)" }}>
-              <svg className="w-4 h-4 text-[#E85520]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-              {item}
-            </span>
-          ))}
+        <div className="flex items-center justify-center gap-2 sm:gap-4 mt-4 text-sm sm:text-base font-semibold text-[#E85520]">
+          <span>Sin publicaciones</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-[#E85520]/40" />
+          <span>Sin CVs</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-[#E85520]/40" />
+          <span>Sin procesos largos</span>
         </div>
       </RevealWrapper>
 
