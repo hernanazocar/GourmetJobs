@@ -61,7 +61,7 @@ const turnosConfirmados = [
 
 const recontrataciones = [
   { restaurant: "Borago", veces: 3 },
-  { restaurant: "La Mision", veces: 5 },
+  { restaurant: "La Misión", veces: 5 },
 ];
 
 // -- Main Page ----------------------------------------------------------------
@@ -152,7 +152,7 @@ export default function TrabajadorDashboard() {
             )}
           </div>
           <p className="text-sm text-[#7A5C48] mb-5">
-            El sistema encontro estos turnos basados en tu perfil
+            El sistema encontró estos turnos basados en tu perfil
           </p>
 
           {invitaciones.length > 0 ? (
@@ -280,10 +280,10 @@ export default function TrabajadorDashboard() {
                 Sin oportunidades nuevas por ahora
               </h3>
               <p className="text-sm text-[#7A5C48] mb-3">
-                El sistema esta buscando turnos que se ajusten a tu perfil
+                El sistema está buscando turnos que se ajusten a tu perfil
               </p>
               <p className="text-xs text-[#9A7A60]">
-                Tip: Manten tu perfil actualizado para recibir mas invitaciones
+                Tip: Mantén tu perfil actualizado para recibir más invitaciones
               </p>
             </div>
           )}
@@ -397,7 +397,7 @@ export default function TrabajadorDashboard() {
                   </div>
                   <div>
                     <p className="text-lg font-bold text-[#1A0E05]">8</p>
-                    <p className="text-xs text-[#7A5C48]">busquedas te incluyeron</p>
+                    <p className="text-xs text-[#7A5C48]">búsquedas te incluyeron</p>
                   </div>
                 </div>
 
@@ -474,7 +474,7 @@ export default function TrabajadorDashboard() {
                 </div>
                 <div>
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-sm text-[#7A5C48]">Aceptacion</span>
+                    <span className="text-sm text-[#7A5C48]">Aceptación</span>
                     <span className="text-sm font-bold text-[#1A0E05]">94%</span>
                   </div>
                   <div className="w-full bg-gray-100 rounded-full h-2">
@@ -528,7 +528,7 @@ export default function TrabajadorDashboard() {
                         {r.restaurant}
                       </p>
                       <p className="text-xs text-[#9A7A60]">
-                        Te invito {r.veces} veces
+                        Te invitó {r.veces} veces
                       </p>
                     </div>
                     <button className="text-xs font-medium text-[#E85520] border border-[#E85520] hover:bg-[#E85520] hover:text-white px-3 py-1.5 rounded-lg transition">
@@ -545,10 +545,10 @@ export default function TrabajadorDashboard() {
         <div className="bg-white rounded-2xl shadow-sm p-6 flex flex-col sm:flex-row sm:items-center gap-4">
           <div className="flex-1">
             <p className="font-semibold text-[#1A0E05] mb-1">
-              Tu perfil esta al 70%
+              Tu perfil está al 70%
             </p>
             <p className="text-sm text-[#7A5C48] mb-3">
-              Completalo para recibir mas oportunidades
+              Complétalo para recibir más oportunidades
             </p>
             <div className="w-full bg-gray-100 rounded-full h-2.5 max-w-md">
               <div

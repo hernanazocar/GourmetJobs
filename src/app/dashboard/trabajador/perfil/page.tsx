@@ -4,36 +4,36 @@ import { useState } from "react";
 import Sidebar from "@/components/dashboard/Sidebar";
 
 const rolesOptions = [
-  "Garzon", "Chef", "Barman", "Sommelier", "Hostess",
+  "Garzón", "Chef", "Barman", "Sommelier", "Hostess",
   "Ayudante de cocina", "Pastelero", "Barista", "Steward",
 ];
 
 const habilidadesDefault = [
-  "Cocina francesa", "Mixologia", "Atencion al cliente",
-  "Sommelier basico", "Cocina japonesa",
+  "Cocina francesa", "Mixología", "Atención al cliente",
+  "Sommelier básico", "Cocina japonesa",
 ];
 
 const comunas = [
   "Providencia", "Las Condes", "Vitacura", "Santiago Centro",
-  "Nunoa", "La Reina", "Lo Barnechea", "Recoleta",
+  "Ñuñoa", "La Reina", "Lo Barnechea", "Recoleta",
 ];
 
-const diasSemana = ["Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"];
+const diasSemana = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
 
 export default function PerfilTrabajadorPage() {
   // Personal info
   const [nombre, setNombre] = useState("Diego");
-  const [apellido, setApellido] = useState("Martinez");
+  const [apellido, setApellido] = useState("Martínez");
   const [email, setEmail] = useState("diego.martinez@email.com");
   const [telefono, setTelefono] = useState("+56 9 1234 5678");
 
   // Experience
-  const [rolPrincipal, setRolPrincipal] = useState("Garzon");
+  const [rolPrincipal, setRolPrincipal] = useState("Garzón");
   const [rolesSecundarios, setRolesSecundarios] = useState<string[]>(["Barman", "Hostess"]);
   const [anosExperiencia, setAnosExperiencia] = useState("3-5");
-  const [habilidades, setHabilidades] = useState<string[]>(["Cocina francesa", "Mixologia", "Atencion al cliente"]);
+  const [habilidades, setHabilidades] = useState<string[]>(["Cocina francesa", "Mixología", "Atención al cliente"]);
   const [nuevaHabilidad, setNuevaHabilidad] = useState("");
-  const [bio, setBio] = useState("Garzon con experiencia en restaurantes de alta cocina y atencion personalizada.");
+  const [bio, setBio] = useState("Garzón con experiencia en restaurantes de alta cocina y atención personalizada.");
 
   // Preferences
   const [turnos, setTurnos] = useState({ manana: true, tarde: true, noche: false, finDeSemana: true });
@@ -44,15 +44,15 @@ export default function PerfilTrabajadorPage() {
 
   // Availability
   const [diasActivos, setDiasActivos] = useState<Record<string, boolean>>({
-    Lun: true, Mar: true, Mie: true, Jue: true, Vie: true, Sab: false, Dom: false,
+    Lun: true, Mar: true, Mié: true, Jue: true, Vie: true, Sáb: false, Dom: false,
   });
   const [horarios, setHorarios] = useState<Record<string, { desde: string; hasta: string }>>({
     Lun: { desde: "09:00", hasta: "18:00" },
     Mar: { desde: "09:00", hasta: "18:00" },
-    Mie: { desde: "09:00", hasta: "18:00" },
+    Mié: { desde: "09:00", hasta: "18:00" },
     Jue: { desde: "09:00", hasta: "18:00" },
     Vie: { desde: "09:00", hasta: "18:00" },
-    Sab: { desde: "10:00", hasta: "16:00" },
+    Sáb: { desde: "10:00", hasta: "16:00" },
     Dom: { desde: "10:00", hasta: "16:00" },
   });
 
@@ -101,9 +101,9 @@ export default function PerfilTrabajadorPage() {
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
           {/* ── Left column ─────────────────────────────────────────── */}
           <div className="xl:col-span-2 space-y-6">
-            {/* Card 1: Informacion personal */}
+            {/* Card 1: Información personal */}
             <div className="bg-white rounded-2xl p-6 shadow-sm">
-              <h2 className="text-lg font-bold text-[#1A0E05] mb-5">Informacion personal</h2>
+              <h2 className="text-lg font-bold text-[#1A0E05] mb-5">Información personal</h2>
 
               {/* Avatar */}
               <div className="flex items-center gap-5 mb-6">
@@ -136,7 +136,7 @@ export default function PerfilTrabajadorPage() {
                   <input className={inputClass} type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
                 <div>
-                  <label className={labelClass}>Telefono</label>
+                  <label className={labelClass}>Teléfono</label>
                   <input className={inputClass} type="tel" value={telefono} onChange={(e) => setTelefono(e.target.value)} />
                 </div>
               </div>
@@ -186,19 +186,19 @@ export default function PerfilTrabajadorPage() {
                   </div>
                 </div>
 
-                {/* Anos de experiencia */}
+                {/* Años de experiencia */}
                 <div>
-                  <label className={labelClass}>Anos de experiencia</label>
+                  <label className={labelClass}>Años de experiencia</label>
                   <select
                     className={inputClass}
                     value={anosExperiencia}
                     onChange={(e) => setAnosExperiencia(e.target.value)}
                   >
                     <option value="<1">Menos de 1</option>
-                    <option value="1-2">1-2 anos</option>
-                    <option value="3-5">3-5 anos</option>
-                    <option value="5-10">5-10 anos</option>
-                    <option value="10+">10+ anos</option>
+                    <option value="1-2">1-2 años</option>
+                    <option value="3-5">3-5 años</option>
+                    <option value="5-10">5-10 años</option>
+                    <option value="10+">10+ años</option>
                   </select>
                 </div>
 
@@ -276,7 +276,7 @@ export default function PerfilTrabajadorPage() {
                   <div className="flex flex-wrap gap-3 mt-1">
                     {(
                       [
-                        { key: "manana", label: "Manana" },
+                        { key: "manana", label: "Mañana" },
                         { key: "tarde", label: "Tarde" },
                         { key: "noche", label: "Noche" },
                         { key: "finDeSemana", label: "Fin de semana" },
@@ -337,7 +337,7 @@ export default function PerfilTrabajadorPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-[#1A0E05]">Disponible para urgencias</p>
-                    <p className="text-xs text-[#7A5C48]">Recibiras notificaciones de turnos urgentes</p>
+                    <p className="text-xs text-[#7A5C48]">Recibirás notificaciones de turnos urgentes</p>
                   </div>
                   <button
                     onClick={() => setUrgencias(!urgencias)}
@@ -361,7 +361,7 @@ export default function PerfilTrabajadorPage() {
             {/* Card 4: Vista previa */}
             <div className="bg-white rounded-2xl p-6 shadow-sm">
               <h2 className="text-lg font-bold text-[#1A0E05] mb-1">Vista previa del perfil</h2>
-              <p className="text-xs text-[#7A5C48] mb-5">Asi te ven las empresas</p>
+              <p className="text-xs text-[#7A5C48] mb-5">Así te ven las empresas</p>
 
               <div className="bg-[#F8F6F3] rounded-2xl p-5">
                 <div className="flex items-center gap-3 mb-4">
@@ -397,7 +397,7 @@ export default function PerfilTrabajadorPage() {
                   </div>
                   <div className="bg-white rounded-xl py-2">
                     <p className="text-lg font-bold text-[#1A0E05]">3-5</p>
-                    <p className="text-[10px] text-[#7A5C48]">Anos exp.</p>
+                    <p className="text-[10px] text-[#7A5C48]">Años exp.</p>
                   </div>
                 </div>
 
@@ -428,7 +428,7 @@ export default function PerfilTrabajadorPage() {
               <div className="space-y-3">
                 {[
                   { label: "Puntualidad", value: 98 },
-                  { label: "Aceptacion", value: 94 },
+                  { label: "Aceptación", value: 94 },
                   { label: "Rating", value: 96 },
                 ].map(({ label, value }) => (
                   <div key={label}>

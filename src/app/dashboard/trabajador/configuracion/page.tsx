@@ -6,7 +6,7 @@ import TopBar from "@/components/dashboard/TopBar";
 
 // ── Types ───────────────────────────────────────────────────────────────────
 
-type DayKey = "Lun" | "Mar" | "Mie" | "Jue" | "Vie" | "Sab" | "Dom";
+type DayKey = "Lun" | "Mar" | "Mié" | "Jue" | "Vie" | "Sáb" | "Dom";
 
 // ── Toggle Component ────────────────────────────────────────────────────────
 
@@ -39,10 +39,10 @@ export default function ConfiguracionPage() {
   const [disponibilidad, setDisponibilidad] = useState<Record<DayKey, boolean>>({
     Lun: false,
     Mar: false,
-    Mie: false,
+    Mié: false,
     Jue: false,
     Vie: true,
-    Sab: true,
+    Sáb: true,
     Dom: true,
   });
 
@@ -53,7 +53,7 @@ export default function ConfiguracionPage() {
   const [notifRecordatorios, setNotifRecordatorios] = useState(false);
 
   // Work preferences
-  const zonas = ["Providencia", "Las Condes", "Vitacura", "Nunoa", "Santiago Centro", "La Reina"];
+  const zonas = ["Providencia", "Las Condes", "Vitacura", "Ñuñoa", "Santiago Centro", "La Reina"];
   const [zonasSeleccionadas, setZonasSeleccionadas] = useState<string[]>(["Providencia", "Las Condes", "Vitacura"]);
   const [tarifaMinima, setTarifaMinima] = useState("4000");
   const [distanciaMaxima, setDistanciaMaxima] = useState("15");
@@ -70,16 +70,16 @@ export default function ConfiguracionPage() {
 
   return (
     <div className="flex h-screen overflow-hidden bg-[#F8F6F3]">
-      <Sidebar type="trabajador" activeItem="Configuracion" />
+      <Sidebar type="trabajador" activeItem="Ajustes" />
 
       <div className="flex-1 flex flex-col overflow-hidden lg:ml-64">
         <main className="flex-1 overflow-y-auto p-4 sm:p-8 pt-20 lg:pt-8">
-          <TopBar title="Configuracion" subtitle="Ajustes de tu cuenta" />
+          <TopBar title="Configuración" subtitle="Ajustes de tu cuenta" />
 
           <div className="space-y-6 max-w-3xl">
-            {/* Informacion personal */}
+            {/* Información personal */}
             <div className="bg-white rounded-2xl shadow-sm p-6">
-              <h2 className="text-lg font-bold text-[#1A0E05] mb-1">Informacion personal</h2>
+              <h2 className="text-lg font-bold text-[#1A0E05] mb-1">Información personal</h2>
               <p className="text-sm text-[#7A5C48] mb-5">Actualiza tus datos de contacto</p>
 
               <div className="space-y-4">
@@ -103,7 +103,7 @@ export default function ConfiguracionPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-[#1A0E05] mb-1.5">Telefono</label>
+                    <label className="block text-sm font-medium text-[#1A0E05] mb-1.5">Teléfono</label>
                     <input
                       type="tel"
                       value={telefono}
@@ -118,7 +118,7 @@ export default function ConfiguracionPage() {
             {/* Disponibilidad por defecto */}
             <div className="bg-white rounded-2xl shadow-sm p-6">
               <h2 className="text-lg font-bold text-[#1A0E05] mb-1">Disponibilidad por defecto</h2>
-              <p className="text-sm text-[#7A5C48] mb-5">Selecciona los dias que normalmente estas disponible</p>
+              <p className="text-sm text-[#7A5C48] mb-5">Selecciona los días que normalmente estás disponible</p>
 
               <div className="grid grid-cols-7 gap-2">
                 {(Object.entries(disponibilidad) as [DayKey, boolean][]).map(([dia, activo]) => (
@@ -142,7 +142,7 @@ export default function ConfiguracionPage() {
             {/* Notificaciones */}
             <div className="bg-white rounded-2xl shadow-sm p-6">
               <h2 className="text-lg font-bold text-[#1A0E05] mb-1">Notificaciones</h2>
-              <p className="text-sm text-[#7A5C48] mb-5">Controla que notificaciones deseas recibir</p>
+              <p className="text-sm text-[#7A5C48] mb-5">Controla qué notificaciones deseas recibir</p>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -208,7 +208,7 @@ export default function ConfiguracionPage() {
                 {/* Tarifa y distancia */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-[#1A0E05] mb-1.5">Tarifa minima ($/hr)</label>
+                    <label className="block text-sm font-medium text-[#1A0E05] mb-1.5">Tarifa mínima ($/hr)</label>
                     <input
                       type="number"
                       value={tarifaMinima}
@@ -217,7 +217,7 @@ export default function ConfiguracionPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-[#1A0E05] mb-1.5">Distancia maxima (km)</label>
+                    <label className="block text-sm font-medium text-[#1A0E05] mb-1.5">Distancia máxima (km)</label>
                     <input
                       type="number"
                       value={distanciaMaxima}
@@ -246,7 +246,7 @@ export default function ConfiguracionPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-[#1A0E05]">Mostrar mi tarifa</p>
-                    <p className="text-xs text-[#7A5C48]">Los restaurantes podran ver tu tarifa preferida</p>
+                    <p className="text-xs text-[#7A5C48]">Los restaurantes podrán ver tu tarifa preferida</p>
                   </div>
                   <Toggle enabled={mostrarTarifa} onChange={() => setMostrarTarifa(!mostrarTarifa)} />
                 </div>

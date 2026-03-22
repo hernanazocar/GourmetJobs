@@ -13,7 +13,7 @@ interface Payment {
 }
 
 const paymentsMock: Payment[] = [
-  { id: 1, restaurante: "La Mision", fecha: "20 Mar 2026", monto: "$36.000", montoNum: 36000, estado: "Pagado" },
+  { id: 1, restaurante: "La Misión", fecha: "20 Mar 2026", monto: "$36.000", montoNum: 36000, estado: "Pagado" },
   { id: 2, restaurante: "Borago", fecha: "18 Mar 2026", monto: "$45.000", montoNum: 45000, estado: "Pagado" },
   { id: 3, restaurante: "Osaka", fecha: "15 Mar 2026", monto: "$22.000", montoNum: 22000, estado: "Pendiente" },
   { id: 4, restaurante: "Liguria", fecha: "12 Mar 2026", monto: "$19.000", montoNum: 19000, estado: "Pagado" },
@@ -113,7 +113,7 @@ export default function GananciasPage() {
           {/* Bar chart */}
           <div className="xl:col-span-3 bg-white rounded-2xl p-6 shadow-sm">
             <h2 className="text-lg font-bold text-[#1A0E05] mb-1">Ingresos semanales</h2>
-            <p className="text-xs text-[#7A5C48] mb-6">Ultimas 4 semanas</p>
+            <p className="text-xs text-[#7A5C48] mb-6">Últimas 4 semanas</p>
 
             <div className="flex items-end justify-between gap-4 h-48">
               {weeklyData.map((week) => {
@@ -214,7 +214,7 @@ export default function GananciasPage() {
             </div>
 
             {filteredPayments.length === 0 && (
-              <p className="text-center text-sm text-[#7A5C48] py-8">No hay pagos en esta categoria</p>
+              <p className="text-center text-sm text-[#7A5C48] py-8">No hay pagos en esta categoría</p>
             )}
           </div>
         </div>

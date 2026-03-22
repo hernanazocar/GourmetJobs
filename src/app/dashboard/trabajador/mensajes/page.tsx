@@ -26,17 +26,17 @@ interface Conversation {
 const conversations: Conversation[] = [
   {
     id: 1,
-    restaurant: "La Mision",
+    restaurant: "La Misión",
     initials: "LM",
-    lastMessage: "Perfecto, te esperamos el sabado!",
+    lastMessage: "Perfecto, te esperamos el sábado!",
     time: "10:32",
     unread: 1,
     messages: [
-      { id: 1, from: "restaurant", text: "Hola Diego! Tenemos un turno disponible este sabado de 19:00 a 01:00 como garzon. Te interesa?", time: "09:15" },
-      { id: 2, from: "worker", text: "Hola! Si, me interesa mucho. Cual es la tarifa?", time: "09:20" },
+      { id: 1, from: "restaurant", text: "¡Hola Diego! Tenemos un turno disponible este sábado de 19:00 a 01:00 como garzón. ¿Te interesa?", time: "09:15" },
+      { id: 2, from: "worker", text: "¡Hola! Sí, me interesa mucho. ¿Cuál es la tarifa?", time: "09:20" },
       { id: 3, from: "restaurant", text: "La tarifa es de $4.500/hr. Incluye propinas compartidas del equipo.", time: "09:25" },
-      { id: 4, from: "worker", text: "Excelente, acepto el turno. Estare ahi a las 18:45 para prepararme.", time: "10:00" },
-      { id: 5, from: "restaurant", text: "Perfecto, te esperamos el sabado!", time: "10:32" },
+      { id: 4, from: "worker", text: "Excelente, acepto el turno. Estaré ahí a las 18:45 para prepararme.", time: "10:00" },
+      { id: 5, from: "restaurant", text: "¡Perfecto, te esperamos el sábado!", time: "10:32" },
     ],
   },
   {
@@ -48,8 +48,8 @@ const conversations: Conversation[] = [
     unread: 0,
     messages: [
       { id: 1, from: "restaurant", text: "Hola Diego, necesitamos un barman para un evento privado el domingo. 20:00 a 02:00, $5.000/hr.", time: "Lun 14:00" },
-      { id: 2, from: "worker", text: "Me interesa! Que tipo de evento es?", time: "Lun 14:30" },
-      { id: 3, from: "restaurant", text: "Es una cena corporativa para 40 personas. Necesitamos alguien con experiencia en cocteleria.", time: "Lun 15:00" },
+      { id: 2, from: "worker", text: "¡Me interesa! ¿Qué tipo de evento es?", time: "Lun 14:30" },
+      { id: 3, from: "restaurant", text: "Es una cena corporativa para 40 personas. Necesitamos alguien con experiencia en coctelería.", time: "Lun 15:00" },
       { id: 4, from: "worker", text: "Perfecto, tengo experiencia con ese tipo de eventos. Confirmo asistencia.", time: "Lun 15:15" },
       { id: 5, from: "restaurant", text: "El evento es formal, lleva camisa negra.", time: "Ayer" },
     ],
@@ -62,7 +62,7 @@ const conversations: Conversation[] = [
     time: "Mar",
     unread: 0,
     messages: [
-      { id: 1, from: "restaurant", text: "Hola Diego, queriamos agradecerte por el turno del viernes. Recibimos muy buenos comentarios de los clientes.", time: "Lun 10:00" },
+      { id: 1, from: "restaurant", text: "Hola Diego, queríamos agradecerte por el turno del viernes. Recibimos muy buenos comentarios de los clientes.", time: "Lun 10:00" },
       { id: 2, from: "worker", text: "Muchas gracias! Fue un placer trabajar con el equipo de Borago.", time: "Lun 11:00" },
       { id: 3, from: "restaurant", text: "Gracias por tu excelente trabajo la semana pasada!", time: "Mar" },
     ],
@@ -75,7 +75,7 @@ const conversations: Conversation[] = [
     time: "Lun",
     unread: 2,
     messages: [
-      { id: 1, from: "restaurant", text: "Hola Diego! Como estas? Tenemos turnos disponibles para el fin de semana. Sabado y domingo almuerzo.", time: "Lun 09:00" },
+      { id: 1, from: "restaurant", text: "¡Hola Diego! ¿Cómo estás? Tenemos turnos disponibles para el fin de semana. Sábado y domingo almuerzo.", time: "Lun 09:00" },
       { id: 2, from: "restaurant", text: "Tenemos turnos disponibles para el fin de semana.", time: "Lun 09:01" },
     ],
   },
@@ -115,7 +115,7 @@ export default function MensajesPage() {
                   </svg>
                   <input
                     type="text"
-                    placeholder="Buscar conversacion..."
+                    placeholder="Buscar conversación..."
                     className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-[#F8F6F3] text-sm text-[#1A0E05] placeholder:text-[#7A5C48]/50 focus:outline-none focus:ring-2 focus:ring-[#E85520]/20"
                   />
                 </div>
@@ -169,7 +169,7 @@ export default function MensajesPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-[#1A0E05] text-sm">{currentConversation.restaurant}</h3>
-                  <p className="text-xs text-green-500">En linea</p>
+                  <p className="text-xs text-green-500">En línea</p>
                 </div>
               </div>
 

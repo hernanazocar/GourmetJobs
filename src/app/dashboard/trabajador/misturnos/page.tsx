@@ -8,10 +8,10 @@ import TopBar from "@/components/dashboard/TopBar";
 
 const proximosTurnos = [
   {
-    restaurant: "La Mision",
+    restaurant: "La Misión",
     initials: "LM",
-    rol: "Garzon turno noche",
-    fecha: "Sabado 22 Mar",
+    rol: "Garzón turno noche",
+    fecha: "Sábado 22 Mar",
     horario: "19:00 - 01:00",
     pago: "$4.500/hr",
     estado: "Confirmado",
@@ -30,7 +30,7 @@ const proximosTurnos = [
   {
     restaurant: "Borago",
     initials: "BO",
-    rol: "Garzon almuerzo",
+    rol: "Garzón almuerzo",
     fecha: "Lunes 24 Mar",
     horario: "12:00 - 17:00",
     pago: "$4.800/hr",
@@ -43,7 +43,7 @@ const turnosCompletados = [
   {
     restaurant: "Liguria",
     initials: "LI",
-    rol: "Garzon turno almuerzo",
+    rol: "Garzón turno almuerzo",
     fecha: "Viernes 14 Mar",
     horario: "12:00 - 17:00",
     pago: "$4.000/hr",
@@ -52,10 +52,10 @@ const turnosCompletados = [
     direccion: "Av. Providencia 1373, Providencia",
   },
   {
-    restaurant: "La Mision",
+    restaurant: "La Misión",
     initials: "LM",
-    rol: "Garzon turno noche",
-    fecha: "Sabado 15 Mar",
+    rol: "Garzón turno noche",
+    fecha: "Sábado 15 Mar",
     horario: "19:00 - 01:00",
     pago: "$4.500/hr",
     ganancia: "$27.000",
@@ -76,7 +76,7 @@ const turnosCompletados = [
   {
     restaurant: "Borago",
     initials: "BO",
-    rol: "Garzon cena especial",
+    rol: "Garzón cena especial",
     fecha: "Viernes 7 Mar",
     horario: "19:00 - 00:00",
     pago: "$4.800/hr",
@@ -91,7 +91,7 @@ const turnosCancelados = [
     restaurant: "Restaurant Ambrosia",
     initials: "RA",
     rol: "Chef de partida",
-    fecha: "Miercoles 12 Mar",
+    fecha: "Miércoles 12 Mar",
     horario: "14:00 - 22:00",
     pago: "$6.000/hr",
     motivo: "Cancelado por el restaurante",
@@ -127,7 +127,7 @@ export default function MisTurnosPage() {
   const [activeTab, setActiveTab] = useState<Tab>("proximos");
 
   const tabs: { key: Tab; label: string; count: number }[] = [
-    { key: "proximos", label: "Proximos", count: proximosTurnos.length },
+    { key: "proximos", label: "Próximos", count: proximosTurnos.length },
     { key: "completados", label: "Completados", count: turnosCompletados.length },
     { key: "cancelados", label: "Cancelados", count: turnosCancelados.length },
   ];

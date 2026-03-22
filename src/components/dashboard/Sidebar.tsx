@@ -199,7 +199,7 @@ export default function Sidebar({ type, activeItem }: SidebarProps) {
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-sm font-semibold text-[#1A0E05] truncate">
-              {type === "empresa" ? "La Mision" : "Diego M."}
+              {type === "empresa" ? "La Misión" : "Diego M."}
             </p>
             <span className="inline-block mt-0.5 px-2 py-0.5 bg-[#E85520]/10 text-[#E85520] text-xs font-semibold rounded-full">
               {type === "empresa" ? "Plan Pro" : "Score 4.7"}
@@ -207,7 +207,7 @@ export default function Sidebar({ type, activeItem }: SidebarProps) {
           </div>
         </div>
         <button className="mt-3 text-[#9A7A60] text-xs hover:underline">
-          Cerrar sesion
+          Cerrar sesión
         </button>
       </div>
     </>
