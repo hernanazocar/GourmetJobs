@@ -150,7 +150,7 @@ export default function Sidebar({ type, activeItem }: SidebarProps) {
       {/* Logo */}
       <div className="flex items-center gap-2.5 px-6 pt-7 pb-6">
         <Link href="/" className="flex items-center gap-2.5">
-          <Image src="/logo.png" alt="GourmetJobs" height={40} width={120} className="h-10 w-auto" />
+          <Image src="/logo.png" alt="GourmetJobs" height={80} width={200} className="h-14 w-auto" />
         </Link>
         <button
           className="ml-auto lg:hidden text-[#7A5C48]"
