@@ -199,14 +199,12 @@ export default function NecesidadPage() {
                   <button
                     type="button"
                     onClick={() => setUrgente(!urgente)}
-                    className={`relative w-12 h-7 rounded-full transition-colors ${
-                      urgente ? "bg-[#E85520]" : "bg-gray-300"
-                    }`}
+                    className="relative w-12 h-7 rounded-full transition-colors"
+                    style={{ background: urgente ? "#E85520" : "#d1d5db" }}
                   >
                     <span
-                      className={`absolute top-0.5 left-0.5 w-6 h-6 bg-white rounded-full shadow transition-transform ${
-                        urgente ? "translate-x-5" : "translate-x-0"
-                      }`}
+                      className="absolute top-0.5 w-6 h-6 bg-white rounded-full shadow transition-all duration-200"
+                      style={{ left: urgente ? "20px" : "2px" }}
                     />
                   </button>
                 </div>

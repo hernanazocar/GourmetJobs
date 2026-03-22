@@ -10,14 +10,12 @@ function Toggle({ enabled, onToggle }: { enabled: boolean; onToggle: () => void 
   return (
     <button
       onClick={onToggle}
-      className={`relative w-11 h-6 rounded-full transition-colors ${
-        enabled ? "bg-[#E85520]" : "bg-[#D4C4B0]"
-      }`}
+      className="relative w-11 h-6 rounded-full transition-colors"
+      style={{ background: enabled ? "#E85520" : "#D4C4B0" }}
     >
       <span
-        className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${
-          enabled ? "translate-x-5" : "translate-x-0"
-        }`}
+        className="absolute top-0.5 w-5 h-5 bg-white rounded-full shadow transition-all duration-200"
+        style={{ left: enabled ? "20px" : "2px" }}
       />
     </button>
   );

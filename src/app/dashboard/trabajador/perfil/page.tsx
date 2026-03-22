@@ -348,14 +348,12 @@ export default function PerfilTrabajadorPage() {
                   </div>
                   <button
                     onClick={() => setUrgencias(!urgencias)}
-                    className={`relative w-12 h-6 rounded-full transition ${
-                      urgencias ? "bg-[#E85520]" : "bg-[#D9CFC4]"
-                    }`}
+                    className="relative w-12 h-6 rounded-full transition"
+                    style={{ background: urgencias ? "#E85520" : "#D9CFC4" }}
                   >
                     <span
-                      className={`absolute top-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${
-                        urgencias ? "translate-x-6" : "translate-x-0.5"
-                      }`}
+                      className="absolute top-0.5 w-5 h-5 bg-white rounded-full shadow transition-all duration-200"
+                      style={{ left: urgencias ? "24px" : "2px" }}
                     />
                   </button>
                 </div>
@@ -467,14 +465,12 @@ export default function PerfilTrabajadorPage() {
                       <span className="text-sm font-medium text-[#1A0E05] w-10">{dia}</span>
                       <button
                         onClick={() => toggleDia(dia)}
-                        className={`relative w-10 h-5 rounded-full transition ${
-                          diasActivos[dia] ? "bg-green-500" : "bg-[#D9CFC4]"
-                        }`}
+                        className="relative w-10 h-5 rounded-full transition"
+                        style={{ background: diasActivos[dia] ? "#22c55e" : "#D9CFC4" }}
                       >
                         <span
-                          className={`absolute top-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform ${
-                            diasActivos[dia] ? "translate-x-5" : "translate-x-0.5"
-                          }`}
+                          className="absolute top-0.5 w-4 h-4 bg-white rounded-full shadow transition-all duration-200"
+                          style={{ left: diasActivos[dia] ? "20px" : "2px" }}
                         />
                       </button>
                     </div>

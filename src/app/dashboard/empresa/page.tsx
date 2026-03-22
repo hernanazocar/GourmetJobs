@@ -197,18 +197,16 @@ export default function EmpresaDashboard() {
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setIsUrgent(!isUrgent)}
-                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                  isUrgent ? "bg-[#E85520]" : "bg-gray-300"
-                }`}
+                className="relative inline-flex h-6 w-11 items-center rounded-full transition-colors"
+                style={{ background: isUrgent ? "#E85520" : "#d1d5db" }}
               >
                 <span
-                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                    isUrgent ? "translate-x-6" : "translate-x-1"
-                  }`}
+                  className="inline-block h-4 w-4 transform rounded-full bg-white transition-all duration-200"
+                  style={{ marginLeft: isUrgent ? "24px" : "4px" }}
                 />
               </button>
               <span className="text-sm text-[#1A0E05] font-medium">
-                \ud83d\udd25 Es urgente (necesito en menos de 2 horas)
+                🔥 Es urgente (necesito en menos de 2 horas)
               </span>
             </div>
           </div>
