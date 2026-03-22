@@ -122,21 +122,21 @@ interface NavItem {
 const empresaNavItems: NavItem[] = [
   { label: "Dashboard", icon: IconHome, href: "/dashboard/empresa" },
   { label: "Buscar talento", icon: IconSearch, href: "/dashboard/empresa/buscar" },
-  { label: "Mis turnos", icon: IconCalendar, href: "/dashboard/empresa/necesidad" },
+  { label: "Mis turnos", icon: IconCalendar, href: "/dashboard/empresa/turnos" },
   { label: "Mi equipo", icon: IconUsers, href: "/dashboard/empresa/equipo" },
-  { label: "Mensajes", icon: IconChat, href: "/dashboard/empresa" },
-  { label: "Analytics", icon: IconChart, href: "/dashboard/empresa" },
-  { label: "Configuracion", icon: IconGear, href: "/dashboard/empresa" },
+  { label: "Mensajes", icon: IconChat, href: "/dashboard/empresa/mensajes" },
+  { label: "Analytics", icon: IconChart, href: "/dashboard/empresa/analytics" },
+  { label: "Configuracion", icon: IconGear, href: "/dashboard/empresa/configuracion" },
 ];
 
 const trabajadorNavItems: NavItem[] = [
   { label: "Dashboard", icon: IconHome, href: "/dashboard/trabajador" },
   { label: "Turnos disponibles", icon: IconBriefcase, href: "/dashboard/trabajador/turnos" },
-  { label: "Mis turnos", icon: IconCalendar, href: "/dashboard/trabajador/turnos" },
+  { label: "Mis turnos", icon: IconCalendar, href: "/dashboard/trabajador/misturnos" },
   { label: "Mi perfil", icon: IconUser, href: "/dashboard/trabajador/perfil" },
-  { label: "Mensajes", icon: IconChat, href: "/dashboard/trabajador" },
+  { label: "Mensajes", icon: IconChat, href: "/dashboard/trabajador/mensajes" },
   { label: "Mis ganancias", icon: IconDollar, href: "/dashboard/trabajador/ganancias" },
-  { label: "Configuracion", icon: IconGear, href: "/dashboard/trabajador" },
+  { label: "Configuracion", icon: IconGear, href: "/dashboard/trabajador/configuracion" },
 ];
 
 // ── Props ───────────────────────────────────────────────────────────────────
