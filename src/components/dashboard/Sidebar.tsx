@@ -125,7 +125,7 @@ const empresaNavItems: NavItem[] = [
 
 const trabajadorNavItems: NavItem[] = [
   { label: "Inicio", icon: IconHome, href: "/dashboard/trabajador" },
-  { label: "Invitaciones", icon: IconBriefcase, href: "/dashboard/trabajador/misturnos" },
+  { label: "Invitaciones", icon: IconBriefcase, href: "/dashboard/trabajador" },
   { label: "Mis turnos", icon: IconCalendar, href: "/dashboard/trabajador/misturnos" },
   { label: "Mi perfil", icon: IconUser, href: "/dashboard/trabajador/perfil" },
   { label: "Mensajes", icon: IconChat, href: "/dashboard/trabajador/mensajes" },
