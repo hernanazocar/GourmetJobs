@@ -1,6 +1,5 @@
 import Nav from "@/components/Nav";
 import ChatBot from "@/components/ChatBot";
-import LiveToast from "@/components/LiveToast";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import HowItWorks from "@/components/HowItWorks";
@@ -34,7 +33,6 @@ export default function Home() {
       </main>
       <Footer />
       <ChatBot />
-      <LiveToast />
     </SearchProvider>
   );
 }
