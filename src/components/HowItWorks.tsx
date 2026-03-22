@@ -215,60 +215,38 @@ export default function HowItWorks() {
               const color = stepColors[index];
               return (
                 <RevealWrapper key={`${tab}-${step.number}`} delay={0.15 + index * 0.1} className="contents">
-                  <div className="bg-white rounded-3xl p-8 shadow-xl hover:-translate-y-2 transition-all duration-300 text-center flex flex-col">
-                    {/* Step number circle */}
-                    <div
-                      className="w-14 h-14 rounded-full flex items-center justify-center text-white text-lg font-extrabold mx-auto shadow-lg"
-                      style={{ background: color.bg, boxShadow: `0 8px 24px ${color.bg}40` }}
-                    >
-                      {step.number}
-                    </div>
-
-                    {/* Icon */}
-                    <div
-                      className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl mx-auto mt-4"
-                      style={{ background: color.light }}
-                    >
-                      {step.icon}
+                  <div className="bg-white rounded-3xl p-6 shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 text-center flex flex-col" style={{ border: "1px solid rgba(232,85,32,0.08)" }}>
+                    {/* Step number + icon row */}
+                    <div className="flex items-center justify-center gap-3">
+                      <div
+                        className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-extrabold shadow-md"
+                        style={{ background: color.bg }}
+                      >
+                        {step.number}
+                      </div>
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center text-xl"
+                        style={{ background: color.light }}
+                      >
+                        {step.icon}
+                      </div>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-bold text-[#1A0E05] mt-4">{titles[index]}</h3>
+                    <h3 className="text-lg font-bold text-[#1A0E05] mt-3">{titles[index]}</h3>
 
                     {/* Description */}
                     <p className="text-[#7A5C48] text-sm leading-relaxed mt-3">{step.description}</p>
 
-                    {/* Bullet points */}
-                    <ul className="mt-4 space-y-2 text-left">
-                      {(tab === "empresa" ? [
-                        [["Selecciona rol y horario", "Sin publicaciones ni avisos", "Formulario en 30 segundos"],
-                         ["Score automático por candidato", "Top 5 mejores matches", "Basado en experiencia y zona"],
-                         ["Aceptación en 1 click", "Notificación instantánea", "WhatsApp directo"]],
-                      ] : [
-                        [["Toma menos de 2 minutos", "Solo necesitas nombre y rol", "Agrega habilidades y zona"],
-                         ["Push, email o WhatsApp", "Sin buscar ni postular", "El sistema hace el trabajo"],
-                         ["Acepta con un tap", "Sin contratos ni papeleo", "Cobra directo al restaurante"]],
-                      ])[0][index].map((bullet: string, bi: number) => (
-                        <li key={bi} className="flex items-start gap-2 text-xs text-[#7A5C48]">
-                          <span className="mt-0.5 w-4 h-4 rounded-full flex items-center justify-center shrink-0" style={{ background: color.light }}>
-                            <svg className="w-2.5 h-2.5" style={{ color: color.bg }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>
-                          </span>
-                          {bullet}
-                        </li>
-                      ))}
-                    </ul>
-
-                    {/* Time chip */}
-                    <div className="mt-4">
-                      <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full text-white" style={{ background: color.bg }}>
+                    {/* Chip */}
+                    <div className="mt-3">
+                      <span className="inline-flex items-center gap-1 text-[11px] font-bold px-3 py-1 rounded-full text-white" style={{ background: color.bg }}>
                         {step.chip}
                       </span>
                     </div>
 
-                    {/* Visual element */}
-                    <div className="mt-4 pt-4" style={{ borderTop: "1px solid #F0E6DC" }}>
+                    {/* Visual mockup */}
+                    <div className="mt-auto pt-4">
                       {tab === "empresa"
                         ? <EmpresaVisual index={index} />
                         : <TrabajadorVisual index={index} />}
