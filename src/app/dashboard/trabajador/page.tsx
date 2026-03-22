@@ -91,38 +91,38 @@ export default function TrabajadorDashboard() {
         </div>
 
         {/* ── 2. Availability Toggle ────────────────────────── */}
-        <div className={`rounded-2xl p-5 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 transition-all duration-300 ${
-          disponibilidad !== "no"
-            ? "bg-green-50 border-2 border-green-200"
-            : "bg-white border-2 border-gray-200"
-        }`}>
+        <div
+          className="rounded-2xl p-5 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6"
+          style={{
+            background: disponibilidad !== "no" ? "#f0fdf4" : "#ffffff",
+            border: disponibilidad !== "no" ? "2px solid #bbf7d0" : "2px solid #e5e7eb",
+          }}
+        >
           <div className="flex items-center gap-4">
             {/* Toggle switch */}
             <button
               onClick={() => setDisponibilidad(disponibilidad === "no" ? "ahora" : "no")}
-              className={`relative w-14 h-8 rounded-full transition-all duration-300 ${
-                disponibilidad !== "no" ? "bg-green-500" : "bg-gray-300"
-              }`}
+              className="relative w-14 h-8 rounded-full transition-all duration-300"
+              style={{ background: disponibilidad !== "no" ? "#22c55e" : "#d1d5db" }}
             >
-              <span className={`absolute top-1 w-6 h-6 bg-white rounded-full shadow-md transition-all duration-300 ${
-                disponibilidad !== "no" ? "left-7" : "left-1"
-              }`} />
+              <span
+                className="absolute top-1 w-6 h-6 bg-white rounded-full shadow-md transition-all duration-300"
+                style={{ left: disponibilidad !== "no" ? "28px" : "4px" }}
+              />
             </button>
             <div>
-              <p className={`font-bold text-base flex items-center gap-2 ${
-                disponibilidad !== "no" ? "text-green-700" : "text-gray-500"
-              }`}>
+              <p className="font-bold text-base flex items-center gap-2" style={{ color: disponibilidad !== "no" ? "#15803d" : "#6b7280" }}>
                 {disponibilidad !== "no" ? (
                   <>
                     <span className="relative flex h-2.5 w-2.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: "#4ade80" }} />
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5" style={{ background: "#22c55e" }} />
                     </span>
                     {disponibilidad === "ahora" ? "Disponible ahora" : disponibilidad === "hoy" ? "Disponible hoy" : "Disponible esta semana"}
                   </>
                 ) : (
                   <>
-                    <span className="w-2.5 h-2.5 rounded-full bg-gray-400" />
+                    <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#9ca3af" }} />
                     No disponible
                   </>
                 )}
@@ -137,7 +137,8 @@ export default function TrabajadorDashboard() {
             <select
               value={disponibilidad}
               onChange={(e) => setDisponibilidad(e.target.value)}
-              className="bg-white border border-green-200 text-green-700 px-4 py-2.5 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-green-300"
+              className="px-4 py-2.5 rounded-xl text-sm font-medium focus:outline-none"
+              style={{ background: "#ffffff", border: "1px solid #bbf7d0", color: "#15803d" }}
             >
               <option value="ahora">Disponible ahora</option>
               <option value="hoy">Disponible hoy</option>
