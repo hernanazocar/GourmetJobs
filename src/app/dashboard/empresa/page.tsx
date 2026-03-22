@@ -7,7 +7,7 @@ import { useState } from "react";
 const MATCHES = [
   {
     name: "Diego Morales",
-    role: "Garz\u00f3n",
+    role: "Garzón",
     score: 95,
     avatar: "https://i.pravatar.cc/100?img=12",
     status: "confirmed" as const,
@@ -33,36 +33,36 @@ const MATCHES = [
 
 // -- Talento recurrente data --------------------------------------------------
 const RECURRING_TALENT = [
-  { name: "Mart\u00edn Garc\u00eda", role: "Chef", shifts: 12, avatar: "https://i.pravatar.cc/100?img=33" },
-  { name: "Sof\u00eda Reyes", role: "Sommelier", shifts: 8, avatar: "https://i.pravatar.cc/100?img=44" },
+  { name: "Martín García", role: "Chef", shifts: 12, avatar: "https://i.pravatar.cc/100?img=33" },
+  { name: "Sofía Reyes", role: "Sommelier", shifts: 8, avatar: "https://i.pravatar.cc/100?img=44" },
   { name: "Lucas Herrera", role: "Barman", shifts: 6, avatar: "https://i.pravatar.cc/100?img=53" },
 ];
 
 // -- Activity data ------------------------------------------------------------
 const ACTIVITY = [
-  { text: "Diego M. acept\u00f3 tu invitaci\u00f3n", time: "Hace 15 min", dotColor: "bg-emerald-500" },
-  { text: "Nueva b\u00fasqueda: Garz\u00f3n turno noche", time: "Hace 1 hora", dotColor: "bg-[#E85520]" },
-  { text: "Camila R. complet\u00f3 turno Chef", time: "Hace 3 horas", dotColor: "bg-blue-500" },
-  { text: "Tu b\u00fasqueda expir\u00f3: Barman s\u00e1bado", time: "Hace 1 d\u00eda", dotColor: "bg-gray-400" },
+  { text: "Diego M. aceptó tu invitación", time: "Hace 15 min", dotColor: "bg-emerald-500" },
+  { text: "Nueva búsqueda: Garzón turno noche", time: "Hace 1 hora", dotColor: "bg-[#E85520]" },
+  { text: "Camila R. completó turno Chef", time: "Hace 3 horas", dotColor: "bg-blue-500" },
+  { text: "Tu búsqueda expiró: Barman sábado", time: "Hace 1 día", dotColor: "bg-gray-400" },
 ];
 
 // -- Active searches data -----------------------------------------------------
 const ACTIVE_SEARCHES = [
   {
     icon: "\ud83c\udf7d",
-    title: "Garz\u00f3n para hoy 19:00",
+    title: "Garzón para hoy 19:00",
     statusText: "3 matches encontrados",
     statusColor: "text-emerald-600",
-    progress: "4 invitados \u00b7 1 acept\u00f3 \u00b7 0 rechaz\u00f3",
+    progress: "4 invitados · 1 aceptó · 0 rechazó",
     searching: false,
     bgIcon: "bg-emerald-100",
   },
   {
     icon: "\ud83d\udc68\u200d\ud83c\udf73",
-    title: "Chef turno ma\u00f1ana",
+    title: "Chef turno mañana",
     statusText: "Buscando...",
     statusColor: "text-amber-600",
-    progress: "2 invitados \u00b7 0 acept\u00f3 \u00b7 0 rechaz\u00f3",
+    progress: "2 invitados · 0 aceptó · 0 rechazó",
     searching: true,
     bgIcon: "bg-amber-100",
   },
@@ -71,7 +71,7 @@ const ACTIVE_SEARCHES = [
     title: "Barman esta semana viernes",
     statusText: "1 match encontrado",
     statusColor: "text-blue-600",
-    progress: "3 invitados \u00b7 1 acept\u00f3 \u00b7 1 rechaz\u00f3",
+    progress: "3 invitados · 1 aceptó · 1 rechazó",
     searching: false,
     bgIcon: "bg-blue-100",
   },
@@ -96,10 +96,10 @@ export default function EmpresaDashboard() {
           <div className="flex items-center justify-between pt-14 lg:pt-0">
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold text-[#1A0E05]">
-                Buenos d\u00edas, La Misi\u00f3n
+                Buenos días, La Misión
               </h1>
               <p className="text-[#7A5C48] mt-1">
-                El sistema est\u00e1 buscando talento para ti
+                El sistema está buscando talento para ti
               </p>
             </div>
             <button className="relative p-3 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
@@ -115,10 +115,10 @@ export default function EmpresaDashboard() {
           {/* ── 2. HERO CARD — Crear necesidad (PRIMARY ACTION) ──── */}
           <div className="bg-white rounded-3xl p-8 shadow-lg">
             <h2 className="text-2xl font-extrabold text-[#1A0E05]">
-              \u00bfQu\u00e9 necesitas hoy?
+              ¿Qué necesitas hoy?
             </h2>
             <p className="text-[#7A5C48] mt-1 mb-6">
-              Describe tu necesidad y el sistema encontrar\u00e1 los mejores profesionales
+              Describe tu necesidad y el sistema encontrará los mejores profesionales
             </p>
 
             {/* Form: horizontal on desktop, stacked on mobile */}
@@ -130,7 +130,7 @@ export default function EmpresaDashboard() {
                 className="w-full px-4 py-3 rounded-xl border border-[#F0E6DC] bg-[#F8F6F3] text-[#1A0E05] text-sm font-medium appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#E85520]/30 focus:border-[#E85520]"
               >
                 <option value="">Rol</option>
-                <option value="garzon">Garz\u00f3n</option>
+                <option value="garzon">Garzón</option>
                 <option value="chef">Chef</option>
                 <option value="barman">Barman</option>
                 <option value="mesero">Mesero</option>
@@ -141,15 +141,15 @@ export default function EmpresaDashboard() {
                 <option value="otro">Otro</option>
               </select>
 
-              {/* Cu\u00e1ndo */}
+              {/* Cuándo */}
               <select
                 value={selectedWhen}
                 onChange={(e) => setSelectedWhen(e.target.value)}
                 className="w-full px-4 py-3 rounded-xl border border-[#F0E6DC] bg-[#F8F6F3] text-[#1A0E05] text-sm font-medium appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#E85520]/30 focus:border-[#E85520]"
               >
-                <option value="">Cu\u00e1ndo</option>
+                <option value="">Cuándo</option>
                 <option value="hoy">Hoy</option>
-                <option value="manana">Ma\u00f1ana</option>
+                <option value="manana">Mañana</option>
                 <option value="semana">Esta semana</option>
               </select>
 
@@ -175,7 +175,7 @@ export default function EmpresaDashboard() {
                 <option value="las-condes">Las Condes</option>
                 <option value="vitacura">Vitacura</option>
                 <option value="santiago-centro">Santiago Centro</option>
-                <option value="nunoa">\u00d1u\u00f1oa</option>
+                <option value="nunoa">Ñuñoa</option>
                 <option value="la-reina">La Reina</option>
                 <option value="otro">Otro</option>
               </select>
@@ -190,7 +190,7 @@ export default function EmpresaDashboard() {
             </div>
 
             <p className="text-xs text-[#7A5C48] mb-4">
-              \u26a1 El sistema busca en toda la base, activa profesionales y te muestra los mejores matches
+              ⚡ El sistema busca en toda la base, activa profesionales y te muestra los mejores matches
             </p>
 
             {/* Urgency toggle */}
@@ -213,10 +213,10 @@ export default function EmpresaDashboard() {
             </div>
           </div>
 
-          {/* ── 3. MIS B\u00daSQUEDAS ACTIVAS ───────────────────────── */}
+          {/* ── 3. MIS BÚSQUEDAS ACTIVAS ───────────────────────── */}
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#F0E6DC]/50">
             <div className="flex items-center justify-between mb-5">
-              <h2 className="text-lg font-bold text-[#1A0E05]">Mis b\u00fasquedas activas</h2>
+              <h2 className="text-lg font-bold text-[#1A0E05]">Mis búsquedas activas</h2>
               <span className="text-xs text-[#7A5C48] bg-[#F8F6F3] px-3 py-1 rounded-full font-medium">
                 {ACTIVE_SEARCHES.length} activas
               </span>
@@ -321,7 +321,7 @@ export default function EmpresaDashboard() {
                             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
-                            Rechaz\u00f3
+                            Rechazó
                           </span>
                         )}
                       </div>
@@ -334,12 +334,12 @@ export default function EmpresaDashboard() {
             {/* ── Right column ─────────────────────────────────────── */}
             <div className="space-y-6">
 
-              {/* Estad\u00edsticas r\u00e1pidas */}
+              {/* Estadísticas rápidas */}
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#F0E6DC]/50">
-                <h2 className="text-lg font-bold text-[#1A0E05] mb-4">Estad\u00edsticas r\u00e1pidas</h2>
+                <h2 className="text-lg font-bold text-[#1A0E05] mb-4">Estadísticas rápidas</h2>
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    { value: "2", label: "B\u00fasquedas activas", color: "text-[#E85520]" },
+                    { value: "2", label: "Búsquedas activas", color: "text-[#E85520]" },
                     { value: "5", label: "Matches hoy", color: "text-blue-600" },
                     { value: "1", label: "Confirmados", color: "text-emerald-600" },
                     { value: "4.8", label: "Rating", color: "text-purple-600" },
@@ -373,7 +373,7 @@ export default function EmpresaDashboard() {
                       />
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-semibold text-[#1A0E05] truncate">{person.name}</p>
-                        <p className="text-xs text-[#7A5C48]">{person.role} \u00b7 {person.shifts} turnos juntos</p>
+                        <p className="text-xs text-[#7A5C48]">{person.role} · {person.shifts} turnos juntos</p>
                       </div>
                       <button className="shrink-0 px-3 py-1.5 bg-[#E85520]/10 text-[#E85520] text-xs font-semibold rounded-lg hover:bg-[#E85520]/20 transition-colors">
                         Re-invitar
@@ -419,7 +419,7 @@ export default function EmpresaDashboard() {
               </div>
               <div>
                 <p className="text-sm font-medium text-[#1A0E05]">
-                  Tambi\u00e9n puedes explorar talento activo ahora
+                  También puedes explorar talento activo ahora
                 </p>
                 <p className="text-xs text-[#7A5C48] flex items-center gap-1.5 mt-0.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
