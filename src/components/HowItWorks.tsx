@@ -16,7 +16,7 @@ function EmpresaVisual({ index }: { index: number }) {
   if (index === 0) {
     // Mini form mockup
     return (
-      <div className="mt-5 rounded-2xl p-4 text-left text-xs" style={{ background: "#FFF7F2", border: "1px solid #F5E0D0" }}>
+      <div className="mt-5 rounded-2xl p-4 text-left text-xs" style={{ background: "#FFFFFF", border: "1px solid #F5E0D0" }}>
         <label className="block text-[#7A5C48] font-semibold mb-1">Rol necesario</label>
         <div className="rounded-lg px-3 py-2 mb-3 text-[#1A0E05] font-medium" style={{ background: "#fff", border: "1px solid #E8D5C4" }}>
           🍳 Chef de partida
@@ -78,7 +78,7 @@ function TrabajadorVisual({ index }: { index: number }) {
   if (index === 0) {
     // Mini profile card preview
     return (
-      <div className="mt-5 rounded-2xl p-4 text-left text-xs" style={{ background: "#FFF7F2", border: "1px solid #F5E0D0" }}>
+      <div className="mt-5 rounded-2xl p-4 text-left text-xs" style={{ background: "#FFFFFF", border: "1px solid #F5E0D0" }}>
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full overflow-hidden" style={{ border: "2px solid #E85520" }}>
             <img src="https://i.pravatar.cc/150?img=11" alt="avatar" className="w-full h-full object-cover" />
@@ -89,8 +89,8 @@ function TrabajadorVisual({ index }: { index: number }) {
           </div>
         </div>
         <div className="flex gap-2 mt-3">
-          <span className="px-2 py-0.5 rounded-full text-[10px] font-bold" style={{ background: "#FFF0E6", color: "#E85520" }}>Coctelería</span>
-          <span className="px-2 py-0.5 rounded-full text-[10px] font-bold" style={{ background: "#FFF0E6", color: "#E85520" }}>Mixología</span>
+          <span className="px-2 py-0.5 rounded-full text-[10px] font-bold" style={{ background: "#FFFFFF", color: "#E85520" }}>Coctelería</span>
+          <span className="px-2 py-0.5 rounded-full text-[10px] font-bold" style={{ background: "#FFFFFF", color: "#E85520" }}>Mixología</span>
         </div>
         <div className="mt-2 flex items-center gap-1 text-[#7A5C48]">
           ⭐ <span className="font-bold text-[#1A0E05]">4.7</span> · Las Condes
@@ -103,7 +103,7 @@ function TrabajadorVisual({ index }: { index: number }) {
     return (
       <div className="mt-5 flex flex-col items-center gap-2">
         <div className="relative">
-          <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl" style={{ background: "#FFF0E6" }}>
+          <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl" style={{ background: "#FFFFFF" }}>
             🔔
           </div>
           <span
@@ -215,7 +215,7 @@ export default function HowItWorks() {
               const color = stepColors[index];
               return (
                 <RevealWrapper key={`${tab}-${step.number}`} delay={0.15 + index * 0.1} className="contents">
-                  <div className="bg-white rounded-3xl p-6 shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 text-center flex flex-col" style={{ border: "1px solid rgba(232,85,32,0.08)" }}>
+                  <div className="rounded-3xl p-6 shadow-xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 text-center flex flex-col" style={{ background: stepColors[index].light, border: `2px solid ${stepColors[index].bg}15` }}>
                     {/* Step number + icon row */}
                     <div className="flex items-center justify-center gap-3">
                       <div
@@ -264,7 +264,7 @@ export default function HowItWorks() {
               const color = stepColors[index];
               return (
                 <RevealWrapper key={`${tab}-mob-${step.number}`} delay={0.15 + index * 0.1}>
-                  <div className="bg-white rounded-3xl p-8 shadow-xl text-center">
+                  <div className="rounded-3xl p-6 shadow-xl text-center" style={{ background: color.light, border: `2px solid ${color.bg}15` }}>
                     <div
                       className="w-14 h-14 rounded-full flex items-center justify-center text-white text-lg font-extrabold mx-auto shadow-lg"
                       style={{ background: color.bg, boxShadow: `0 8px 24px ${color.bg}40` }}
