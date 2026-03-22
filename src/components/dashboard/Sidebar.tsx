@@ -120,23 +120,23 @@ interface NavItem {
 }
 
 const empresaNavItems: NavItem[] = [
-  { label: "Dashboard", icon: IconHome, href: "/dashboard/empresa" },
-  { label: "Buscar talento", icon: IconSearch, href: "/dashboard/empresa/buscar" },
-  { label: "Mis turnos", icon: IconCalendar, href: "/dashboard/empresa/turnos" },
-  { label: "Mi equipo", icon: IconUsers, href: "/dashboard/empresa/equipo" },
+  { label: "Inicio", icon: IconHome, href: "/dashboard/empresa" },
+  { label: "Ver talento", icon: IconSearch, href: "/dashboard/empresa/buscar" },
+  { label: "Mis búsquedas", icon: IconCalendar, href: "/dashboard/empresa/turnos" },
+  { label: "Talento frecuente", icon: IconUsers, href: "/dashboard/empresa/equipo" },
   { label: "Mensajes", icon: IconChat, href: "/dashboard/empresa/mensajes" },
-  { label: "Analytics", icon: IconChart, href: "/dashboard/empresa/analytics" },
-  { label: "Configuracion", icon: IconGear, href: "/dashboard/empresa/configuracion" },
+  { label: "Métricas", icon: IconChart, href: "/dashboard/empresa/analytics" },
+  { label: "Ajustes", icon: IconGear, href: "/dashboard/empresa/configuracion" },
 ];
 
 const trabajadorNavItems: NavItem[] = [
-  { label: "Dashboard", icon: IconHome, href: "/dashboard/trabajador" },
-  { label: "Turnos disponibles", icon: IconBriefcase, href: "/dashboard/trabajador/turnos" },
+  { label: "Inicio", icon: IconHome, href: "/dashboard/trabajador" },
+  { label: "Invitaciones", icon: IconBriefcase, href: "/dashboard/trabajador/misturnos" },
   { label: "Mis turnos", icon: IconCalendar, href: "/dashboard/trabajador/misturnos" },
   { label: "Mi perfil", icon: IconUser, href: "/dashboard/trabajador/perfil" },
   { label: "Mensajes", icon: IconChat, href: "/dashboard/trabajador/mensajes" },
   { label: "Mis ganancias", icon: IconDollar, href: "/dashboard/trabajador/ganancias" },
-  { label: "Configuracion", icon: IconGear, href: "/dashboard/trabajador/configuracion" },
+  { label: "Ajustes", icon: IconGear, href: "/dashboard/trabajador/configuracion" },
 ];
 
 // ── Props ───────────────────────────────────────────────────────────────────
