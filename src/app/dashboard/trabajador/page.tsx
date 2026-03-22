@@ -12,7 +12,7 @@ const invitaciones = [
     zona: "Providencia",
     rol: "Garzón",
     horario: "Hoy 19:00 -- 01:00",
-    pago: "$4.500/hr (referencial)",
+    pago: "Tarifa: $4.000 - $5.000/hr (referencial)",
     matchReason: "Cerca de ti -- Compatible con tu experiencia",
     hace: "Hace 15 min",
     tiempoRestante: 28,
@@ -24,7 +24,7 @@ const invitaciones = [
     zona: "Las Condes",
     rol: "Barman",
     horario: "Hoy 20:00 -- 02:00",
-    pago: "$5.000/hr (referencial)",
+    pago: "Tarifa: $4.000 - $6.000/hr (referencial)",
     matchReason: "Zona habitual -- Alta tasa de aceptación",
     hace: "Hace 32 min",
     tiempoRestante: 18,
@@ -36,7 +36,7 @@ const invitaciones = [
     zona: "Vitacura",
     rol: "Garzón",
     horario: "Mañana 19:00 -- 00:00",
-    pago: "$6.000/hr (referencial)",
+    pago: "Tarifa: $5.000 - $7.000/hr (referencial)",
     matchReason: "Te invitaron antes -- Excelente puntualidad",
     hace: "Hace 1 hora",
     tiempoRestante: 45,
@@ -90,54 +90,61 @@ export default function TrabajadorDashboard() {
           )}
         </div>
 
-        {/* ── 2. Availability Toggle (status bar) ────────────────────────── */}
-        <div className="bg-white rounded-2xl p-5 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-          <div className="flex items-center gap-3">
-            <div className="relative">
-              <div className="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center">
-                <svg
-                  className="w-5 h-5 text-green-500"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-              </div>
-              <span className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-full border-2 border-white" />
-            </div>
+        {/* ── 2. Availability Toggle ────────────────────────── */}
+        <div className={`rounded-2xl p-5 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 transition-all duration-300 ${
+          disponibilidad !== "no"
+            ? "bg-green-50 border-2 border-green-200"
+            : "bg-white border-2 border-gray-200"
+        }`}>
+          <div className="flex items-center gap-4">
+            {/* Toggle switch */}
+            <button
+              onClick={() => setDisponibilidad(disponibilidad === "no" ? "ahora" : "no")}
+              className={`relative w-14 h-8 rounded-full transition-all duration-300 ${
+                disponibilidad !== "no" ? "bg-green-500" : "bg-gray-300"
+              }`}
+            >
+              <span className={`absolute top-1 w-6 h-6 bg-white rounded-full shadow-md transition-all duration-300 ${
+                disponibilidad !== "no" ? "left-7" : "left-1"
+              }`} />
+            </button>
             <div>
-              <p className="font-semibold text-[#1A0E05] flex items-center gap-2">
-                Disponible ahora
-                <span className="w-2 h-2 rounded-full bg-green-500 inline-block" />
+              <p className={`font-bold text-base flex items-center gap-2 ${
+                disponibilidad !== "no" ? "text-green-700" : "text-gray-500"
+              }`}>
+                {disponibilidad !== "no" ? (
+                  <>
+                    <span className="relative flex h-2.5 w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
+                    </span>
+                    {disponibilidad === "ahora" ? "Disponible ahora" : disponibilidad === "hoy" ? "Disponible hoy" : "Disponible esta semana"}
+                  </>
+                ) : (
+                  <>
+                    <span className="w-2.5 h-2.5 rounded-full bg-gray-400" />
+                    No disponible
+                  </>
+                )}
+              </p>
+              <p className="text-xs text-[#7A5C48] mt-0.5">
+                {disponibilidad !== "no" ? "Las empresas pueden verte e invitarte" : "No apareces en búsquedas"}
               </p>
             </div>
           </div>
 
-          <select
-            value={disponibilidad}
-            onChange={(e) => setDisponibilidad(e.target.value)}
-            className="bg-green-50 border border-green-200 text-green-700 px-4 py-2.5 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-green-300"
-          >
-            <option value="ahora">Disponible ahora</option>
-            <option value="hoy">Disponible hoy</option>
-            <option value="semana">Esta semana</option>
-            <option value="no">No disponible</option>
-          </select>
+          {disponibilidad !== "no" && (
+            <select
+              value={disponibilidad}
+              onChange={(e) => setDisponibilidad(e.target.value)}
+              className="bg-white border border-green-200 text-green-700 px-4 py-2.5 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-green-300"
+            >
+              <option value="ahora">Disponible ahora</option>
+              <option value="hoy">Disponible hoy</option>
+              <option value="semana">Esta semana</option>
+            </select>
+          )}
         </div>
-        <p className="text-xs text-[#7A5C48] -mt-4 mb-6 ml-1">
-          Estar activo aumenta tu visibilidad, pero recibirás invitaciones de todas formas
-        </p>
 
         {/* ── 3. Invitaciones (HERO CONTENT) ─────────────────────────────── */}
         <div className="mb-8">
@@ -488,25 +495,6 @@ export default function TrabajadorDashboard() {
               <p className="text-xs text-[#9A7A60] text-center">
                 Tu score mejora con cada turno completado
               </p>
-            </div>
-
-            {/* Ganancias del mes */}
-            <div className="bg-white rounded-2xl shadow-sm p-6">
-              <h3 className="font-bold text-[#1A0E05] mb-3">
-                Ganancias del mes
-              </h3>
-              <p className="text-2xl font-bold text-[#1A0E05] mb-1">
-                $142.000 <span className="text-sm font-normal text-[#7A5C48]">este mes</span>
-              </p>
-              <p className="text-sm text-[#7A5C48] mb-3">
-                12 turnos &middot; +12% vs anterior
-              </p>
-              <a
-                href="/dashboard/trabajador/ganancias"
-                className="text-sm font-medium text-[#E85520] hover:underline"
-              >
-                Ver detalle &rarr;
-              </a>
             </div>
 
             {/* Restaurantes que te buscan */}

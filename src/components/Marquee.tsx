@@ -86,7 +86,7 @@ function ProfileModal({ worker, onClose }: { worker: Worker; onClose: () => void
           {/* Stats grid */}
           <div className="grid grid-cols-3 gap-3 mt-5">
             {[
-              { label: "Precio/hr", value: worker.price, icon: "💰" },
+              { label: "Tarifa ref.", value: worker.price, icon: "💰" },
               { label: "Horario", value: worker.hours.split(" ").slice(1).join(" "), icon: "🕒" },
               { label: "Turnos", value: "127+", icon: "📋" },
             ].map((s) => (
@@ -246,7 +246,7 @@ export default function Marquee() {
                       </div>
                       <div className="flex-1 rounded-lg py-1.5 text-center" style={{ background: "#FFE4CC" }}>
                         <div className="text-[#1A0E05] font-bold text-xs">{worker.price}</div>
-                        <div className="text-[#7A5C48] text-[9px]">por hora</div>
+                        <div className="text-[#7A5C48] text-[9px]">tarifa ref.</div>
                       </div>
                     </div>
 

@@ -25,7 +25,7 @@ const turnosMock: Turno[] = [
     rol: "Garzon",
     fecha: "Hoy, 21 Mar",
     horario: "19:00 - 00:00",
-    precioHr: "$12.000",
+    precioHr: "$10.000 - $14.000",
     distancia: "1.2 km",
     descripcion: "Evento privado para 40 personas, experiencia en servicio de vinos requerida.",
     urgente: true,
@@ -38,7 +38,7 @@ const turnosMock: Turno[] = [
     rol: "Barman",
     fecha: "Manana, 22 Mar",
     horario: "20:00 - 02:00",
-    precioHr: "$15.000",
+    precioHr: "$12.000 - $18.000",
     distancia: "3.4 km",
     descripcion: "Barra principal del restaurante, cocteleria de autor.",
     urgente: false,
@@ -51,7 +51,7 @@ const turnosMock: Turno[] = [
     rol: "Garzon",
     fecha: "23 Mar",
     horario: "12:00 - 17:00",
-    precioHr: "$10.000",
+    precioHr: "$8.000 - $12.000",
     distancia: "2.8 km",
     descripcion: "Almuerzo ejecutivo, servicio rapido y eficiente.",
     urgente: false,
@@ -64,7 +64,7 @@ const turnosMock: Turno[] = [
     rol: "Hostess",
     fecha: "23 Mar",
     horario: "19:00 - 23:00",
-    precioHr: "$11.000",
+    precioHr: "$9.000 - $13.000",
     distancia: "4.1 km",
     descripcion: "Recepcion y manejo de reservas en restaurante de alta demanda.",
     urgente: false,
@@ -77,7 +77,7 @@ const turnosMock: Turno[] = [
     rol: "Garzon",
     fecha: "24 Mar",
     horario: "11:00 - 16:00",
-    precioHr: "$9.500",
+    precioHr: "$8.000 - $11.000",
     distancia: "0.8 km",
     descripcion: "Turno de almuerzo, ambiente casual. Buenas propinas.",
     urgente: false,
@@ -90,7 +90,7 @@ const turnosMock: Turno[] = [
     rol: "Barman",
     fecha: "Hoy, 21 Mar",
     horario: "21:00 - 03:00",
-    precioHr: "$14.000",
+    precioHr: "$11.000 - $16.000",
     distancia: "5.2 km",
     descripcion: "Barra de eventos, necesario experiencia en cocteleria clasica.",
     urgente: true,
@@ -103,7 +103,7 @@ const turnosMock: Turno[] = [
     rol: "Sommelier",
     fecha: "25 Mar",
     horario: "19:00 - 23:00",
-    precioHr: "$18.000",
+    precioHr: "$15.000 - $20.000",
     distancia: "1.5 km",
     descripcion: "Cena maridaje para 20 personas. Conocimiento de vinos chilenos.",
     urgente: false,
@@ -116,7 +116,7 @@ const turnosMock: Turno[] = [
     rol: "Ayudante de cocina",
     fecha: "26 Mar",
     horario: "10:00 - 18:00",
-    precioHr: "$8.500",
+    precioHr: "$7.000 - $10.000",
     distancia: "6.0 km",
     descripcion: "Apoyo en mise en place y preparacion de ingredientes.",
     urgente: false,
@@ -127,7 +127,7 @@ const turnosMock: Turno[] = [
 const rolesFilter = ["Todos", "Garzon", "Barman", "Hostess", "Chef", "Sommelier", "Ayudante de cocina"];
 const zonasFilter = ["Todas", "Providencia", "Las Condes", "Vitacura", "Santiago Centro", "Nunoa"];
 const whenFilter = ["Todos", "Hoy", "Manana", "Esta semana"];
-const sortOptions = ["Mas cercano", "Mejor pago", "Mas reciente"];
+const sortOptions = ["Mas cercano", "Mejor tarifa ref.", "Mas reciente"];
 
 export default function TurnosDisponiblesPage() {
   const [rolFilter, setRolFilter] = useState("Todos");
@@ -234,7 +234,7 @@ export default function TurnosDisponiblesPage() {
                   <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="font-semibold text-[#1A0E05]">{turno.precioHr}/hr</span>
+                  <span className="font-semibold text-[#1A0E05]">{turno.precioHr}/hr <span className="font-normal text-[#9A7A60]">(ref.)</span></span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-[#7A5C48]">
                   <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>

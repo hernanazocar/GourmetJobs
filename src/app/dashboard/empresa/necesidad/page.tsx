@@ -15,7 +15,9 @@ export default function NecesidadPage() {
   const [horaHasta, setHoraHasta] = useState("01:00");
   const [duracion, setDuracion] = useState("Turno único");
   const [zona, setZona] = useState("Providencia");
-  const [precio, setPrecio] = useState(8500);
+  const [precioDesde, setPrecioDesde] = useState(7000);
+  const [precioHasta, setPrecioHasta] = useState(10000);
+  const [tarifaTipo, setTarifaTipo] = useState("por hora");
   const [requisitos, setRequisitos] = useState("");
   const [urgente, setUrgente] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -133,19 +135,45 @@ export default function NecesidadPage() {
                   </select>
                 </div>
 
-                {/* Precio por hora */}
+                {/* Tarifa referencial (rango) */}
                 <div>
-                  <label className="block text-sm font-semibold text-[#1A0E05] mb-2">Precio por hora</label>
-                  <div className="relative">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#7A5C48] font-semibold">$</span>
-                    <input
-                      type="number"
-                      min={0}
-                      value={precio}
-                      onChange={(e) => setPrecio(Number(e.target.value))}
-                      className="w-full bg-[#FFF5EE] rounded-xl pl-8 pr-4 py-3 text-[#1A0E05] border-none outline-none"
-                    />
+                  <label className="block text-sm font-semibold text-[#1A0E05] mb-2">Tarifa referencial (rango)</label>
+                  <div className="flex items-center gap-3">
+                    <div className="relative flex-1">
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#7A5C48] font-semibold">$</span>
+                      <input
+                        type="number"
+                        min={0}
+                        value={precioDesde}
+                        onChange={(e) => setPrecioDesde(Number(e.target.value))}
+                        placeholder="Desde"
+                        className="w-full bg-[#FFF5EE] rounded-xl pl-8 pr-4 py-3 text-[#1A0E05] border-none outline-none"
+                      />
+                    </div>
+                    <span className="text-[#7A5C48] font-medium">-</span>
+                    <div className="relative flex-1">
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#7A5C48] font-semibold">$</span>
+                      <input
+                        type="number"
+                        min={0}
+                        value={precioHasta}
+                        onChange={(e) => setPrecioHasta(Number(e.target.value))}
+                        placeholder="Hasta"
+                        className="w-full bg-[#FFF5EE] rounded-xl pl-8 pr-4 py-3 text-[#1A0E05] border-none outline-none"
+                      />
+                    </div>
                   </div>
+                  <select
+                    value={tarifaTipo}
+                    onChange={(e) => setTarifaTipo(e.target.value)}
+                    className="w-full bg-[#FFF5EE] rounded-xl px-4 py-3 text-[#1A0E05] border-none outline-none mt-2"
+                  >
+                    <option value="por hora">Por hora</option>
+                    <option value="por día">Por día</option>
+                    <option value="por turno">Por turno</option>
+                    <option value="a convenir">A convenir</option>
+                  </select>
+                  <p className="text-xs text-[#9A7A60] mt-2">La tarifa es referencial. El acuerdo final es directo con el profesional.</p>
                 </div>
 
                 {/* Requisitos */}
@@ -205,7 +233,7 @@ export default function NecesidadPage() {
                       <p className="text-sm text-[#7A5C48] mt-1">La Misión - {zona}</p>
                     </div>
                     <span className="text-lg font-bold text-[#E85520]">
-                      ${precio.toLocaleString("es-CL")}/hr
+                      ${precioDesde.toLocaleString("es-CL")} - ${precioHasta.toLocaleString("es-CL")}/{tarifaTipo === "a convenir" ? "a convenir" : tarifaTipo.replace("por ", "")}
                     </span>
                   </div>
                   <div className="flex flex-wrap gap-3 text-sm text-[#7A5C48]">

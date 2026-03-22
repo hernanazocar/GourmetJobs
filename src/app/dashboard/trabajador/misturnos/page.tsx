@@ -13,7 +13,7 @@ const proximosTurnos = [
     rol: "Garzón turno noche",
     fecha: "Sábado 22 Mar",
     horario: "19:00 - 01:00",
-    pago: "$4.500/hr",
+    pago: "Tarifa: $4.000 - $5.000/hr (ref.)",
     estado: "Confirmado",
     direccion: "Av. Providencia 1234, Providencia",
   },
@@ -23,7 +23,7 @@ const proximosTurnos = [
     rol: "Barman evento privado",
     fecha: "Domingo 23 Mar",
     horario: "20:00 - 02:00",
-    pago: "$5.000/hr",
+    pago: "Tarifa: $4.000 - $6.000/hr (ref.)",
     estado: "Confirmado",
     direccion: "Isidora Goyenechea 3000, Las Condes",
   },
@@ -33,7 +33,7 @@ const proximosTurnos = [
     rol: "Garzón almuerzo",
     fecha: "Lunes 24 Mar",
     horario: "12:00 - 17:00",
-    pago: "$4.800/hr",
+    pago: "Tarifa: $4.000 - $5.500/hr (ref.)",
     estado: "Confirmado",
     direccion: "Nueva Costanera 3467, Vitacura",
   },
@@ -46,8 +46,7 @@ const turnosCompletados = [
     rol: "Garzón turno almuerzo",
     fecha: "Viernes 14 Mar",
     horario: "12:00 - 17:00",
-    pago: "$4.000/hr",
-    ganancia: "$20.000",
+    pago: "Tarifa: $3.500 - $4.500/hr (ref.)",
     rating: 4.8,
     direccion: "Av. Providencia 1373, Providencia",
   },
@@ -57,8 +56,7 @@ const turnosCompletados = [
     rol: "Garzón turno noche",
     fecha: "Sábado 15 Mar",
     horario: "19:00 - 01:00",
-    pago: "$4.500/hr",
-    ganancia: "$27.000",
+    pago: "Tarifa: $4.000 - $5.000/hr (ref.)",
     rating: 5.0,
     direccion: "Av. Providencia 1234, Providencia",
   },
@@ -68,8 +66,7 @@ const turnosCompletados = [
     rol: "Barman",
     fecha: "Domingo 9 Mar",
     horario: "20:00 - 02:00",
-    pago: "$5.000/hr",
-    ganancia: "$30.000",
+    pago: "Tarifa: $4.000 - $6.000/hr (ref.)",
     rating: 4.5,
     direccion: "Isidora Goyenechea 3000, Las Condes",
   },
@@ -79,8 +76,7 @@ const turnosCompletados = [
     rol: "Garzón cena especial",
     fecha: "Viernes 7 Mar",
     horario: "19:00 - 00:00",
-    pago: "$4.800/hr",
-    ganancia: "$24.000",
+    pago: "Tarifa: $4.000 - $5.500/hr (ref.)",
     rating: 4.9,
     direccion: "Nueva Costanera 3467, Vitacura",
   },
@@ -93,7 +89,7 @@ const turnosCancelados = [
     rol: "Chef de partida",
     fecha: "Miércoles 12 Mar",
     horario: "14:00 - 22:00",
-    pago: "$6.000/hr",
+    pago: "Tarifa: $5.000 - $7.000/hr (ref.)",
     motivo: "Cancelado por el restaurante",
     direccion: "Av. El Bosque Norte 0177, Las Condes",
   },
@@ -265,9 +261,7 @@ export default function MisTurnosPage() {
                       </div>
                     </div>
                     <div className="text-right shrink-0">
-                      <p className="text-xs text-[#7A5C48] mb-1">Ganancia</p>
-                      <p className="text-lg font-bold text-green-600">{turno.ganancia}</p>
-                      <p className="text-xs text-[#7A5C48] mt-0.5">{turno.pago}</p>
+                      <p className="text-xs text-[#9A7A60]">{turno.pago}</p>
                     </div>
                   </div>
                 </div>

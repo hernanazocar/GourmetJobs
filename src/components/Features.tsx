@@ -1,6 +1,6 @@
 "use client";
 
-import { features, trustBars, earningsData } from "@/lib/data";
+import { features, trustBars, activityData } from "@/lib/data";
 import RevealWrapper from "./ui/RevealWrapper";
 
 export default function Features() {
@@ -127,10 +127,10 @@ export default function Features() {
                   </div>
                 )}
 
-                {/* Earnings Data (second card) */}
+                {/* Activity Data (second card) */}
                 {index === 1 && (
                   <div className="grid grid-cols-3 gap-4 mt-6">
-                    {earningsData.map((item) => (
+                    {activityData.map((item) => (
                       <div
                         key={item.label}
                         className="text-center bg-orange/5 rounded-xl py-3"

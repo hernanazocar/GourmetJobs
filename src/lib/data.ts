@@ -13,18 +13,18 @@ export const avatarColors = [
 export type WorkerCategory = "all" | "garzones" | "cocina" | "baristas" | "admin";
 
 export const marqueeWorkers = [
-  { name: "Camila R.", role: "Chef de partida", category: "cocina" as WorkerCategory, zone: "Providencia", availability: "now" as const, img: "https://i.pravatar.cc/150?img=1", rating: 4.9, experience: "6 años", price: "$5.500/hr", hours: "Hoy 10:00–18:00", tagline: "Especialista en cocina francesa y menú degustación", badge: "fast" as const, skills: ["Cocina francesa", "Repostería"] },
-  { name: "Diego M.", role: "Barman", category: "baristas" as WorkerCategory, zone: "Las Condes", availability: "today" as const, img: "https://i.pravatar.cc/150?img=11", rating: 4.7, experience: "4 años", price: "$4.500/hr", hours: "Hoy 20:00–03:00", tagline: "Coctelería clásica y de autor, alto flujo", badge: "demand" as const, skills: ["Coctelería", "Mixología"] },
-  { name: "Valentina S.", role: "Mesera", category: "garzones" as WorkerCategory, zone: "Vitacura", availability: "now" as const, img: "https://i.pravatar.cc/150?img=5", rating: 4.8, experience: "5 años", price: "$4.000/hr", hours: "Hoy 12:00–22:00", tagline: "Atención VIP y bilingüe inglés-español", badge: "fast" as const, skills: ["Atención VIP", "Bilingüe"] },
-  { name: "Matías F.", role: "Sous Chef", category: "cocina" as WorkerCategory, zone: "Ñuñoa", availability: "now" as const, img: "https://i.pravatar.cc/150?img=12", rating: 5.0, experience: "8 años", price: "$7.000/hr", hours: "Hoy 09:00–17:00", tagline: "Gestión de equipo y cocina asiática fusión", badge: null, skills: ["Cocina asiática", "Gestión"] },
-  { name: "Isidora P.", role: "Pastelera", category: "cocina" as WorkerCategory, zone: "Santiago Centro", availability: "today" as const, img: "https://i.pravatar.cc/150?img=9", rating: 4.9, experience: "5 años", price: "$5.000/hr", hours: "Mañana 07:00–15:00", tagline: "Pastelería fina y chocolatería artesanal", badge: "demand" as const, skills: ["Pastelería", "Chocolatería"] },
-  { name: "Sebastián V.", role: "Garzón", category: "garzones" as WorkerCategory, zone: "La Reina", availability: "now" as const, img: "https://i.pravatar.cc/150?img=13", rating: 4.3, experience: "2 años", price: "$3.800/hr", hours: "Hoy 19:00–01:00", tagline: "Experiencia en fine dining y servicio de vinos", badge: null, skills: ["Fine dining", "Vinos"] },
-  { name: "Antonia M.", role: "Hostess", category: "admin" as WorkerCategory, zone: "Providencia", availability: "now" as const, img: "https://i.pravatar.cc/150?img=23", rating: 4.8, experience: "3 años", price: "$4.200/hr", hours: "Hoy 12:00–20:00", tagline: "Gestión de reservas y atención al cliente premium", badge: "fast" as const, skills: ["Reservas", "Atención"] },
-  { name: "Felipe L.", role: "Cocinero línea", category: "cocina" as WorkerCategory, zone: "Las Condes", availability: "today" as const, img: "https://i.pravatar.cc/150?img=14", rating: 4.2, experience: "1 año", price: "$3.500/hr", hours: "Hoy 18:00–02:00", tagline: "Parrilla y cocina rápida, turnos noche", badge: "new" as const, skills: ["Parrilla", "Cocina rápida"] },
-  { name: "Catalina B.", role: "Sommelier", category: "baristas" as WorkerCategory, zone: "Vitacura", availability: "now" as const, img: "https://i.pravatar.cc/150?img=25", rating: 5.0, experience: "7 años", price: "$6.500/hr", hours: "Hoy 18:00–00:00", tagline: "Cata de vinos y maridaje para eventos", badge: "demand" as const, skills: ["Cata de vinos", "Maridaje"] },
-  { name: "Tomás H.", role: "Ayudante cocina", category: "cocina" as WorkerCategory, zone: "Maipú", availability: "now" as const, img: "https://i.pravatar.cc/150?img=15", rating: 4.0, experience: "6 meses", price: "$3.000/hr", hours: "Hoy 10:00–18:00", tagline: "Preparación y limpieza, turnos flexibles", badge: "new" as const, skills: ["Prep", "Limpieza"] },
-  { name: "Javiera C.", role: "Barista", category: "baristas" as WorkerCategory, zone: "Providencia", availability: "now" as const, img: "https://i.pravatar.cc/150?img=32", rating: 4.6, experience: "3 años", price: "$4.000/hr", hours: "Hoy 07:00–15:00", tagline: "Café de especialidad y latte art", badge: null, skills: ["Latte art", "Café especialidad"] },
-  { name: "Roberto S.", role: "Garzón", category: "garzones" as WorkerCategory, zone: "Santiago Centro", availability: "today" as const, img: "https://i.pravatar.cc/150?img=33", rating: 4.5, experience: "3 años", price: "$4.000/hr", hours: "Mañana 12:00–22:00", tagline: "Restaurantes de alto flujo y eventos", badge: null, skills: ["Alto flujo", "Eventos"] },
+  { name: "Camila R.", role: "Chef de partida", category: "cocina" as WorkerCategory, zone: "Providencia", availability: "now" as const, img: "https://i.pravatar.cc/150?img=1", rating: 4.9, experience: "6 años", price: "$4.500 - $6.500/hr", hours: "Hoy 10:00–18:00", tagline: "Especialista en cocina francesa y menú degustación", badge: "fast" as const, skills: ["Cocina francesa", "Repostería"] },
+  { name: "Diego M.", role: "Barman", category: "baristas" as WorkerCategory, zone: "Las Condes", availability: "today" as const, img: "https://i.pravatar.cc/150?img=11", rating: 4.7, experience: "4 años", price: "$3.500 - $5.500/hr", hours: "Hoy 20:00–03:00", tagline: "Coctelería clásica y de autor, alto flujo", badge: "demand" as const, skills: ["Coctelería", "Mixología"] },
+  { name: "Valentina S.", role: "Mesera", category: "garzones" as WorkerCategory, zone: "Vitacura", availability: "now" as const, img: "https://i.pravatar.cc/150?img=5", rating: 4.8, experience: "5 años", price: "$3.500 - $5.000/hr", hours: "Hoy 12:00–22:00", tagline: "Atención VIP y bilingüe inglés-español", badge: "fast" as const, skills: ["Atención VIP", "Bilingüe"] },
+  { name: "Matías F.", role: "Sous Chef", category: "cocina" as WorkerCategory, zone: "Ñuñoa", availability: "now" as const, img: "https://i.pravatar.cc/150?img=12", rating: 5.0, experience: "8 años", price: "$6.000 - $8.000/hr", hours: "Hoy 09:00–17:00", tagline: "Gestión de equipo y cocina asiática fusión", badge: null, skills: ["Cocina asiática", "Gestión"] },
+  { name: "Isidora P.", role: "Pastelera", category: "cocina" as WorkerCategory, zone: "Santiago Centro", availability: "today" as const, img: "https://i.pravatar.cc/150?img=9", rating: 4.9, experience: "5 años", price: "$4.000 - $6.000/hr", hours: "Mañana 07:00–15:00", tagline: "Pastelería fina y chocolatería artesanal", badge: "demand" as const, skills: ["Pastelería", "Chocolatería"] },
+  { name: "Sebastián V.", role: "Garzón", category: "garzones" as WorkerCategory, zone: "La Reina", availability: "now" as const, img: "https://i.pravatar.cc/150?img=13", rating: 4.3, experience: "2 años", price: "$3.000 - $4.500/hr", hours: "Hoy 19:00–01:00", tagline: "Experiencia en fine dining y servicio de vinos", badge: null, skills: ["Fine dining", "Vinos"] },
+  { name: "Antonia M.", role: "Hostess", category: "admin" as WorkerCategory, zone: "Providencia", availability: "now" as const, img: "https://i.pravatar.cc/150?img=23", rating: 4.8, experience: "3 años", price: "$3.500 - $5.000/hr", hours: "Hoy 12:00–20:00", tagline: "Gestión de reservas y atención al cliente premium", badge: "fast" as const, skills: ["Reservas", "Atención"] },
+  { name: "Felipe L.", role: "Cocinero línea", category: "cocina" as WorkerCategory, zone: "Las Condes", availability: "today" as const, img: "https://i.pravatar.cc/150?img=14", rating: 4.2, experience: "1 año", price: "$3.000 - $4.000/hr", hours: "Hoy 18:00–02:00", tagline: "Parrilla y cocina rápida, turnos noche", badge: "new" as const, skills: ["Parrilla", "Cocina rápida"] },
+  { name: "Catalina B.", role: "Sommelier", category: "baristas" as WorkerCategory, zone: "Vitacura", availability: "now" as const, img: "https://i.pravatar.cc/150?img=25", rating: 5.0, experience: "7 años", price: "$5.500 - $7.500/hr", hours: "Hoy 18:00–00:00", tagline: "Cata de vinos y maridaje para eventos", badge: "demand" as const, skills: ["Cata de vinos", "Maridaje"] },
+  { name: "Tomás H.", role: "Ayudante cocina", category: "cocina" as WorkerCategory, zone: "Maipú", availability: "now" as const, img: "https://i.pravatar.cc/150?img=15", rating: 4.0, experience: "6 meses", price: "A convenir", hours: "Hoy 10:00–18:00", tagline: "Preparación y limpieza, turnos flexibles", badge: "new" as const, skills: ["Prep", "Limpieza"] },
+  { name: "Javiera C.", role: "Barista", category: "baristas" as WorkerCategory, zone: "Providencia", availability: "now" as const, img: "https://i.pravatar.cc/150?img=32", rating: 4.6, experience: "3 años", price: "$3.000 - $5.000/hr", hours: "Hoy 07:00–15:00", tagline: "Café de especialidad y latte art", badge: null, skills: ["Latte art", "Café especialidad"] },
+  { name: "Roberto S.", role: "Garzón", category: "garzones" as WorkerCategory, zone: "Santiago Centro", availability: "today" as const, img: "https://i.pravatar.cc/150?img=33", rating: 4.5, experience: "3 años", price: "$3.500 - $5.000/hr", hours: "Mañana 12:00–22:00", tagline: "Restaurantes de alto flujo y eventos", badge: null, skills: ["Alto flujo", "Eventos"] },
 ];
 
 export const problems = [
@@ -39,7 +39,7 @@ export const solutions = [
   { icon: "⚡", title: "Match en 2 min", text: "Nuestro algoritmo conecta tu turno con el trabajador verificado más cercano y disponible. Confirmación instantánea." },
   { icon: "🛡️", title: "100% verificado", text: "Cada trabajador tiene GourmetScore: identidad validada, referencias comprobadas y rating actualizado en tiempo real." },
   { icon: "🔄", title: "Garantía total", text: "Si un trabajador no se presenta, enviamos reemplazo inmediato sin costo. Nuestra tasa de cumplimiento es del 98%." },
-  { icon: "💰", title: "Paga por resultado", text: "Solo pagas por turnos completados exitosamente. Sin comisiones ocultas, sin contratos de permanencia." },
+  { icon: "💰", title: "Sin intermediarios", text: "El acuerdo es directo entre empresa y profesional. Sin comisiones ocultas, sin contratos de permanencia." },
   { icon: "📈", title: "Analytics completo", text: "Dashboard con métricas de cada turno: puntualidad, calidad, costos y proyecciones. Decisiones basadas en datos." },
 ];
 
@@ -112,9 +112,9 @@ export const features: Feature[] = [
     accent: true,
   },
   {
-    icon: "💰",
-    title: "Earnings Tracker",
-    description: "Visualiza costos por semana, mes y proyección anual en tiempo real.",
+    icon: "📊",
+    title: "Panel de actividad",
+    description: "Visualiza turnos, matches y métricas de tu operación en tiempo real.",
     chip: "Analytics",
     size: "span2",
   },
@@ -161,10 +161,10 @@ export const trustBars = [
   { label: "Rating", value: 96 },
 ];
 
-export const earningsData = [
-  { label: "Semana", value: "$142K" },
-  { label: "Mes", value: "$580K" },
-  { label: "Proyección", value: "$720K" },
+export const activityData = [
+  { label: "Turnos activos", value: "12" },
+  { label: "Matches este mes", value: "48" },
+  { label: "Tasa de respuesta", value: "94%" },
 ];
 
 export const pricingPlans = [

@@ -9,7 +9,7 @@ const STATS = [
   { label: "Turnos publicados", value: "24", color: "#E85520" },
   { label: "Turnos completados", value: "21", color: "#16a34a" },
   { label: "Tasa de éxito", value: "87%", color: "#2563eb" },
-  { label: "Gasto estimado", value: "$1.2M", color: "#9333ea" },
+  { label: "Tasa de respuesta", value: "89%", color: "#9333ea" },
 ];
 
 const MONTHLY_DATA = [

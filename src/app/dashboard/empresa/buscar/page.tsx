@@ -16,7 +16,7 @@ const WORKERS = [
     experience: 4,
     zone: "Providencia",
     responseTime: 5,
-    price: 8500,
+    priceRange: "$7.000 - $10.000/hr",
     available: "now" as const,
     skills: ["Atención VIP", "Inglés", "Coctelería básica"],
     fastResponse: true,
@@ -32,7 +32,7 @@ const WORKERS = [
     experience: 6,
     zone: "Las Condes",
     responseTime: 12,
-    price: 15000,
+    priceRange: "$12.000 - $18.000/hr",
     available: "now" as const,
     skills: ["Cocina italiana", "Pastelería", "Sushi"],
     fastResponse: false,
@@ -48,7 +48,7 @@ const WORKERS = [
     experience: 3,
     zone: "Providencia",
     responseTime: 3,
-    price: 10000,
+    priceRange: "$8.000 - $12.000/hr",
     available: "now" as const,
     skills: ["Coctelería clásica", "Flair", "Vinos"],
     fastResponse: true,
@@ -64,7 +64,7 @@ const WORKERS = [
     experience: 2,
     zone: "Ñuñoa",
     responseTime: 8,
-    price: 7500,
+    priceRange: "$6.000 - $9.000/hr",
     available: "today" as const,
     skills: ["Banquetería", "Protocolo"],
     fastResponse: false,
@@ -80,7 +80,7 @@ const WORKERS = [
     experience: 5,
     zone: "Vitacura",
     responseTime: 10,
-    price: 12000,
+    priceRange: "$10.000 - $14.000/hr",
     available: "now" as const,
     skills: ["Repostería fina", "Chocolate", "Decoración"],
     fastResponse: false,
@@ -96,7 +96,7 @@ const WORKERS = [
     experience: 1,
     zone: "Santiago Centro",
     responseTime: 15,
-    price: 7000,
+    priceRange: "$5.000 - $8.000/hr",
     available: "today" as const,
     skills: ["Atención general", "POS"],
     fastResponse: false,
@@ -112,7 +112,7 @@ const WORKERS = [
     experience: 7,
     zone: "Las Condes",
     responseTime: 6,
-    price: 14000,
+    priceRange: "$11.000 - $16.000/hr",
     available: "now" as const,
     skills: ["Cocina peruana", "Mariscos", "Menú degustación"],
     fastResponse: true,
@@ -128,7 +128,7 @@ const WORKERS = [
     experience: 3,
     zone: "Providencia",
     responseTime: 7,
-    price: 9500,
+    priceRange: "$8.000 - $11.000/hr",
     available: "now" as const,
     skills: ["Mixología", "Cerveza artesanal", "Café"],
     fastResponse: false,
@@ -316,12 +316,12 @@ export default function BuscarTalentoPage() {
                   <span>&#9889; Responde en {worker.responseTime} min</span>
                 </div>
 
-                {/* Price */}
+                {/* Price range */}
                 <div className="mb-3">
-                  <span className="text-xl font-bold text-[#1A0E05]">
-                    ${worker.price.toLocaleString("es-CL")}
+                  <span className="text-base font-bold text-[#1A0E05]">
+                    {worker.priceRange}
                   </span>
-                  <span className="text-sm text-[#7A5C48]">/hr</span>
+                  <span className="text-xs text-[#9A7A60] ml-1">(referencial)</span>
                 </div>
 
                 {/* Skill tags */}

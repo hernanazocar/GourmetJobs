@@ -305,9 +305,9 @@ export default function PerfilTrabajadorPage() {
                   </select>
                 </div>
 
-                {/* Rango de precio */}
+                {/* Tarifa referencial */}
                 <div>
-                  <label className={labelClass}>Rango de precio por hora</label>
+                  <label className={labelClass}>Tarifa referencial</label>
                   <div className="flex items-center gap-3">
                     <div className="flex items-center gap-1 flex-1">
                       <span className="text-sm text-[#7A5C48]">$</span>
@@ -331,6 +331,13 @@ export default function PerfilTrabajadorPage() {
                       />
                     </div>
                   </div>
+                  <select className={`${inputClass} mt-2`} defaultValue="por hora">
+                    <option value="por hora">Por hora</option>
+                    <option value="por día">Por día</option>
+                    <option value="por turno">Por turno</option>
+                    <option value="a convenir">A convenir</option>
+                  </select>
+                  <p className="text-xs text-[#9A7A60] mt-2">La tarifa es solo referencial. El acuerdo final es entre tu y el restaurante.</p>
                 </div>
 
                 {/* Urgencias toggle */}
