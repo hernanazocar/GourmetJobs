@@ -238,8 +238,37 @@ export default function HowItWorks() {
                     {/* Description */}
                     <p className="text-[#7A5C48] text-sm leading-relaxed mt-3">{step.description}</p>
 
+                    {/* Bullet points */}
+                    <ul className="mt-4 space-y-2 text-left">
+                      {(tab === "empresa" ? [
+                        [["Selecciona rol y horario", "Sin publicaciones ni avisos", "Formulario en 30 segundos"],
+                         ["Score automático por candidato", "Top 5 mejores matches", "Basado en experiencia y zona"],
+                         ["Aceptación en 1 click", "Notificación instantánea", "WhatsApp directo"]],
+                      ] : [
+                        [["Toma menos de 2 minutos", "Solo necesitas nombre y rol", "Agrega habilidades y zona"],
+                         ["Push, email o WhatsApp", "Sin buscar ni postular", "El sistema hace el trabajo"],
+                         ["Acepta con un tap", "Sin contratos ni papeleo", "Cobra directo al restaurante"]],
+                      ])[0][index].map((bullet: string, bi: number) => (
+                        <li key={bi} className="flex items-start gap-2 text-xs text-[#7A5C48]">
+                          <span className="mt-0.5 w-4 h-4 rounded-full flex items-center justify-center shrink-0" style={{ background: color.light }}>
+                            <svg className="w-2.5 h-2.5" style={{ color: color.bg }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          </span>
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Time chip */}
+                    <div className="mt-4">
+                      <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full text-white" style={{ background: color.bg }}>
+                        {step.chip}
+                      </span>
+                    </div>
+
                     {/* Visual element */}
-                    <div className="mt-auto pt-2">
+                    <div className="mt-4 pt-4" style={{ borderTop: "1px solid #F0E6DC" }}>
                       {tab === "empresa"
                         ? <EmpresaVisual index={index} />
                         : <TrabajadorVisual index={index} />}
@@ -272,9 +301,16 @@ export default function HowItWorks() {
                     </div>
                     <h3 className="text-xl font-bold text-[#1A0E05] mt-4">{titles[index]}</h3>
                     <p className="text-[#7A5C48] text-sm leading-relaxed mt-3">{step.description}</p>
-                    {tab === "empresa"
-                      ? <EmpresaVisual index={index} />
-                      : <TrabajadorVisual index={index} />}
+                    <div className="mt-4">
+                      <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full text-white" style={{ background: color.bg }}>
+                        {step.chip}
+                      </span>
+                    </div>
+                    <div className="mt-4 pt-4" style={{ borderTop: "1px solid #F0E6DC" }}>
+                      {tab === "empresa"
+                        ? <EmpresaVisual index={index} />
+                        : <TrabajadorVisual index={index} />}
+                    </div>
                   </div>
                 </RevealWrapper>
               );
