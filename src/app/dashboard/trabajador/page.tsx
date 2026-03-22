@@ -254,15 +254,16 @@ export default function TrabajadorDashboard() {
                       <p className="text-xs text-[#9A7A60] mt-2">{inv.hace}</p>
                     </div>
 
-                    {/* Action buttons */}
-                    <div className="flex sm:flex-col items-center gap-2 sm:min-w-[130px]">
-                      <button className="flex-1 sm:w-full px-6 py-3 text-sm font-bold text-white bg-green-500 hover:bg-green-600 rounded-xl transition shadow-sm">
-                        Aceptar
-                      </button>
-                      <button className="flex-1 sm:w-full px-6 py-3 text-sm font-medium text-[#7A5C48] hover:bg-gray-50 rounded-xl transition">
-                        No me interesa
-                      </button>
-                    </div>
+                  </div>
+
+                  {/* Action buttons — full width below */}
+                  <div className="flex gap-3 mt-4 pt-4 border-t border-[#F0E6DC]">
+                    <button className="flex-1 px-6 py-3.5 text-sm font-bold text-white rounded-xl transition shadow-sm" style={{ background: "#22c55e" }}>
+                      ✓ Aceptar invitación
+                    </button>
+                    <button className="px-6 py-3.5 text-sm font-medium text-[#7A5C48] border border-[#E0D0C0] hover:bg-[#F8F6F3] rounded-xl transition">
+                      No me interesa
+                    </button>
                   </div>
                 </div>
               ))}
