@@ -67,18 +67,6 @@ export default function Nav() {
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="/dashboard/empresa"
-            className="text-sm font-bold text-white bg-white/20 hover:bg-white/30 transition px-4 py-2 rounded-lg flex items-center gap-1.5"
-          >
-            🏢 Demo empresa
-          </a>
-          <a
-            href="/dashboard/trabajador"
-            className="text-sm font-bold text-white bg-white/20 hover:bg-white/30 transition px-4 py-2 rounded-lg flex items-center gap-1.5"
-          >
-            👨‍🍳 Demo trabajador
-          </a>
-          <a
             href="/login"
             className="group text-sm font-bold text-white px-5 py-2.5 rounded-[14px] transition-all duration-200 hover:bg-white/10 flex items-center gap-2"
             style={{

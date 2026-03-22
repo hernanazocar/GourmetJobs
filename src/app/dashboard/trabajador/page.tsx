@@ -7,10 +7,10 @@ import Sidebar from "@/components/dashboard/Sidebar";
 
 const invitaciones = [
   {
-    restaurant: "La Mision",
+    restaurant: "La Misión",
     tipo: "Restaurante italiano",
     zona: "Providencia",
-    rol: "Garzon",
+    rol: "Garzón",
     horario: "Hoy 19:00 -- 01:00",
     pago: "$4.500/hr (referencial)",
     matchReason: "Cerca de ti -- Compatible con tu experiencia",
@@ -20,12 +20,12 @@ const invitaciones = [
   },
   {
     restaurant: "Osaka Nikkei",
-    tipo: "Restaurante japones",
+    tipo: "Restaurante japonés",
     zona: "Las Condes",
     rol: "Barman",
     horario: "Hoy 20:00 -- 02:00",
     pago: "$5.000/hr (referencial)",
-    matchReason: "Zona habitual -- Alta tasa de aceptacion",
+    matchReason: "Zona habitual -- Alta tasa de aceptación",
     hace: "Hace 32 min",
     tiempoRestante: 18,
     tiempoTotal: 60,
@@ -34,8 +34,8 @@ const invitaciones = [
     restaurant: "Borago",
     tipo: "Fine dining",
     zona: "Vitacura",
-    rol: "Garzon",
-    horario: "Manana 19:00 -- 00:00",
+    rol: "Garzón",
+    horario: "Mañana 19:00 -- 00:00",
     pago: "$6.000/hr (referencial)",
     matchReason: "Te invitaron antes -- Excelente puntualidad",
     hace: "Hace 1 hora",
@@ -46,15 +46,15 @@ const invitaciones = [
 
 const turnosConfirmados = [
   {
-    restaurant: "La Mision",
-    rol: "Garzon",
+    restaurant: "La Misión",
+    rol: "Garzón",
     fecha: "Viernes 22 Mar",
     horario: "19:00 -- 01:00",
   },
   {
     restaurant: "Liguria",
-    rol: "Garzon",
-    fecha: "Sabado 23 Mar",
+    rol: "Garzón",
+    fecha: "Sábado 23 Mar",
     horario: "12:00 -- 17:00",
   },
 ];
@@ -85,7 +85,7 @@ export default function TrabajadorDashboard() {
             </p>
           ) : (
             <p className="text-[#7A5C48] mt-1">
-              El sistema esta buscando oportunidades para ti
+              El sistema está buscando oportunidades para ti
             </p>
           )}
         </div>
@@ -136,7 +136,7 @@ export default function TrabajadorDashboard() {
           </select>
         </div>
         <p className="text-xs text-[#7A5C48] -mt-4 mb-6 ml-1">
-          Estar activo aumenta tu visibilidad, pero recibiras invitaciones de todas formas
+          Estar activo aumenta tu visibilidad, pero recibirás invitaciones de todas formas
         </p>
 
         {/* ── 3. Invitaciones (HERO CONTENT) ─────────────────────────────── */}

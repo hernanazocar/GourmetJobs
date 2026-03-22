@@ -33,15 +33,15 @@ export default function ConfiguracionPage() {
 
   return (
     <div className="flex h-screen bg-[#F8F6F3] overflow-hidden">
-      <Sidebar type="empresa" activeItem="Configuracion" />
+      <Sidebar type="empresa" activeItem="Ajustes" />
 
       <main className="flex-1 overflow-y-auto ml-0 lg:ml-64">
         <div className="p-4 sm:p-6 lg:p-8 pt-20 lg:pt-8 space-y-6">
-          <TopBar title="Configuracion" subtitle="Ajustes de tu cuenta" />
+          <TopBar title="Configuración" subtitle="Ajustes de tu cuenta" />
 
-          {/* Informacion de la empresa */}
+          {/* Información de la empresa */}
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#F0E6DC]/50">
-            <h2 className="text-lg font-bold text-[#1A0E05] mb-1">Informacion de la empresa</h2>
+            <h2 className="text-lg font-bold text-[#1A0E05] mb-1">Información de la empresa</h2>
             <p className="text-sm text-[#7A5C48] mb-6">Datos principales de tu negocio</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -51,13 +51,13 @@ export default function ConfiguracionPage() {
                 </label>
                 <input
                   type="text"
-                  defaultValue="La Mision"
+                  defaultValue="La Misión"
                   className="w-full px-4 py-3 bg-[#F8F6F3] rounded-xl text-sm text-[#1A0E05] outline-none focus:ring-2 focus:ring-[#E85520]/20 border border-transparent focus:border-[#E85520]/30"
                 />
               </div>
               <div>
                 <label className="block text-sm font-semibold text-[#1A0E05] mb-1.5">
-                  Correo electronico
+                  Correo electrónico
                 </label>
                 <input
                   type="email"
@@ -67,7 +67,7 @@ export default function ConfiguracionPage() {
               </div>
               <div>
                 <label className="block text-sm font-semibold text-[#1A0E05] mb-1.5">
-                  Telefono
+                  Teléfono
                 </label>
                 <input
                   type="tel"
@@ -77,7 +77,7 @@ export default function ConfiguracionPage() {
               </div>
               <div>
                 <label className="block text-sm font-semibold text-[#1A0E05] mb-1.5">
-                  Direccion
+                  Dirección
                 </label>
                 <input
                   type="text"
@@ -91,7 +91,7 @@ export default function ConfiguracionPage() {
           {/* Plan actual */}
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#F0E6DC]/50">
             <h2 className="text-lg font-bold text-[#1A0E05] mb-1">Plan actual</h2>
-            <p className="text-sm text-[#7A5C48] mb-6">Tu suscripcion y uso</p>
+            <p className="text-sm text-[#7A5C48] mb-6">Tu suscripción y uso</p>
 
             <div className="flex flex-col sm:flex-row sm:items-center gap-6">
               <div className="flex-1 p-5 rounded-2xl bg-gradient-to-br from-[#E85520] to-[#D04A1A] text-white">
@@ -132,7 +132,7 @@ export default function ConfiguracionPage() {
           {/* Notificaciones */}
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#F0E6DC]/50">
             <h2 className="text-lg font-bold text-[#1A0E05] mb-1">Notificaciones</h2>
-            <p className="text-sm text-[#7A5C48] mb-6">Configura como recibir alertas</p>
+            <p className="text-sm text-[#7A5C48] mb-6">Configura cómo recibir alertas</p>
 
             <div className="space-y-5">
               <div className="flex items-center justify-between">
@@ -148,7 +148,7 @@ export default function ConfiguracionPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-semibold text-[#1A0E05]">Notificaciones por WhatsApp</p>
-                  <p className="text-xs text-[#7A5C48] mt-0.5">Alertas instantaneas en tu celular</p>
+                  <p className="text-xs text-[#7A5C48] mt-0.5">Alertas instantáneas en tu celular</p>
                 </div>
                 <Toggle enabled={whatsappNotif} onToggle={() => setWhatsappNotif(!whatsappNotif)} />
               </div>
@@ -188,7 +188,7 @@ export default function ConfiguracionPage() {
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-red-200">
             <h2 className="text-lg font-bold text-red-600 mb-1">Zona de peligro</h2>
             <p className="text-sm text-[#7A5C48] mb-4">
-              Acciones irreversibles. Procede con precaucion.
+              Acciones irreversibles. Procede con precaución.
             </p>
             <button className="px-5 py-2.5 text-sm font-semibold text-white bg-red-600 rounded-xl hover:bg-red-700 transition-colors">
               Eliminar cuenta

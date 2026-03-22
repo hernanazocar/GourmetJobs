@@ -10,7 +10,7 @@ const ACTIVE_SHIFTS = [
   {
     id: 1,
     title: "Turno noche - Viernes",
-    role: "Garzon",
+    role: "Garzón",
     date: "21 Mar 2026",
     time: "19:00 - 01:00",
     status: "Confirmado",
@@ -19,7 +19,7 @@ const ACTIVE_SHIFTS = [
   },
   {
     id: 2,
-    title: "Turno almuerzo - Sabado",
+    title: "Turno almuerzo - Sábado",
     role: "Chef de partida",
     date: "22 Mar 2026",
     time: "11:00 - 16:00",
@@ -52,8 +52,8 @@ const ACTIVE_SHIFTS = [
 const COMPLETED_SHIFTS = [
   {
     id: 5,
-    title: "Turno noche - Miercoles",
-    role: "Garzon",
+    title: "Turno noche - Miércoles",
+    role: "Garzón",
     date: "19 Mar 2026",
     time: "19:00 - 01:00",
     status: "Completado",
@@ -69,7 +69,7 @@ const COMPLETED_SHIFTS = [
     time: "18:00 - 23:00",
     status: "Completado",
     statusStyle: "bg-blue-50 text-blue-700 border border-blue-200",
-    worker: { name: "Martin G.", avatar: "https://i.pravatar.cc/100?img=33" },
+    worker: { name: "Martín G.", avatar: "https://i.pravatar.cc/100?img=33" },
     rating: 4,
   },
   {
@@ -125,7 +125,7 @@ function IconEmpty() {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function ShiftCard({ shift, showRating = false }: { shift: any; showRating?: boolean }) {
   const roleEmoji =
-    shift.role === "Garzon" ? "🍽" :
+    shift.role === "Garzón" ? "🍽" :
     shift.role.includes("Chef") ? "👨‍🍳" :
     shift.role === "Barman" ? "🍸" :
     shift.role === "Sommelier" ? "🍷" : "🍽";

@@ -260,6 +260,18 @@ export default function Hero() {
           </div>
         </div>
       </RevealWrapper>
+
+      {/* Demo links */}
+      <RevealWrapper delay={0.45}>
+        <div className="flex items-center justify-center gap-6 mt-6">
+          <a href="/dashboard/empresa" className="text-[#7A5C48] text-sm hover:text-[#E85520] transition flex items-center gap-1.5 underline underline-offset-4 decoration-[#E85520]/30">
+            🏢 Ver demo empresa
+          </a>
+          <a href="/dashboard/trabajador" className="text-[#7A5C48] text-sm hover:text-[#E85520] transition flex items-center gap-1.5 underline underline-offset-4 decoration-[#E85520]/30">
+            👨‍🍳 Ver demo trabajador
+          </a>
+        </div>
+      </RevealWrapper>
     </section>
   );
 }

@@ -8,7 +8,7 @@ import TopBar from "@/components/dashboard/TopBar";
 const STATS = [
   { label: "Turnos publicados", value: "24", color: "#E85520" },
   { label: "Turnos completados", value: "21", color: "#16a34a" },
-  { label: "Tasa de exito", value: "87%", color: "#2563eb" },
+  { label: "Tasa de éxito", value: "87%", color: "#2563eb" },
   { label: "Gasto estimado", value: "$1.2M", color: "#9333ea" },
 ];
 
@@ -22,7 +22,7 @@ const MONTHLY_DATA = [
 ];
 
 const TOP_ROLES = [
-  { role: "Garzon", pct: 35 },
+  { role: "Garzón", pct: 35 },
   { role: "Chef", pct: 25 },
   { role: "Barman", pct: 18 },
   { role: "Sommelier", pct: 12 },
@@ -49,7 +49,7 @@ export default function AnalyticsPage() {
 
       <main className="flex-1 overflow-y-auto ml-0 lg:ml-64">
         <div className="p-4 sm:p-6 lg:p-8 pt-20 lg:pt-8 space-y-6">
-          <TopBar title="Analytics" subtitle="Metricas de tu actividad" />
+          <TopBar title="Analytics" subtitle="Métricas de tu actividad" />
 
           {/* Stats Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
@@ -72,8 +72,8 @@ export default function AnalyticsPage() {
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
             {/* Bar Chart - Hiring Activity */}
             <div className="xl:col-span-2 bg-white rounded-2xl p-6 shadow-sm border border-[#F0E6DC]/50">
-              <h2 className="text-lg font-bold text-[#1A0E05] mb-1">Actividad de contratacion</h2>
-              <p className="text-sm text-[#7A5C48] mb-6">Ultimos 6 meses</p>
+              <h2 className="text-lg font-bold text-[#1A0E05] mb-1">Actividad de contratación</h2>
+              <p className="text-sm text-[#7A5C48] mb-6">Últimos 6 meses</p>
 
               <div className="flex items-end justify-between gap-3 h-48">
                 {MONTHLY_DATA.map((d) => {
@@ -114,7 +114,7 @@ export default function AnalyticsPage() {
               </div>
 
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#F0E6DC]/50">
-                <h2 className="text-lg font-bold text-[#1A0E05] mb-1">Satisfaccion</h2>
+                <h2 className="text-lg font-bold text-[#1A0E05] mb-1">Satisfacción</h2>
                 <p className="text-sm text-[#7A5C48] mb-4">Rating promedio de trabajadores</p>
                 <div className="flex items-end gap-2">
                   <span className="text-4xl font-bold text-[#E85520]">4.8</span>
@@ -137,8 +137,8 @@ export default function AnalyticsPage() {
 
           {/* Top Roles */}
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#F0E6DC]/50">
-            <h2 className="text-lg font-bold text-[#1A0E05] mb-1">Roles mas contratados</h2>
-            <p className="text-sm text-[#7A5C48] mb-6">Distribucion por tipo de rol</p>
+            <h2 className="text-lg font-bold text-[#1A0E05] mb-1">Roles más contratados</h2>
+            <p className="text-sm text-[#7A5C48] mb-6">Distribución por tipo de rol</p>
 
             <div className="space-y-4">
               {TOP_ROLES.map((item) => (

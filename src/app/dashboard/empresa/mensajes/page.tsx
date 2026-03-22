@@ -32,9 +32,9 @@ const CONVERSATIONS: Conversation[] = [
     time: "hace 5 min",
     unread: 2,
     messages: [
-      { id: 1, text: "Hola Diego, tenemos un turno disponible este viernes de 19:00 a 01:00. Te interesa?", time: "10:30", sent: true },
-      { id: 2, text: "Hola! Si, me interesa mucho. Es como garzon?", time: "10:45", sent: false },
-      { id: 3, text: "Si, garzon para turno noche. El pago es $45.000 por turno.", time: "10:48", sent: true },
+      { id: 1, text: "Hola Diego, tenemos un turno disponible este viernes de 19:00 a 01:00. ¿Te interesa?", time: "10:30", sent: true },
+      { id: 2, text: "¡Hola! Sí, me interesa mucho. ¿Es como garzón?", time: "10:45", sent: false },
+      { id: 3, text: "Sí, garzón para turno noche. El pago es $45.000 por turno.", time: "10:48", sent: true },
       { id: 4, text: "Excelente, me parece bien el monto.", time: "11:02", sent: false },
       { id: 5, text: "Perfecto, confirmo asistencia para el viernes", time: "11:05", sent: false },
     ],
@@ -47,9 +47,9 @@ const CONVERSATIONS: Conversation[] = [
     time: "hace 1 hora",
     unread: 0,
     messages: [
-      { id: 1, text: "Valentina, tu turno del sabado fue calificado con 5 estrellas por el chef.", time: "09:00", sent: true },
-      { id: 2, text: "Que buena noticia! Me encanta trabajar con ustedes.", time: "09:15", sent: false },
-      { id: 3, text: "Nos alegra. Tenemos mas turnos la proxima semana, te avisamos.", time: "09:20", sent: true },
+      { id: 1, text: "Valentina, tu turno del sábado fue calificado con 5 estrellas por el chef.", time: "09:00", sent: true },
+      { id: 2, text: "¡Qué buena noticia! Me encanta trabajar con ustedes.", time: "09:15", sent: false },
+      { id: 3, text: "Nos alegra. Tenemos más turnos la próxima semana, te avisamos.", time: "09:20", sent: true },
       { id: 4, text: "Gracias por la oportunidad!", time: "09:22", sent: false },
     ],
   },
@@ -61,35 +61,35 @@ const CONVERSATIONS: Conversation[] = [
     time: "hace 3 horas",
     unread: 1,
     messages: [
-      { id: 1, text: "Hola Camila, necesitamos una chef de partida para un evento el sabado.", time: "08:00", sent: true },
-      { id: 2, text: "Hola! Cuantos comensales son?", time: "08:30", sent: false },
-      { id: 3, text: "Aproximadamente 80 personas, menu de 3 tiempos.", time: "08:35", sent: true },
-      { id: 4, text: "Me interesa! A que hora necesitan que este?", time: "08:50", sent: false },
-      { id: 5, text: "A las 14:00 en el salon principal.", time: "08:55", sent: true },
+      { id: 1, text: "Hola Camila, necesitamos una chef de partida para un evento el sábado.", time: "08:00", sent: true },
+      { id: 2, text: "¡Hola! ¿Cuántos comensales son?", time: "08:30", sent: false },
+      { id: 3, text: "Aproximadamente 80 personas, menú de 3 tiempos.", time: "08:35", sent: true },
+      { id: 4, text: "¡Me interesa! ¿A qué hora necesitan que esté?", time: "08:50", sent: false },
+      { id: 5, text: "A las 14:00 en el salón principal.", time: "08:55", sent: true },
       { id: 6, text: "Puedo llegar 15 min antes para preparar", time: "09:10", sent: false },
     ],
   },
   {
     id: 4,
-    name: "Martin G.",
+    name: "Martín G.",
     avatar: "https://i.pravatar.cc/100?img=33",
     lastMessage: "Dale, nos vemos el lunes entonces",
     time: "ayer",
     unread: 0,
     messages: [
-      { id: 1, text: "Martin, quedas confirmado para el turno del lunes.", time: "14:00", sent: true },
+      { id: 1, text: "Martín, quedas confirmado para el turno del lunes.", time: "14:00", sent: true },
       { id: 2, text: "Dale, nos vemos el lunes entonces", time: "14:30", sent: false },
     ],
   },
   {
     id: 5,
-    name: "Sofia R.",
+    name: "Sofía R.",
     avatar: "https://i.pravatar.cc/100?img=47",
     lastMessage: "Me avisan cualquier cosa",
     time: "ayer",
     unread: 0,
     messages: [
-      { id: 1, text: "Sofia, lamentablemente el evento del domingo fue cancelado.", time: "16:00", sent: true },
+      { id: 1, text: "Sofía, lamentablemente el evento del domingo fue cancelado.", time: "16:00", sent: true },
       { id: 2, text: "Entiendo, no hay problema.", time: "16:20", sent: false },
       { id: 3, text: "Me avisan cualquier cosa", time: "16:21", sent: false },
     ],
@@ -125,7 +125,7 @@ export default function MensajesPage() {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Buscar conversacion..."
+                  placeholder="Buscar conversación..."
                   className="w-full pl-9 pr-4 py-2.5 bg-[#F8F6F3] rounded-xl text-sm text-[#1A0E05] placeholder-[#B8A898] outline-none focus:ring-2 focus:ring-[#E85520]/20"
                 />
                 <svg className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[#B8A898]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
@@ -180,7 +180,7 @@ export default function MensajesPage() {
               />
               <div>
                 <h3 className="text-sm font-bold text-[#1A0E05]">{selected.name}</h3>
-                <p className="text-xs text-emerald-600">En linea</p>
+                <p className="text-xs text-emerald-600">En línea</p>
               </div>
             </div>
 

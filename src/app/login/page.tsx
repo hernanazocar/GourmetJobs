@@ -256,6 +256,19 @@ export default function LoginPage() {
               Crear cuenta gratis
             </Link>
           </p>
+
+          {/* Demo links */}
+          <div className="mt-6 pt-6 border-t border-[#E0D0C0]">
+            <p className="text-center text-[#9A7A60] text-xs mb-3">O prueba sin registrarte</p>
+            <div className="flex gap-3">
+              <a href="/dashboard/empresa" className="flex-1 text-center py-3 rounded-xl text-sm font-semibold text-[#7A5C48] bg-[#FFF5EE] hover:bg-[#FFE4CC] transition">
+                🏢 Demo empresa
+              </a>
+              <a href="/dashboard/trabajador" className="flex-1 text-center py-3 rounded-xl text-sm font-semibold text-[#7A5C48] bg-[#FFF5EE] hover:bg-[#FFE4CC] transition">
+                👨‍🍳 Demo trabajador
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
